@@ -1,13 +1,12 @@
-# ~/vtol_ctrl_ros2/src/ros2_px4_interface/ros2_px4_interface.py
-
 import rclpy
 from rclpy.node import Node
-from px4_msgs.msg import ActuatorServosTrim, ActuatorMotors, VehicleCommand, ActuatorServos, VehicleLocalPosition, VehicleOdometry, AirspeedWind, Airspeed, VehicleAngularVelocity, VehicleStatus
+from px4_msgs.msg import ActuatorServosTrim, ActuatorMotors, VehicleCommand, ActuatorServos, VehicleLocalPosition, VehicleOdometry, AirspeedWind, Airspeed, VehicleAngularVelocity, VehicleStatus, VehicleCommandAck, OffboardControlMode
 from std_msgs.msg import Float32, UInt8
-from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy, HistoryPolicy
+from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy
 import logging
 
 HZ_RATE = 200.0
+OFFBOARD_CONTROL_MODE_RATE = 2.0  # Hz
 
 class ROS2PX4Interface(Node):
     def __init__(self):
@@ -18,56 +17,50 @@ class ROS2PX4Interface(Node):
         self.logger = logging.getLogger('ROS2PX4Interface')
         
         # Publishers
-        # self.actuator_servos_trim_pub = self.create_publisher(ActuatorServosTrim, 'actuator_servos_trim', QoSProfile(depth=10))
         self.actuator_motors_pub = self.create_publisher(ActuatorMotors, '/fmu/in/actuator_motors', QoSProfile(
             reliability=ReliabilityPolicy.BEST_EFFORT,
             durability=DurabilityPolicy.VOLATILE,
-            # history=QoSProfile.HISTORY_KEEP_LAST,
-            depth=10  # Set depth based on your requirements
-        ))
-        self.vehicle_command_pub = self.create_publisher(VehicleCommand, '/fmu/in/vehicle_command', QoSProfile(
-            reliability=ReliabilityPolicy.BEST_EFFORT,
-            durability=DurabilityPolicy.VOLATILE,
-            # history=QoSProfile.HISTORY_KEEP_LAST,
-            depth=10  # Set depth based on your requirements
+            depth=10
         ))
         self.actuator_servos_pub = self.create_publisher(ActuatorServos, '/fmu/in/actuator_servos', QoSProfile(
             reliability=ReliabilityPolicy.BEST_EFFORT,
             durability=DurabilityPolicy.VOLATILE,
-            # history=QoSProfile.HISTORY_KEEP_LAST,
-            depth=10  # Set depth based on your requirements
+            depth=10
+        ))
+        self.offboard_control_mode_pub = self.create_publisher(OffboardControlMode, '/fmu/in/offboard_control_mode', QoSProfile(
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            durability=DurabilityPolicy.VOLATILE,
+            depth=10
         ))
 
         # Subscribers
-        
-
-        self.create_subscription(VehicleLocalPosition, '/fmu/out/vehicle_local_position', self.vehicle_local_position_callback, qos_profile = QoSProfile(
+        self.create_subscription(VehicleLocalPosition, '/fmu/out/vehicle_local_position', self.vehicle_local_position_callback, qos_profile=QoSProfile(
             reliability=ReliabilityPolicy.BEST_EFFORT,
             durability=DurabilityPolicy.TRANSIENT_LOCAL,
-            # history=QoSProfile.HISTORY_KEEP_LAST,
-            depth=10  # Set depth based on your requirements
+            depth=10
         ))
         self.create_subscription(VehicleOdometry, '/fmu/out/vehicle_odometry', self.vehicle_odometry_callback, QoSProfile(
             reliability=ReliabilityPolicy.BEST_EFFORT,
             durability=DurabilityPolicy.TRANSIENT_LOCAL,
-            # history=QoSProfile.HISTORY_KEEP_LAST,
-            depth=10  # Set depth based on your requirements
+            depth=10
         ))
-        # self.create_subscription(AirspeedWind, 'fmu/out/airspeed_wind', self.airspeed_wind_callback, QoSProfile(depth=10)) #
-        # self.create_subscription(Airspeed, 'fmu/out/airspeed', self.airspeed_callback, QoSProfile(depth=10)) #
-        # self.create_subscription(VehicleAngularVelocity, 'fmu/out/vehicle_angular_velocity', self.vehicle_angular_velocity_callback, QoSProfile(depth=10)) #
-        self.create_subscription(VehicleStatus, '/fmu/out/vehicle_status', self.vehicle_status_callback, QoSProfile(
+        # self.create_subscription(AirspeedWind, '/fmu/out/airspeed_wind', self.airspeed_wind_callback, QoSProfile(
+        #     reliability=ReliabilityPolicy.BEST_EFFORT,
+        #     durability=DurabilityPolicy.TRANSIENT_LOCAL,
+        #     depth=10
+        # ))
+        self.create_subscription(VehicleCommandAck, '/fmu/out/vehicle_command_ack', self.vehicle_command_ack_callback, QoSProfile(
             reliability=ReliabilityPolicy.BEST_EFFORT,
             durability=DurabilityPolicy.TRANSIENT_LOCAL,
-            # history=QoSProfile.HISTORY_KEEP_LAST,
-            depth=10  # Set depth based on your requirements
+            depth=10
         ))
 
-        # Set up a timer for publishing messages at 1/HZ_RATE Hz
-        self.timer = self.create_timer(1.0/HZ_RATE, self.publish_messages)
+        # Set up timers
+        self.publish_messages_timer = self.create_timer(1.0 / HZ_RATE, self.publish_messages)
+        self.offboard_control_mode_timer = self.create_timer(1.0 / OFFBOARD_CONTROL_MODE_RATE, self.publish_offboard_control_mode)
 
         # Initial command to arm and enable offboard mode
-        self.arm_and_enable_offboard()
+        self.publish_offboard_control_mode()
 
     def arm_and_enable_offboard(self):
         self.logger.info("Arming vehicle and enabling offboard mode")
@@ -113,41 +106,80 @@ class ROS2PX4Interface(Node):
     def vehicle_odometry_callback(self, msg):
         self.logger.info(f"Received VehicleOdometry: position={msg.position}, velocity={msg.velocity}, angular_velocity={msg.angular_velocity}")
 
-    def airspeed_wind_callback(self, msg):
-        self.logger.info(f"Received AirspeedWind: tas_innov={msg.tas_innov}, tas_scale_validated={msg.tas_scale_validated}, beta_innov={msg.beta_innov}")
+    # def airspeed_wind_callback(self, msg):
+    #     """Callback function for airspeed_wind topic subscriber."""
+    #     source_map = {
+    #         0: 'Synthetic Sideslip Fusion',
+    #         1: 'Sensor 1 (Airspeed Fusion)',
+    #         2: 'Sensor 2 (Airspeed Fusion)',
+    #         3: 'Sensor 3 (Airspeed Fusion)'
+    #     }
+    #     self.logger.info(f"Received AirspeedWind: "
+    #                      f"timestamp={msg.timestamp}, "
+    #                      f"timestamp_sample={msg.timestamp_sample}, "
+    #                      f"windspeed_north={msg.windspeed_north}, "
+    #                      f"windspeed_east={msg.windspeed_east}, "
+    #                      f"variance_north={msg.variance_north}, "
+    #                      f"variance_east={msg.variance_east}, "
+    #                      f"tas_innov={msg.tas_innov}, "
+    #                      f"tas_innov_var={msg.tas_innov_var}, "
+    #                      f"tas_scale_raw={msg.tas_scale_raw}, "
+    #                      f"tas_scale_raw_var={msg.tas_scale_raw_var}, "
+    #                      f"tas_scale_validated={msg.tas_scale_validated}, "
+    #                      f"beta_innov={msg.beta_innov}, "
+    #                      f"beta_innov_var={msg.beta_innov_var}, "
+    #                      f"source={source_map.get(msg.source, 'Unknown')}")
 
-    def airspeed_callback(self, msg):
-        self.logger.info(f"Received Airspeed: true_airspeed_m_s={msg.true_airspeed_m_s}, indicated_airspeed_m_s={msg.indicated_airspeed_m_s}")
-
-    def vehicle_angular_velocity_callback(self, msg):
-        self.logger.info(f"Received VehicleAngularVelocity: xyz={msg.xyz}, xyz_derivative={msg.xyz_derivative}")
-
-    def vehicle_status_callback(self, vehicle_status):
-        """Callback function for vehicle_status topic subscriber."""
-        self.vehicle_status = vehicle_status
-        self.get_logger().info(f"Received VehicleStatus: {self.vehicle_status}")
+    def vehicle_command_ack_callback(self, msg):
+        """Callback function for vehicle_command_ack topic subscriber."""
+        result_map = {
+            0: 'Accepted',
+            1: 'Temporarily Rejected',
+            2: 'Denied',
+            3: 'Unsupported',
+            4: 'Failed',
+            5: 'In Progress',
+            6: 'Cancelled'
+        }
+        self.logger.info(f"Received VehicleCommandAck: "
+                         f"Command={msg.command}, "
+                         f"Result={result_map.get(msg.result, 'Unknown')}, "
+                         f"Result Param1={msg.result_param1}, "
+                         f"Result Param2={msg.result_param2}, "
+                         f"Target System={msg.target_system}, "
+                         f"Target Component={msg.target_component}, "
+                         f"From External={msg.from_external}")
 
     def publish_messages(self):
         self.logger.info("Publishing messages")
-
-        # # Publish ActuatorServosTrim message
-        # trim_msg = ActuatorServosTrim()
-        # trim_msg.timestamp = self.get_clock().now().nanoseconds // 1000
-        # trim_msg.trim = [0.0] * 8  # Example trim values
-        # self.actuator_servos_trim_pub.publish(trim_msg)
-        # self.logger.info("Published ActuatorServosTrim message")
 
         # Publish ActuatorMotors message
         motors_msg = ActuatorMotors()
         motors_msg.control = [1.0] * 12  # Example motor control values
         self.actuator_motors_pub.publish(motors_msg)
-        # self.logger.info("Published ActuatorMotors message")
+        self.logger.info("Published ActuatorMotors message")
 
         # Publish ActuatorServos message
         servos_msg = ActuatorServos()
         servos_msg.control = [1.0] * 8  # Example servo control values
         self.actuator_servos_pub.publish(servos_msg)
-        # self.logger.info("Published ActuatorServos message")
+        self.logger.info("Published ActuatorServos message")
+
+    def publish_offboard_control_mode(self):
+        self.logger.info("Publishing OffboardControlMode message")
+
+        offboard_control_mode_msg = OffboardControlMode()
+        offboard_control_mode_msg.timestamp = self.get_clock().now().nanoseconds // 1000
+        offboard_control_mode_msg.position = True
+        offboard_control_mode_msg.velocity = True
+        offboard_control_mode_msg.acceleration = True
+        offboard_control_mode_msg.attitude = True
+        offboard_control_mode_msg.body_rate = True
+        offboard_control_mode_msg.thrust_and_torque = True
+        offboard_control_mode_msg.direct_actuator = True
+
+        self.offboard_control_mode_pub.publish(offboard_control_mode_msg)
+        self.logger.info("Published OffboardControlMode message")
 
 def main(args=None):
     rclpy.init(args=args)

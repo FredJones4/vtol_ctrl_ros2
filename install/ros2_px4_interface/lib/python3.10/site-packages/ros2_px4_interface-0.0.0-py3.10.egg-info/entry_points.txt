@@ -1,3 +1,4 @@
 [console_scripts]
+offboard_test = ros2_px4_interface.OffBoardTest:main
 ros2_px4_interface = ros2_px4_interface.ros2_px4_interface:main
 

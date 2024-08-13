@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'ros2_px4_interface = ros2_px4_interface.ros2_px4_interface:main',
+            'offboard_test = ros2_px4_interface.OffBoardTest:main',
         ],
     },
 )
