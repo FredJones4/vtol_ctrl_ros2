@@ -1,0 +1,16 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages",
+        "/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/local/lib/python3.10/dist-packages",
+        "/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages",
+        "/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/local/lib/python3.10/dist-packages",
+        "/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

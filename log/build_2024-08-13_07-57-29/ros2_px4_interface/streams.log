@@ -1,0 +1,34 @@
+[0.795s] Invoking command in '/home/cmhales/vtol_ctrl_ros2/src/ros2_px4_interface': PYTHONPATH=/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/ros2_px4_interface build --build-base /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build install --record /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/install.log --single-version-externally-managed install_data
+[0.954s] /home/cmhales/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:268: UserWarning: Unknown distribution option: 'tests_require'
+[0.954s]   warnings.warn(msg)
+[1.070s] running egg_info
+[1.070s] creating ../../build/ros2_px4_interface/ros2_px4_interface.egg-info
+[1.089s] writing ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/PKG-INFO
+[1.089s] writing dependency_links to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/dependency_links.txt
+[1.089s] writing requirements to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/requires.txt
+[1.089s] writing top-level names to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/top_level.txt
+[1.089s] writing manifest file '../../build/ros2_px4_interface/ros2_px4_interface.egg-info/SOURCES.txt'
+[1.128s] reading manifest file '../../build/ros2_px4_interface/ros2_px4_interface.egg-info/SOURCES.txt'
+[1.129s] writing manifest file '../../build/ros2_px4_interface/ros2_px4_interface.egg-info/SOURCES.txt'
+[1.129s] running build
+[1.129s] running build_py
+[1.129s] creating /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build
+[1.129s] creating /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib
+[1.129s] creating /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface
+[1.130s] copying ros2_px4_interface/__init__.py -> /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface
+[1.130s] running install
+[1.134s] running install_lib
+[1.153s] creating /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface
+[1.154s] copying /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface/__init__.py -> /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface
+[1.154s] byte-compiling /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface/__init__.py to __init__.cpython-310.pyc
+[1.154s] running install_data
+[1.155s] creating /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ament_index
+[1.155s] creating /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ament_index/resource_index
+[1.155s] creating /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ament_index/resource_index/packages
+[1.155s] copying resource/ros2_px4_interface -> /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ament_index/resource_index/packages
+[1.155s] copying package.xml -> /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ros2_px4_interface
+[1.155s] running install_egg_info
+[1.175s] Copying ../../build/ros2_px4_interface/ros2_px4_interface.egg-info to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface-0.0.0-py3.10.egg-info
+[1.176s] running install_scripts
+[1.327s] writing list of installed files to '/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/install.log'
+[1.351s] Invoked command in '/home/cmhales/vtol_ctrl_ros2/src/ros2_px4_interface' returned '0': PYTHONPATH=/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/ros2_px4_interface build --build-base /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build install --record /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/install.log --single-version-externally-managed install_data

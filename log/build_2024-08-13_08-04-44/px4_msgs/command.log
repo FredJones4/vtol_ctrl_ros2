@@ -1,0 +1,6 @@
+Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/px4_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4_msgs -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs
+Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/px4_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4_msgs -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs
+Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/px4_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/px4_msgs -- -j6 -l6
+Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/px4_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/px4_msgs -- -j6 -l6
+Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/px4_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/px4_msgs
+Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/px4_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/px4_msgs

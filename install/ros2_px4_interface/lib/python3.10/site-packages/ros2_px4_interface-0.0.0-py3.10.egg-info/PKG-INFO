@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: ros2-px4-interface
+Version: 0.0.0
+Summary: Grabs System State and feeds motor and servo control (plus trim) to PX4.
+Home-page: UNKNOWN
+Maintainer: cmhales
+Maintainer-email: cmhales@byu.edu
+License: Apache 2.0
+Platform: UNKNOWN
+
+UNKNOWN
+
