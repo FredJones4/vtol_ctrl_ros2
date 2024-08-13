@@ -22,6 +22,8 @@ setup(
         'console_scripts': [
             'ros2_px4_interface = ros2_px4_interface.ros2_px4_interface:main',
             'offboard_test = ros2_px4_interface.OffBoardTest:main',
+            'px4_data_gatherer = ros2_px4_interface.px4_data_gatherer:main',
+            'actuator_px4_control = ros2_px4_interface.actuator_px4_control:main',
         ],
     },
 )

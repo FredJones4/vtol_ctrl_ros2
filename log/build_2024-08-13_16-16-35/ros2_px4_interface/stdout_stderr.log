@@ -1,0 +1,28 @@
+running egg_info
+writing ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/PKG-INFO
+writing dependency_links to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/dependency_links.txt
+writing entry points to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/entry_points.txt
+writing requirements to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/requires.txt
+writing top-level names to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/top_level.txt
+reading manifest file '../../build/ros2_px4_interface/ros2_px4_interface.egg-info/SOURCES.txt'
+writing manifest file '../../build/ros2_px4_interface/ros2_px4_interface.egg-info/SOURCES.txt'
+running build
+running build_py
+copying ros2_px4_interface/actuator_px4_control.py -> /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface
+copying ros2_px4_interface/ros2_px4_interface.py -> /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface
+running install
+running install_lib
+copying /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface/actuator_px4_control.py -> /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface
+copying /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface/ros2_px4_interface.py -> /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface
+byte-compiling /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface/actuator_px4_control.py to actuator_px4_control.cpython-310.pyc
+byte-compiling /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface/ros2_px4_interface.py to ros2_px4_interface.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/ros2_px4_interface/ros2_px4_interface.egg-info to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface-0.0.0-py3.10.egg-info
+running install_scripts
+Installing actuator_px4_control script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface
+Installing offboard_test script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface
+Installing px4_data_gatherer script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface
+Installing ros2_px4_interface script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface
+writing list of installed files to '/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/install.log'

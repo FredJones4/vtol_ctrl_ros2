@@ -1,0 +1,27 @@
+[2.826s] Invoking command in '/home/cmhales/vtol_ctrl_ros2/src/ros2_px4_interface': PYTHONPATH=/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/ros2_px4_interface build --build-base /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build install --record /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/install.log --single-version-externally-managed install_data
+[3.820s] running egg_info
+[3.824s] writing ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/PKG-INFO
+[3.825s] writing dependency_links to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/dependency_links.txt
+[3.828s] writing entry points to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/entry_points.txt
+[3.828s] writing requirements to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/requires.txt
+[3.828s] writing top-level names to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/top_level.txt
+[3.832s] reading manifest file '../../build/ros2_px4_interface/ros2_px4_interface.egg-info/SOURCES.txt'
+[3.838s] writing manifest file '../../build/ros2_px4_interface/ros2_px4_interface.egg-info/SOURCES.txt'
+[3.841s] running build
+[3.842s] running build_py
+[3.844s] copying ros2_px4_interface/ros2_px4_interface.py -> /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface
+[3.845s] running install
+[3.848s] running install_lib
+[3.849s] copying /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface/ros2_px4_interface.py -> /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface
+[3.852s] byte-compiling /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface/ros2_px4_interface.py to ros2_px4_interface.cpython-310.pyc
+[3.856s] running install_data
+[3.859s] running install_egg_info
+[3.861s] removing '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface-0.0.0-py3.10.egg-info' (and everything under it)
+[3.861s] Copying ../../build/ros2_px4_interface/ros2_px4_interface.egg-info to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface-0.0.0-py3.10.egg-info
+[3.862s] running install_scripts
+[3.944s] Installing actuator_px4_control script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface
+[3.950s] Installing offboard_test script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface
+[3.950s] Installing px4_data_gatherer script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface
+[3.951s] Installing ros2_px4_interface script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface
+[3.951s] writing list of installed files to '/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/install.log'
+[4.107s] Invoked command in '/home/cmhales/vtol_ctrl_ros2/src/ros2_px4_interface' returned '0': PYTHONPATH=/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/ros2_px4_interface build --build-base /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build install --record /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/install.log --single-version-externally-managed install_data

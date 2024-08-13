@@ -1,35 +1,114 @@
 import rclpy
 from rclpy.node import Node
+from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy
 from px4_msgs.msg import OffboardControlMode, TrajectorySetpoint, VehicleCommand
+from px4_msgs.msg import (ActuatorMotors, ActuatorServos, VehicleCommand, OffboardControlMode)
+from std_msgs.msg import Header
 import time
+import math
 
-HZ_RATE = 200.0
+
+
+HZ_RATE = 100.0
 
 class ROS2PX4Interface(Node):
     def __init__(self):
-        super().__init__('ros2_px4_interface')
+        super().__init__('offboard_control')
 
-        # Publishers
         self.offboard_control_mode_publisher = self.create_publisher(OffboardControlMode, '/fmu/in/offboard_control_mode', 10)
         self.trajectory_setpoint_publisher = self.create_publisher(TrajectorySetpoint, '/fmu/in/trajectory_setpoint', 10)
         self.vehicle_command_publisher = self.create_publisher(VehicleCommand, '/fmu/in/vehicle_command', 10)
 
-        # Set up a timer for publishing messages at 1/HZ_RATE Hz
-        self.timer = self.create_timer(1.0 / HZ_RATE, self.timer_callback)
-
         self.offboard_setpoint_counter = 0
 
-        # Initial command to arm and enable offboard mode
-        self.arm_and_enable_offboard()
+        qos_profile = QoSProfile(
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            durability=DurabilityPolicy.VOLATILE,
+            depth=10
+        )
 
-    def arm_and_enable_offboard(self):
-        self.get_logger().info("Arming vehicle and enabling offboard mode")
+        # Create publishers with the specified QoS profiles
+        self.actuator_motors_pub = self.create_publisher(
+            ActuatorMotors,
+            '/fmu/in/actuator_motors',
+            qos_profile
+        )
 
-        # Create and publish VehicleCommand message to arm the vehicle
-        self.arm()
+        self.vehicle_command_pub = self.create_publisher(
+            VehicleCommand,
+            '/fmu/in/vehicle_command',
+            qos_profile
+        )
 
-        # Create and publish VehicleCommand message to enable offboard mode
-        self.engage_offboard_mode()
+        self.actuator_servos_pub = self.create_publisher(
+            ActuatorServos,
+            '/fmu/in/actuator_servos',
+            qos_profile
+        )
+
+        self.offboard_control_mode_pub = self.create_publisher(
+            OffboardControlMode,
+            '/fmu/in/offboard_control_mode',
+            qos_profile
+        )
+
+        self.timer = self.create_timer(0.1, self.timer_callback)  # 100 ms timer, or 10 Hz clock
+
+    def change_mode(self):
+        current_time = self.get_clock().now()
+        elapsed_time = (current_time - self.timer_start).nanoseconds/ 1e9
+
+        if elapsed_time >= self.timer_period:
+            self.get_logger().info("Changing mode to fixed-wing")
+
+            # Create and publish VehicleCommand message to change mode
+            cmd = VehicleCommand()
+            cmd.command = 84  # Command to change flight mode (check specific value for your system)
+            cmd.param1 = 1.0     # Parameter to indicate the desired mode (check specific parameter for your system)
+            cmd.target_system = 1
+            cmd.source_system = 1
+            cmd.target_component = 0
+            cmd.source_component = 0
+            self.vehicle_command_pub.publish(cmd)
+            self.get_logger().info("Published VehicleCommand message to change mode to fixed-wing")
+
+            # Stop the timer after mode change
+            self.timer2.destroy()
+            self.destroy_node()
+
+    def timer_callback(self):
+        print("counter: ", self.offboard_setpoint_counter)
+        if self.offboard_setpoint_counter == 10:
+            # Change to Offboard mode after 10 setpoints
+            self.publish_vehicle_command(VehicleCommand.VEHICLE_CMD_DO_SET_MODE, 1.0, 6.0)
+
+            # Arm the vehicle
+            self.arm()
+        if self.offboard_setpoint_counter < 200: # 20 seconds
+            # Publish offboard control mode and trajectory setpoint
+            self.publish_offboard_control_mode()
+            self.publish_trajectory_setpoint()
+            if self.offboard_setpoint_counter > 10:
+                self.offboard_setpoint_counter += 1
+        elif self.offboard_setpoint_counter == 200:
+            self.timer_start = self.get_clock().now()
+            # Initialize the mode change (for example, change to fixed-wing after 5 seconds)
+            self.get_logger().info("Preparing to change mode from VTOL to fixed-wing")
+            self.timer_period = 5.0  # Change mode after 5 seconds
+            self.timer2 = self.create_timer(1.0, self.change_mode)
+            self.offboard_setpoint_counter += 1
+
+            pass
+        elif self.offboard_setpoint_counter < 400: #TEMP
+            self.publish_offboard_control_mode()
+            self.offboard_setpoint_counter += 1
+        else:
+            self.publish_offboard_control_mode()
+            self.publish_actuator_items()
+
+        # Increment the counter and stop after reaching 11
+        if self.offboard_setpoint_counter < 11:
+            self.offboard_setpoint_counter += 1
 
     def arm(self):
         """Send a command to arm the vehicle."""
@@ -40,11 +119,6 @@ class ROS2PX4Interface(Node):
         """Send a command to disarm the vehicle."""
         self.publish_vehicle_command(VehicleCommand.VEHICLE_CMD_COMPONENT_ARM_DISARM, 0.0)
         self.get_logger().info('Disarm command sent')
-
-    def engage_offboard_mode(self):
-        """Switch to offboard mode."""
-        self.publish_vehicle_command(VehicleCommand.VEHICLE_CMD_DO_SET_MODE, 1.0, 6.0)
-        self.get_logger().info("Switching to offboard mode")
 
     def publish_offboard_control_mode(self):
         """Publish the offboard control mode."""
@@ -61,8 +135,8 @@ class ROS2PX4Interface(Node):
     def publish_trajectory_setpoint(self):
         """Publish a trajectory setpoint."""
         msg = TrajectorySetpoint()
-        msg.position = [0.0, 0.0, -5.0]  # Hover 5 meters above the ground
-        msg.yaw = -3.14  # Yaw angle
+        msg.position = [0.0, 0.0, -20.0]
+        msg.yaw = -3.14  # [-PI:PI]
         msg.timestamp = int(time.time() * 1e6)  # microseconds
         self.trajectory_setpoint_publisher.publish(msg)
         self.get_logger().info('Published TrajectorySetpoint message')
@@ -82,21 +156,31 @@ class ROS2PX4Interface(Node):
         self.vehicle_command_publisher.publish(msg)
         self.get_logger().info(f'Published VehicleCommand message with command {command}')
 
-    def timer_callback(self):
-        if self.offboard_setpoint_counter == 10:
-            # Change to Offboard mode after 10 setpoints
-            self.publish_vehicle_command(VehicleCommand.VEHICLE_CMD_DO_SET_MODE, 1.0, 6.0)
+    def publish_actuator_motors(self, motors_msg):
+        self.actuator_motors_pub.publish(motors_msg)
+        self.get_logger().info('Published ActuatorMotors message')
 
-            # Arm the vehicle
-            self.arm()
 
-        # Publish offboard control mode and trajectory setpoint
-        self.publish_offboard_control_mode()
-        self.publish_trajectory_setpoint()
+    def publish_actuator_servos(self, servos_msg):
+        self.actuator_servos_pub.publish(servos_msg)
+        self.get_logger().info('Published ActuatorServos message')
 
-        # Increment the counter and stop after reaching 11
-        if self.offboard_setpoint_counter < 11:
-            self.offboard_setpoint_counter += 1
+
+    def publish_actuator_items(self):
+        motors_msg = ActuatorMotors()  # Populate with relevant data
+        motors_msg.control = [0.0,     0.0,       0.0,        0.0,    1.0,     0.0, 
+                            0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+        ]
+        # # command_msg = VehicleCommand()  # Populate with relevant data
+        servos_msg = ActuatorServos()   # Populate with relevant data
+        servos_msg.control = [1.0,      1.0,        1.0,       0.0,     0.0,     0.0, 
+                            0.0, 0.0]
+        # control_mode_msg = OffboardControlMode()  # Populate with relevant data
+
+        # self.publish_actuator_motors(motors_msg)
+        # node.publish_vehicle_command(command_msg)
+        self.publish_actuator_servos(servos_msg)
+        # node.publish_offboard_control_mode(control_mode_msg)
 
 def main(args=None):
     rclpy.init(args=args)
