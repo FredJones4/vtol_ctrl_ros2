@@ -63,7 +63,7 @@ class ROS2PX4Interface(Node):
 
             # Create and publish VehicleCommand message to change mode
             cmd = VehicleCommand()
-            cmd.command = 84  # Command to change flight mode (check specific value for your system)
+            cmd.command = 84  # Command to change flight mode (see https://docs.px4.io/main/en/msg_docs/VehicleCommand.html, line 84)
             cmd.param1 = 1.0     # Parameter to indicate the desired mode (check specific parameter for your system)
             cmd.target_system = 1
             cmd.source_system = 1
@@ -74,7 +74,6 @@ class ROS2PX4Interface(Node):
 
             # Stop the timer after mode change
             self.timer2.destroy()
-            self.destroy_node()
 
     def timer_callback(self):
         print("counter: ", self.offboard_setpoint_counter)
