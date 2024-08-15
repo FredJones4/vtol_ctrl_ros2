@@ -29,7 +29,7 @@ ros2 run <package-name> <package-node>
 For the self-made nodes, this will currently either be:
 
 ```
-ros2 run ros2_px4_interface ros2_px4_interface
+ros2 run ros2_px4_interface offboard_test
 ```
 or:
 ```
@@ -48,4 +48,5 @@ colcon build --packages-select ros2_px4_interface
 
 The ```px4_ros_com``` and ```px4_msgs``` are provided by PX4 and should not be altered.
 
-If you are going to add a new node, follow the instructions found at Steps 2.2 to 2.4 on https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html
+If you are going to write a new node, follow the instructions found at Steps 2 on https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html
+
