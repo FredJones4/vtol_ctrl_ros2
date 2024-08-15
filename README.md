@@ -1,7 +1,11 @@
 # vtol_ctrl_ros2
 
 To run the code:
-1. 
+1. Make sure ROS 2 is completely installed. For our purposes, the installation instructions on PX4's website will do:
+```
+https://docs.px4.io/main/en/ros2/user_guide.html
+```
+Then:
 ```
 cd ~/vtol_ctrl_ros2
 ```
