@@ -1,7 +1,8 @@
 # vtol_ctrl_ros2
 
 To run the code:
-1. ```
+1. 
+```
 cd ~/vtol_ctrl_ros2
 ```
 2. Source the ROS 2 setup. WARNING: Please do this on Ubuntu 22.04 (the one with the jellyfish. For the Hackathon 2024, that's what the RPi has).
