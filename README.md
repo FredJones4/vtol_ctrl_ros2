@@ -104,19 +104,27 @@ The needed calculation will be performed in real time from [example code found o
 
 ```mermaid
 graph TD
-    subgraph PX4DataGatherer Node
+    subgraph PX4DataGatherer_Node
         A[(PX4DataGatherer)]
         A1[1. convert_quaternion_to_euler]
         A2[2. convert_airspeed_in_to_airspeedValue]
     end
 
     subgraph Topics
-
         D[/fmu/out/vehicle_local_position/]
         E[/fmu/out/sensor_combined/]
     end
 
-    D -->|Subscribes to| A
-    E -->|Subscribes to| A
+    subgraph XRCE-DDS
+        PX4[PX4]
+        PX4 --> D
+        PX4 --> E
+    end
+
+    style XRCE-DDS fill:#f9f,stroke:#333,stroke-width:2px
+    style PX4 fill:#333,stroke:#333,stroke-width:2px,color:#fff
+
+    D -->|angular_velocity, velocity, position, q| A
+    E -->|accelerometer_m_s2| A
 
 ```
