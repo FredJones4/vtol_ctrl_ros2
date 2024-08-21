@@ -115,7 +115,7 @@ The needed calculation will be performed in real time from [example code found o
 - ROS wrapper for Dean's code
 - Airspeed direct-to-USB 
 
-#### Topics to be added:
+#### [Topics to be added](https://www.theconstruct.ai/ros2-in-5-mins-005-how-to-work-with-ros2-topics-from-the-command-line/#:~:text=Also%2C%20by%20publishing%20to%20a%20topic%20that%20did%20not%20exist%20before%2C%20we%20got%20ROS2%20to%20automatically%20create%20it.):
 - Airspeed_USB-to-Data_gatherer topic
 - 
 #### Test version of code:
