@@ -88,6 +88,7 @@ Then:
 ```
 $ MicroXRCEAgent serial -b 921600 --dev /dev/ttyUSB0
 ```
+Replace 921600 with the appropriate baud rate. 921600 is just the standard. It should be ```57600``` for the PX4 work. 
 
 ## Design Description
 
@@ -120,6 +121,14 @@ The needed calculation will be performed in real time from [example code found o
 - 
 #### Test version of code:
 
+- The nodes made by the developer (me) are highlighted in red.
+
+- The topics are placed in parallelograms.
+
+- The nodes themselves are represented by circles. The text boxes next to them are simply descriptions of functions inside the node, and not separate nodes. Functions like "grab the data from xyz publisher" is redundant and therefore not included.
+- You will notice that the px4_ros2_TEST is under a "node" subgraph called Control_Node_Test. This will differ in the implementation version below.
+- The PX4 software is filled with pink to highlight (no pun intended) the fact that the PX4 software is a black box that is not altered at all by the developer.
+- The reader will notice that arrows going _toward_ topics are listed at a certain rate. This is a user decision, directly programmed into the publisher. It does not matter to list the publishing rate, as this is controlled by PX4. While [publishing rates can be printed by CLI commands](https://docs.px4.io/main/en/middleware/uorb.html#uorb-top-command), it has been untested by the developer (neither by O-Scope on a physical system nor by the above link's command on the digital system) just how fast exactly each topic is published. By way of observation, certain topics are published at different rates, and _thus constitutes the need for further testing._ 
 
 
 
@@ -167,7 +176,7 @@ graph TD
     end
 
     subgraph Control_Node_Test
-        H((PX4_ros2_TEST))
+        H((Control_Node_Test))
         H2[1. Update personal dictionary<br> with PX4DataGatherer_Node msg dictionary]
         H1[2. Send test motor and servo values]
     end
@@ -180,8 +189,8 @@ graph TD
 
     style USB fill:#00ff00,stroke:#333,color:#000
 
-    D -->|angular_velocity, velocity, position, q @200+Hz| A
-    E -->|accelerometer_m_s2 @200+Hz| A
+    D -->|angular_velocity, velocity, position, q | A
+    E -->|accelerometer_m_s2 | A
 
     G --> |adjusted_airspeed @AFAP| F
     F -->|adjusted_airspeed @200 + Hz| A
@@ -196,6 +205,13 @@ NOTE: 200+ Hz is written because a proper Speed Ratio has not been properly test
 
 
 #### Implementation Version of Code:
+
+
+The differences between Test Code and Implementation Code:
+- As seen from the differently highlighted (blue) MAVSIM and Control_Node (name changed from above), the only differences are in the top node. 
+- The node is renamed to ROS_Wrapper because it will wrap the control "MAVSIM" code. 
+- Additionally, the function description ```2.``` is changed in Control_Node to describe how the ROS wrapper will work.
+- NOTE: This setup will require, on the physical board, **2 USB CONNECTIONS: the Airspeed sensor and the TELEM port into the Pixhawk.** Proper configuration and labelling of USB port is required. 
 
 
 
@@ -249,8 +265,8 @@ graph TD
     end
     
     style Control_Node stroke-width:4px,stroke:#0000ff
-    style PX4DataGatherer_Node stroke-width:4px,stroke:#0000ff
-    style USB_Data_Gatherer stroke-width:4px,stroke:#0000ff
+    style PX4DataGatherer_Node stroke-width:4px,stroke:#ff0000
+    style USB_Data_Gatherer stroke-width:4px,stroke:#ff0000
     style XRCE-DDS fill:#f9f,stroke:#333,stroke-width:2px
     style PX4 fill:#333,stroke:#333,stroke-width:2px,color:#fff
 
@@ -263,7 +279,7 @@ graph TD
     F -->|airspeedValue| A
 
     MAVSIM(MAVSIM)
-    style MAVSIM font-size:60px,fill:#00ff00,stroke:#333,color:#000
+    style MAVSIM font-size:60px,fill:#00ff00,stroke:#0000ff,color:#000
 
     MAVSIM -->|Motor Controls, Servo Controls @ ___ Hz| H
     H -->|Full State| MAVSIM
