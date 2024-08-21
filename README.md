@@ -100,20 +100,47 @@ The needed calculation will be performed in real time from [example code found o
 #### Topics to be added:
 - Airspeed_USB-to-Data_gatherer topic
 - 
-#### Graph
+#### Test version of code:
+
+
+
 
 ```mermaid
 graph TD
     subgraph PX4DataGatherer_Node
-        A[(PX4DataGatherer)]
+        A((PX4DataGatherer))
         A1[1. convert_quaternion_to_euler]
-        A2[2. convert_airspeed_in_to_airspeedValue]
+        
     end
 
-    subgraph Topics
+    A-->|Full State @200+Hz| G2T
+    G2T --> |Full State| H
+
+    subgraph PX4 Topics
+        D2[/fmu/in/actuator_servos/]
+        D1[/fmu/in/actuator_motors/]
         D[/fmu/out/vehicle_local_position/]
         E[/fmu/out/sensor_combined/]
     end
+
+    subgraph Handmade Topics
+        F[/airspeed_bridge/]
+        G2T[/data_to_control/]
+    end
+
+    H -->|Motor Controls @200+Hz| D1
+    H --> |Servo Controls @200+Hz|D2
+    D1 -->|Motor Controls|PX4
+    D2 -->|Servo Controls|PX4
+
+    subgraph USB_Data_Gatherer
+        G((USB Data Gatherer))
+        A2[1. convert_airspeed_in_to_airspeedValue]
+       
+    end
+
+    USB(USB Output)
+    USB -->|raw_airspeed_data| G
 
     subgraph XRCE-DDS
         PX4[PX4]
@@ -121,10 +148,171 @@ graph TD
         PX4 --> E
     end
 
+    subgraph Control_Node_Test
+        H((PX4_ros2_TEST))
+        H2[1. Update personal dictionary<br> with PX4DataGatherer_Node msg dictionary]
+        H1[2. Send test motor and servo values]
+    end
+    
+    style Control_Node_Test stroke-width:4px,stroke:#ff0000
+    style PX4DataGatherer_Node stroke-width:4px,stroke:#ff0000
+    style USB_Data_Gatherer stroke-width:4px,stroke:#ff0000
     style XRCE-DDS fill:#f9f,stroke:#333,stroke-width:2px
     style PX4 fill:#333,stroke:#333,stroke-width:2px,color:#fff
 
-    D -->|angular_velocity, velocity, position, q| A
-    E -->|accelerometer_m_s2| A
+    style USB fill:#00ff00,stroke:#333,color:#000
+
+    D -->|angular_velocity, velocity, position, q @200+Hz| A
+    E -->|accelerometer_m_s2 @200+Hz| A
+
+    G --> |adjusted_airspeed @AFAP| F
+    F -->|adjusted_airspeed @200 + Hz| A
+
 
 ```
+NOTE: AFAP means "As Fast As Possible"
+
+NOTE: 200+ Hz is written because a proper Speed Ratio has not been properly tested on Raspberry Pi, nor on SITL.
+
+
+
+
+#### Implementation Version of Code:
+
+
+
+```mermaid
+graph TD
+    subgraph PX4DataGatherer_Node
+        A((PX4DataGatherer))
+        A1[1. convert_quaternion_to_euler]
+        
+    end
+
+    A-->|Full State @200+Hz| G2T
+    G2T --> |Full State| H
+
+    subgraph PX4 Topics
+        D2[/fmu/in/actuator_servos/]
+        D1[/fmu/in/actuator_motors/]
+        D[/fmu/out/vehicle_local_position/]
+        E[/fmu/out/sensor_combined/]
+    end
+
+    subgraph Handmade Topics
+        F[/airspeed_bridge/]
+        G2T[/data_to_control/]
+    end
+
+    H -->|Motor Controls @200+Hz| D1
+    H --> |Servo Controls @200+Hz|D2
+    D1 -->|Motor Controls|PX4
+    D2 -->|Servo Controls|PX4
+
+    subgraph USB_Data_Gatherer
+        G((USB Data Gatherer))
+        A2[1. convert_airspeed_in_to_airspeedValue]
+       
+    end
+
+    USB(USB Output)
+    USB -->|raw_airspeed_data| G
+
+    subgraph XRCE-DDS
+        PX4[PX4]
+        PX4 --> D
+        PX4 --> E
+    end
+
+    subgraph Control_Node
+        H((ROS_Wrapper))
+        H2[1. Update personal dictionary<br> with PX4DataGatherer_Node msg dictionary]
+        H1[2. UPON RECEIVING FULL STATE,<br>re-calculate needed Servo Control Values and Motor Control values]
+    end
+    
+    style Control_Node stroke-width:4px,stroke:#0000ff
+    style PX4DataGatherer_Node stroke-width:4px,stroke:#0000ff
+    style USB_Data_Gatherer stroke-width:4px,stroke:#0000ff
+    style XRCE-DDS fill:#f9f,stroke:#333,stroke-width:2px
+    style PX4 fill:#333,stroke:#333,stroke-width:2px,color:#fff
+
+    style USB fill:#00ff00,stroke:#333,color:#000
+
+    D -->|angular_velocity, velocity, position, q @200+Hz| A
+    E -->|accelerometer_m_s2 @200+Hz| A
+
+    G --> |airspeedValue @AFAP| F
+    F -->|airspeedValue| A
+
+    MAVSIM(MAVSIM)
+    style MAVSIM font-size:60px,fill:#00ff00,stroke:#333,color:#000
+
+    MAVSIM -->|Motor Controls, Servo Controls @ ___ Hz| H
+    H -->|Full State| MAVSIM
+```
+
+# Barb
+
+```mermaid
+graph TD
+    subgraph PX4DataGatherer_Node
+        A((PX4DataGatherer))
+        A1[1. convert_quaternion_to_euler]
+    end
+
+    A-->|Full State @200+Hz| H
+
+    subgraph Topics
+        D2[/fmu/in/actuator_servos/]
+        D1[/fmu/in/actuator_motors/]
+        D[/fmu/out/vehicle_local_position/]
+        E[/fmu/out/sensor_combined/]
+        F[/selfmade_airspeed_bridge/]
+    end
+
+    H -->|Motor Controls @200+Hz| D1
+    H -->|Servo Controls @200+Hz| D2
+    D1 -->|Motor Controls| PX4
+    D2 -->|Servo Controls| PX4
+
+    subgraph USB_Data_Gatherer
+        G((USB Data Gatherer))
+        A2[1. convert airspeed_in<br>to airspeedValue]
+    end
+
+    USB(USB Output)
+    USB -->|raw_airspeed_data| G
+
+    subgraph XRCE-DDS
+        PX4[PX4]
+        PX4 --> D
+        PX4 --> E
+    end
+
+    subgraph Control_Node
+        H((ROS_Wrapper))
+        H2[1. Update personal dictionary<br> with PX4DataGatherer_Node msg dictionary]
+        H1[2. UPON RECEIVING FULL STATE,<br>re-calculate needed Servo Control Values and Motor Control values]
+    end
+    
+    style Control_Node stroke-width:4px,stroke:#0000ff
+    style PX4DataGatherer_Node stroke-width:4px,stroke:#0000ff
+    style USB_Data_Gatherer stroke-width:4px,stroke:#0000ff
+    style XRCE-DDS fill:#f9f,stroke:#333,stroke-width:2px
+    style PX4 fill:#333,stroke:#333,stroke-width:2px,color:#fff
+    style USB fill:#00ff00,stroke:#333,color:#000
+
+    D -->|angular_velocity, velocity, position, q @200+Hz| A
+    E -->|accelerometer_m_s2 @200+Hz| A
+
+    G -->|airspeedValue @AFAP| F
+    F -->|airspeedValue @AFAP| A
+
+    MAVSIM(MAVSIM)
+    style MAVSIM font-size:60px,fill:#00ff00,stroke:#333,color:#000
+
+    MAVSIM -->|Motor Controls, Servo Controls @ ___ Hz| H
+    H -->|Full State| MAVSIM
+
+```
+NOTE: Above, "___" is used to describe an unknown Hz rate.
