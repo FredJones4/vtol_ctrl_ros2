@@ -72,6 +72,7 @@ The ```px4_ros_com``` and ```px4_msgs``` are provided by PX4 and should not be a
 
 If you are going to write a new node, follow the instructions found at Steps 2 on https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html
 
+## Design Description
 
 #### The full state needed:
 ##### Important note: The timestamp of the pixhawk is in [MICROseconds](https://docs.px4.io/main/en/msg_docs/VehicleAttitude.html#:~:text=system%20start%20(-,microseconds,-)%0A%0Auint64%20timestamp_sample).
@@ -253,3 +254,5 @@ graph TD
 
 
 NOTE: Above, "___" is used to describe an unknown Hz rate. That rate is based off of the wrapped control code.
+
+NOTE: "MAVISM" refers to simulation code, professor-made or student-made, that creates the control allocation neeeded for the vtol/fixed-wing.
