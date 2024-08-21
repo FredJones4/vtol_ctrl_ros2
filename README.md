@@ -72,6 +72,23 @@ The ```px4_ros_com``` and ```px4_msgs``` are provided by PX4 and should not be a
 
 If you are going to write a new node, follow the instructions found at Steps 2 on https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html
 
+## Working over USB Port
+Plug in and unplug your USB Connection.
+
+Open a new terminal.
+
+Use the following to check which USB port to [check which connection was just plugged in](https://www.cyberciti.biz/faq/find-out-linux-serial-ports-with-setserial/):
+```
+sudo dmesg | grep tty
+```
+
+Then:
+
+
+```
+$ MicroXRCEAgent serial -b 921600 --dev /dev/ttyUSB0
+```
+
 ## Design Description
 
 #### The full state needed:
