@@ -4,20 +4,59 @@
 This tutorial expects that the user (you) is (are) using VSCode to edit code and view the text. For GitHub or other sources, please adapt the startup instructions as needed. 
 1. This Markdown Preview utilizes Mermaid and LaTeX in its setup so ROS graphs can be quickly and directly be altered later. Download the ```Markdown Preview Mermaid Support``` and the `Markdown+Math` extensions.
 ## Running the code
-### Set up 
-1. After downloading all the relevant files and variables as described in https://docs.px4.io/main/en/ros2/user_guide.html, start the "XRCE-DDS" agent (aka the "Mircro-ROS" agent) with settings for connecting to the uXRCE-DDS client running on the simulator:
+### Start the Agent
+For ROS 2 to communicate with PX4, uXRCE-DDS client must be running on PX4, connected to a micro XRCE-DDS agent running on the companion computer.
+
+The agent can be installed onto the companion computer in a number of ways. Below we show how to build the agent "standalone" from source and connect to a client running on the PX4 simulator.
+
+To setup and start the agent:
+
+    Open a terminal.
+Enter the following commands to fetch and build the agent from source:
+```bash
+git clone https://github.com/eProsima/Micro-XRCE-DDS-Agent.git
+cd Micro-XRCE-DDS-Agent
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+sudo ldconfig /usr/local/lib/
+```
+
+1. The above is as described in https://docs.px4.io/main/en/ros2/user_guide.html. Enter the following now to start the "XRCE-DDS" agent (aka the "Mircro-ROS" agent) with settings for connecting to the uXRCE-DDS client running on the simulator:
 ```
 MicroXRCEAgent udp4 -p 8888
 ``` 
-2. In a new termianl, start the latest PX4 Gazebo simulation of preference as described in https://docs.px4.io/main/en/sim_gazebo_gz/. 
+#### For USB:
+
+Plug in and unplug your USB Connection.
+
+Open a new terminal.
+
+Use the following to check which USB port to [check which connection was just plugged in](https://www.cyberciti.biz/faq/find-out-linux-serial-ports-with-setserial/):
+```
+sudo dmesg | grep tty
+```
+
+Then:
+
+
+```
+$ MicroXRCEAgent serial -b 57600 --dev /dev/ttyUSB0
+```
+Replace ```57600``` with the appropriate baud rate. ```921600``` is just the standard. The baud rate should be ```57600``` for MAGICC Lab PX4 work. 
+
+Replace ```ttyUSB0``` with the appropriate port.
+
+2. Start a terminal. On Linux, this can be accomplished via the `Ctrl-Alt-t` keystroke sequence. In that new termianl, start the latest PX4 Gazebo simulation of preference as described in https://docs.px4.io/main/en/sim_gazebo_gz/. 
 
 3. Start up QGroundControl, which should connect automatically to the PX4 Gazebo Simulation.
 
-4. Open a new terminal for the ROS 2 source code. On Linux, this can be accomplished via the `Ctrl-Alt-t` keystroke sequence.
+4. Open a new terminal for the ROS 2 source code. For each successive node started, a new terminal will be needed, and steps 1-4 below will need to be repeated for each.
 
-
-### To run the code
-This will occupy the unused terminal described above. For each successive node started, a new terminal will be needed, and steps 1-4 will need to be repeated for each.
+### Running the ROS code.
+This will utilize the terminal above.
 
 0. Make sure ROS 2 is completely installed. For our purposes, the installation instructions on PX4's website will do:
 ```
@@ -72,25 +111,8 @@ The ```px4_ros_com``` and ```px4_msgs``` are provided by PX4 and should not be a
 
 If you are going to write a new node, follow the instructions found at Steps 2 on https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html
 
-## Working over USB Port
-Plug in and unplug your USB Connection.
 
-Open a new terminal.
-
-Use the following to check which USB port to [check which connection was just plugged in](https://www.cyberciti.biz/faq/find-out-linux-serial-ports-with-setserial/):
-```
-sudo dmesg | grep tty
-```
-
-Then:
-
-
-```
-$ MicroXRCEAgent serial -b 921600 --dev /dev/ttyUSB0
-```
-Replace 921600 with the appropriate baud rate. 921600 is just the standard. It should be ```57600``` for the PX4 work. 
-
-## Design Description
+# Design Description
 
 #### The full state needed:
 ##### Important note: The timestamp of the pixhawk is in [MICROseconds](https://docs.px4.io/main/en/msg_docs/VehicleAttitude.html#:~:text=system%20start%20(-,microseconds,-)%0A%0Auint64%20timestamp_sample).
