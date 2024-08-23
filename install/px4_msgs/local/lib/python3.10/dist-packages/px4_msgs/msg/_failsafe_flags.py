@@ -90,6 +90,7 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         '_wind_limit_exceeded',
         '_flight_time_limit_exceeded',
         '_local_position_accuracy_low',
+        '_navigator_failure',
         '_fd_critical_failure',
         '_fd_esc_arming_failure',
         '_fd_imbalanced_prop',
@@ -132,6 +133,7 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         'wind_limit_exceeded': 'boolean',
         'flight_time_limit_exceeded': 'boolean',
         'local_position_accuracy_low': 'boolean',
+        'navigator_failure': 'boolean',
         'fd_critical_failure': 'boolean',
         'fd_esc_arming_failure': 'boolean',
         'fd_imbalanced_prop': 'boolean',
@@ -166,6 +168,7 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
@@ -219,6 +222,7 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         self.wind_limit_exceeded = kwargs.get('wind_limit_exceeded', bool())
         self.flight_time_limit_exceeded = kwargs.get('flight_time_limit_exceeded', bool())
         self.local_position_accuracy_low = kwargs.get('local_position_accuracy_low', bool())
+        self.navigator_failure = kwargs.get('navigator_failure', bool())
         self.fd_critical_failure = kwargs.get('fd_critical_failure', bool())
         self.fd_esc_arming_failure = kwargs.get('fd_esc_arming_failure', bool())
         self.fd_imbalanced_prop = kwargs.get('fd_imbalanced_prop', bool())
@@ -322,6 +326,8 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         if self.flight_time_limit_exceeded != other.flight_time_limit_exceeded:
             return False
         if self.local_position_accuracy_low != other.local_position_accuracy_low:
+            return False
+        if self.navigator_failure != other.navigator_failure:
             return False
         if self.fd_critical_failure != other.fd_critical_failure:
             return False
@@ -822,6 +828,19 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
                 isinstance(value, bool), \
                 "The 'local_position_accuracy_low' field must be of type 'bool'"
         self._local_position_accuracy_low = value
+
+    @builtins.property
+    def navigator_failure(self):
+        """Message field 'navigator_failure'."""
+        return self._navigator_failure
+
+    @navigator_failure.setter
+    def navigator_failure(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'navigator_failure' field must be of type 'bool'"
+        self._navigator_failure = value
 
     @builtins.property
     def fd_critical_failure(self):

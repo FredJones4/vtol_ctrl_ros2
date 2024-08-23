@@ -502,6 +502,10 @@ CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/navigator_mission_it
 CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/navigator_mission_item__builder.hpp
 CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/navigator_mission_item__struct.hpp
 CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/navigator_mission_item__traits.hpp
+CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/navigator_status.hpp
+CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/navigator_status__builder.hpp
+CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/navigator_status__struct.hpp
+CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/navigator_status__traits.hpp
 CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/normalized_unsigned_setpoint.hpp
 CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/normalized_unsigned_setpoint__builder.hpp
 CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/normalized_unsigned_setpoint__struct.hpp
@@ -1063,6 +1067,7 @@ rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/ms
 rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/msg/ModeCompleted.idl
 rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/msg/MountOrientation.idl
 rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/msg/NavigatorMissionItem.idl
+rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/msg/NavigatorStatus.idl
 rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/msg/NormalizedUnsignedSetpoint.idl
 rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/msg/NpfgStatus.idl
 rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/msg/ObstacleDistance.idl
@@ -2481,6 +2486,18 @@ rosidl_generator_cpp/px4_msgs/msg/detail/navigator_mission_item__struct.hpp: ros
 
 rosidl_generator_cpp/px4_msgs/msg/detail/navigator_mission_item__traits.hpp: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/px4_msgs/msg/detail/navigator_mission_item__traits.hpp
+
+rosidl_generator_cpp/px4_msgs/msg/navigator_status.hpp: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/px4_msgs/msg/navigator_status.hpp
+
+rosidl_generator_cpp/px4_msgs/msg/detail/navigator_status__builder.hpp: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/px4_msgs/msg/detail/navigator_status__builder.hpp
+
+rosidl_generator_cpp/px4_msgs/msg/detail/navigator_status__struct.hpp: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/px4_msgs/msg/detail/navigator_status__struct.hpp
+
+rosidl_generator_cpp/px4_msgs/msg/detail/navigator_status__traits.hpp: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/px4_msgs/msg/detail/navigator_status__traits.hpp
 
 rosidl_generator_cpp/px4_msgs/msg/normalized_unsigned_setpoint.hpp: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/px4_msgs/msg/normalized_unsigned_setpoint.hpp
@@ -4152,6 +4169,9 @@ px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/mount_orientation__trait
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/navigator_mission_item__builder.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/navigator_mission_item__struct.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/navigator_mission_item__traits.hpp
+px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/navigator_status__builder.hpp
+px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/navigator_status__struct.hpp
+px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/navigator_status__traits.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/normalized_unsigned_setpoint__builder.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/normalized_unsigned_setpoint__struct.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/normalized_unsigned_setpoint__traits.hpp
@@ -4551,6 +4571,7 @@ px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/mission_result.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/mode_completed.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/mount_orientation.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/navigator_mission_item.hpp
+px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/navigator_status.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/normalized_unsigned_setpoint.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/npfg_status.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/obstacle_distance.hpp

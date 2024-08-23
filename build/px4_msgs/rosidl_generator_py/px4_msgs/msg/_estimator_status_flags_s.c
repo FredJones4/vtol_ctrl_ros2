@@ -446,6 +446,24 @@ bool px4_msgs__msg__estimator_status_flags__convert_from_py(PyObject * _pymsg, v
     ros_message->cs_opt_flow_terrain = (Py_True == field);
     Py_DECREF(field);
   }
+  {  // cs_valid_fake_pos
+    PyObject * field = PyObject_GetAttrString(_pymsg, "cs_valid_fake_pos");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->cs_valid_fake_pos = (Py_True == field);
+    Py_DECREF(field);
+  }
+  {  // cs_constant_pos
+    PyObject * field = PyObject_GetAttrString(_pymsg, "cs_constant_pos");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->cs_constant_pos = (Py_True == field);
+    Py_DECREF(field);
+  }
   {  // fault_status_changes
     PyObject * field = PyObject_GetAttrString(_pymsg, "fault_status_changes");
     if (!field) {
@@ -1162,6 +1180,28 @@ PyObject * px4_msgs__msg__estimator_status_flags__convert_to_py(void * raw_ros_m
     field = PyBool_FromLong(ros_message->cs_opt_flow_terrain ? 1 : 0);
     {
       int rc = PyObject_SetAttrString(_pymessage, "cs_opt_flow_terrain", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // cs_valid_fake_pos
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->cs_valid_fake_pos ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "cs_valid_fake_pos", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // cs_constant_pos
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->cs_constant_pos ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "cs_constant_pos", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

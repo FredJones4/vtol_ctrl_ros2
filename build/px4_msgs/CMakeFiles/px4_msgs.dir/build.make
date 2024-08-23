@@ -175,6 +175,7 @@ CMakeFiles/px4_msgs: /home/cmhales/vtol_ctrl_ros2/src/px4_msgs/msg/MissionResult
 CMakeFiles/px4_msgs: /home/cmhales/vtol_ctrl_ros2/src/px4_msgs/msg/ModeCompleted.msg
 CMakeFiles/px4_msgs: /home/cmhales/vtol_ctrl_ros2/src/px4_msgs/msg/MountOrientation.msg
 CMakeFiles/px4_msgs: /home/cmhales/vtol_ctrl_ros2/src/px4_msgs/msg/NavigatorMissionItem.msg
+CMakeFiles/px4_msgs: /home/cmhales/vtol_ctrl_ros2/src/px4_msgs/msg/NavigatorStatus.msg
 CMakeFiles/px4_msgs: /home/cmhales/vtol_ctrl_ros2/src/px4_msgs/msg/NormalizedUnsignedSetpoint.msg
 CMakeFiles/px4_msgs: /home/cmhales/vtol_ctrl_ros2/src/px4_msgs/msg/NpfgStatus.msg
 CMakeFiles/px4_msgs: /home/cmhales/vtol_ctrl_ros2/src/px4_msgs/msg/ObstacleDistance.msg

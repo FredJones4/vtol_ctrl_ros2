@@ -110,6 +110,7 @@
     "/home/cmhales/vtol_ctrl_ros2/src/px4_msgs:msg/ModeCompleted.msg",
     "/home/cmhales/vtol_ctrl_ros2/src/px4_msgs:msg/MountOrientation.msg",
     "/home/cmhales/vtol_ctrl_ros2/src/px4_msgs:msg/NavigatorMissionItem.msg",
+    "/home/cmhales/vtol_ctrl_ros2/src/px4_msgs:msg/NavigatorStatus.msg",
     "/home/cmhales/vtol_ctrl_ros2/src/px4_msgs:msg/NormalizedUnsignedSetpoint.msg",
     "/home/cmhales/vtol_ctrl_ros2/src/px4_msgs:msg/NpfgStatus.msg",
     "/home/cmhales/vtol_ctrl_ros2/src/px4_msgs:msg/ObstacleDistance.msg",

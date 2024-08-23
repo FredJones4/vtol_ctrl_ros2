@@ -138,6 +138,10 @@ module px4_msgs {
       boolean local_position_accuracy_low;
 
       @verbatim (language="comment", text=
+        "Navigator failed to execute a mode")
+      boolean navigator_failure;
+
+      @verbatim (language="comment", text=
         "Failure detector" "\n"
         "Critical failure (attitude/altitude limit exceeded, or external ATS)")
       boolean fd_critical_failure;

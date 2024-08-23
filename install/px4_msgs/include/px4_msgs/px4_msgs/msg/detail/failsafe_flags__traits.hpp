@@ -270,6 +270,13 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
+  // member: navigator_failure
+  {
+    out << "navigator_failure: ";
+    rosidl_generator_traits::value_to_yaml(msg.navigator_failure, out);
+    out << ", ";
+  }
+
   // member: fd_critical_failure
   {
     out << "fd_critical_failure: ";
@@ -650,6 +657,16 @@ inline void to_block_style_yaml(
     }
     out << "local_position_accuracy_low: ";
     rosidl_generator_traits::value_to_yaml(msg.local_position_accuracy_low, out);
+    out << "\n";
+  }
+
+  // member: navigator_failure
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "navigator_failure: ";
+    rosidl_generator_traits::value_to_yaml(msg.navigator_failure, out);
     out << "\n";
   }
 

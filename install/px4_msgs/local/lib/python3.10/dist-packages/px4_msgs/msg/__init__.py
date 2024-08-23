@@ -107,6 +107,7 @@ from px4_msgs.msg._mission_result import MissionResult  # noqa: F401
 from px4_msgs.msg._mode_completed import ModeCompleted  # noqa: F401
 from px4_msgs.msg._mount_orientation import MountOrientation  # noqa: F401
 from px4_msgs.msg._navigator_mission_item import NavigatorMissionItem  # noqa: F401
+from px4_msgs.msg._navigator_status import NavigatorStatus  # noqa: F401
 from px4_msgs.msg._normalized_unsigned_setpoint import NormalizedUnsignedSetpoint  # noqa: F401
 from px4_msgs.msg._npfg_status import NpfgStatus  # noqa: F401
 from px4_msgs.msg._obstacle_distance import ObstacleDistance  # noqa: F401

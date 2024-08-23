@@ -109,6 +109,10 @@ typedef struct px4_msgs__msg__EstimatorStatusFlags
   bool cs_rng_terrain;
   /// 40 - true if we are fusing flow data for terrain
   bool cs_opt_flow_terrain;
+  /// 41 - true if a valid constant position is being fused
+  bool cs_valid_fake_pos;
+  /// 42 - true if the vehicle is at a constant position
+  bool cs_constant_pos;
   /// fault status
   /// number of filter fault status (fs) changes
   uint32_t fault_status_changes;

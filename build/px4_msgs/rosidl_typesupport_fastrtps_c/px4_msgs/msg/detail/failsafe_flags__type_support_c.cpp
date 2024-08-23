@@ -224,6 +224,11 @@ static bool _FailsafeFlags__cdr_serialize(
     cdr << (ros_message->local_position_accuracy_low ? true : false);
   }
 
+  // Field name: navigator_failure
+  {
+    cdr << (ros_message->navigator_failure ? true : false);
+  }
+
   // Field name: fd_critical_failure
   {
     cdr << (ros_message->fd_critical_failure ? true : false);
@@ -469,6 +474,13 @@ static bool _FailsafeFlags__cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message->local_position_accuracy_low = tmp ? true : false;
+  }
+
+  // Field name: navigator_failure
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->navigator_failure = tmp ? true : false;
   }
 
   // Field name: fd_critical_failure
@@ -723,6 +735,12 @@ size_t get_serialized_size_px4_msgs__msg__FailsafeFlags(
   // field.name local_position_accuracy_low
   {
     size_t item_size = sizeof(ros_message->local_position_accuracy_low);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name navigator_failure
+  {
+    size_t item_size = sizeof(ros_message->navigator_failure);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -1032,6 +1050,13 @@ size_t max_serialized_size_px4_msgs__msg__FailsafeFlags(
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: local_position_accuracy_low
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: navigator_failure
   {
     size_t array_size = 1;
 

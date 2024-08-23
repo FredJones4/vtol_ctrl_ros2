@@ -120,6 +120,10 @@ cdr_serialize(
   cdr << (ros_message.cs_rng_terrain ? true : false);
   // Member: cs_opt_flow_terrain
   cdr << (ros_message.cs_opt_flow_terrain ? true : false);
+  // Member: cs_valid_fake_pos
+  cdr << (ros_message.cs_valid_fake_pos ? true : false);
+  // Member: cs_constant_pos
+  cdr << (ros_message.cs_constant_pos ? true : false);
   // Member: fault_status_changes
   cdr << ros_message.fault_status_changes;
   // Member: fs_bad_mag_x
@@ -471,6 +475,20 @@ cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message.cs_opt_flow_terrain = tmp ? true : false;
+  }
+
+  // Member: cs_valid_fake_pos
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.cs_valid_fake_pos = tmp ? true : false;
+  }
+
+  // Member: cs_constant_pos
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.cs_constant_pos = tmp ? true : false;
   }
 
   // Member: fault_status_changes
@@ -910,6 +928,18 @@ get_serialized_size(
   // Member: cs_opt_flow_terrain
   {
     size_t item_size = sizeof(ros_message.cs_opt_flow_terrain);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: cs_valid_fake_pos
+  {
+    size_t item_size = sizeof(ros_message.cs_valid_fake_pos);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: cs_constant_pos
+  {
+    size_t item_size = sizeof(ros_message.cs_constant_pos);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -1429,6 +1459,22 @@ max_serialized_size_EstimatorStatusFlags(
   }
 
   // Member: cs_opt_flow_terrain
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: cs_valid_fake_pos
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: cs_constant_pos
   {
     size_t array_size = 1;
 

@@ -178,6 +178,7 @@ px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mission_
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mode_completed.py
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mount_orientation.py
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_navigator_mission_item.py
+px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_navigator_status.py
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_normalized_unsigned_setpoint.py
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_npfg_status.py
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_obstacle_distance.py
@@ -398,6 +399,7 @@ px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mission_
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mode_completed_s.c
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mount_orientation_s.c
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_navigator_mission_item_s.c
+px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_navigator_status_s.c
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_normalized_unsigned_setpoint_s.c
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_npfg_status_s.c
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_obstacle_distance_s.c
@@ -630,6 +632,7 @@ rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: ros
 rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/px4_msgs/msg/ModeCompleted.idl
 rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/px4_msgs/msg/MountOrientation.idl
 rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/px4_msgs/msg/NavigatorMissionItem.idl
+rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/px4_msgs/msg/NavigatorStatus.idl
 rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/px4_msgs/msg/NormalizedUnsignedSetpoint.idl
 rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/px4_msgs/msg/NpfgStatus.idl
 rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/px4_msgs/msg/ObstacleDistance.idl
@@ -1076,6 +1079,9 @@ rosidl_generator_py/px4_msgs/msg/_mount_orientation.py: rosidl_generator_py/px4_
 
 rosidl_generator_py/px4_msgs/msg/_navigator_mission_item.py: rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/px4_msgs/msg/_navigator_mission_item.py
+
+rosidl_generator_py/px4_msgs/msg/_navigator_status.py: rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/px4_msgs/msg/_navigator_status.py
 
 rosidl_generator_py/px4_msgs/msg/_normalized_unsigned_setpoint.py: rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/px4_msgs/msg/_normalized_unsigned_setpoint.py
@@ -1737,6 +1743,9 @@ rosidl_generator_py/px4_msgs/msg/_mount_orientation_s.c: rosidl_generator_py/px4
 rosidl_generator_py/px4_msgs/msg/_navigator_mission_item_s.c: rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/px4_msgs/msg/_navigator_mission_item_s.c
 
+rosidl_generator_py/px4_msgs/msg/_navigator_status_s.c: rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/px4_msgs/msg/_navigator_status_s.c
+
 rosidl_generator_py/px4_msgs/msg/_normalized_unsigned_setpoint_s.c: rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/px4_msgs/msg/_normalized_unsigned_setpoint_s.c
 
@@ -2287,6 +2296,8 @@ px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mount_orientation.py
 px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mount_orientation_s.c
 px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_navigator_mission_item.py
 px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_navigator_mission_item_s.c
+px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_navigator_status.py
+px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_navigator_status_s.c
 px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_normalized_unsigned_setpoint.py
 px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_normalized_unsigned_setpoint_s.c
 px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_npfg_status.py

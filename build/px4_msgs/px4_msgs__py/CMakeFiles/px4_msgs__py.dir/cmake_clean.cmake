@@ -221,6 +221,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/px4_msgs/msg/_mount_orientation_s.c"
   "../rosidl_generator_py/px4_msgs/msg/_navigator_mission_item.py"
   "../rosidl_generator_py/px4_msgs/msg/_navigator_mission_item_s.c"
+  "../rosidl_generator_py/px4_msgs/msg/_navigator_status.py"
+  "../rosidl_generator_py/px4_msgs/msg/_navigator_status_s.c"
   "../rosidl_generator_py/px4_msgs/msg/_normalized_unsigned_setpoint.py"
   "../rosidl_generator_py/px4_msgs/msg/_normalized_unsigned_setpoint_s.c"
   "../rosidl_generator_py/px4_msgs/msg/_npfg_status.py"

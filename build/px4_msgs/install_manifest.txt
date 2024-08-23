@@ -243,6 +243,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/gps_dump__functions.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/autotune_attitude_control_status__struct.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/input_rc__functions.c
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/navigator_status__struct.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/obstacle_distance__type_support.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/vehicle_air_data__functions.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/parameter_set_used_request__struct.h
@@ -801,6 +802,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/mode_completed__functions.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/wind__type_support.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/esc_status__type_support.h
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/navigator_status__type_support.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/estimator_selector_status__struct.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/vehicle_trajectory_bezier__struct.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/offboard_control_mode__struct.h
@@ -900,6 +902,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/sensor_gnss_relative__functions.c
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/iridiumsbd_status__struct.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/led_control__type_support.h
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/navigator_status__functions.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/orbit_status__functions.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/airspeed__functions.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/rtl_time_estimate__functions.c
@@ -917,6 +920,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/sensor_hygrometer__functions.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/parameter_reset_request__functions.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/sensor_accel__struct.h
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/navigator_status__functions.c
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/vehicle_constraints__functions.c
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/register_ext_component_request__struct.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/goto_setpoint__type_support.h
@@ -985,6 +989,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/camera_trigger.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/gps_dump.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/vehicle_land_detected.h
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/navigator_status.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/config_overrides.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/airspeed_wind.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/manual_control_setpoint.h
@@ -1107,6 +1112,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/vehicle_thrust_setpoint__rosidl_typesupport_fastrtps_c.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/rover_differential_status__rosidl_typesupport_fastrtps_c.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/vehicle_trajectory_bezier__rosidl_typesupport_fastrtps_c.h
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/navigator_status__rosidl_typesupport_fastrtps_c.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/landing_gear__rosidl_typesupport_fastrtps_c.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/goto_setpoint__rosidl_typesupport_fastrtps_c.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/satellite_info__rosidl_typesupport_fastrtps_c.h
@@ -1523,6 +1529,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/system_power__builder.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/register_ext_component_request__struct.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/vehicle_angular_acceleration_setpoint__traits.hpp
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/navigator_status__builder.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/vehicle_attitude_setpoint__builder.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/ping__builder.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/iridiumsbd_status__struct.hpp
@@ -1560,6 +1567,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/airspeed__builder.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/sensor_selection__struct.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/tune_control__struct.hpp
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/navigator_status__traits.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/offboard_control_mode__builder.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/estimator_bias3d__builder.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/estimator_bias3d__traits.hpp
@@ -2060,6 +2068,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/sensor_gyro__traits.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/position_controller_landing_status__builder.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/actuator_controls_status__builder.hpp
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/navigator_status__struct.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/takeoff_status.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/home_position.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/mount_orientation.hpp
@@ -2123,6 +2132,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/satellite_info.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/led_control.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/power_monitor.hpp
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/navigator_status.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/transponder_report.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/geofence_status.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/ekf2_timestamps.hpp
@@ -2233,6 +2243,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/flight_phase_estimation__rosidl_typesupport_fastrtps_cpp.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/telemetry_status__rosidl_typesupport_fastrtps_cpp.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/qshell_retval__rosidl_typesupport_fastrtps_cpp.hpp
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/navigator_status__rosidl_typesupport_fastrtps_cpp.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/gripper__rosidl_typesupport_fastrtps_cpp.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/rtl_status__rosidl_typesupport_fastrtps_cpp.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/rpm__rosidl_typesupport_fastrtps_cpp.hpp
@@ -2514,6 +2525,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/mission__rosidl_typesupport_introspection_c.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/trajectory_setpoint__rosidl_typesupport_introspection_c.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/differential_pressure__rosidl_typesupport_introspection_c.h
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/navigator_status__rosidl_typesupport_introspection_c.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/wind__rosidl_typesupport_introspection_c.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/estimator_selector_status__type_support.c
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/parameter_set_value_response__rosidl_typesupport_introspection_c.h
@@ -2830,6 +2842,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/estimator_gps_status__type_support.c
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/manual_control_setpoint__rosidl_typesupport_introspection_c.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/ulog_stream__rosidl_typesupport_introspection_c.h
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/navigator_status__type_support.c
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/home_position__rosidl_typesupport_introspection_c.h
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/parameter_reset_request__type_support.c
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/vehicle_acceleration__rosidl_typesupport_introspection_c.h
@@ -3019,6 +3032,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/input_rc__rosidl_typesupport_introspection_cpp.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/rtl_status__rosidl_typesupport_introspection_cpp.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/distance_sensor__type_support.cpp
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/navigator_status__type_support.cpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/airspeed_validated__type_support.cpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/vehicle_attitude__rosidl_typesupport_introspection_cpp.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/landing_target_innovations__rosidl_typesupport_introspection_cpp.hpp
@@ -3188,6 +3202,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/vehicle_land_detected__type_support.cpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/sensors_status__type_support.cpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/rtl_status__type_support.cpp
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/navigator_status__rosidl_typesupport_introspection_cpp.hpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/vehicle_constraints__type_support.cpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/transponder_report__type_support.cpp
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/include/px4_msgs/px4_msgs/msg/detail/vehicle_command_ack__rosidl_typesupport_introspection_cpp.hpp
@@ -3376,6 +3391,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages/px4_msgs/msg/_uavcan_parameter_request_s.c
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages/px4_msgs/msg/_fuel_tank_status_s.c
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages/px4_msgs/msg/_telemetry_status_s.c
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages/px4_msgs/msg/_navigator_status.py
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages/px4_msgs/msg/_vehicle_optical_flow.py
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages/px4_msgs/msg/_gimbal_device_set_attitude.py
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages/px4_msgs/msg/_sensor_optical_flow.py
@@ -3489,6 +3505,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages/px4_msgs/msg/_landing_gear_s.c
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages/px4_msgs/msg/_wind_s.c
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages/px4_msgs/msg/_vehicle_land_detected_s.c
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages/px4_msgs/msg/_navigator_status_s.c
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages/px4_msgs/msg/_cellular_status.py
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages/px4_msgs/msg/_parameter_set_value_response.py
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages/px4_msgs/msg/_sensor_gyro.py
@@ -3847,6 +3864,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/msg/ModeCompleted.idl
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/msg/MountOrientation.idl
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/msg/NavigatorMissionItem.idl
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/msg/NavigatorStatus.idl
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/msg/NormalizedUnsignedSetpoint.idl
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/msg/NpfgStatus.idl
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/msg/ObstacleDistance.idl
@@ -4065,6 +4083,7 @@
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/msg/ModeCompleted.msg
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/msg/MountOrientation.msg
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/msg/NavigatorMissionItem.msg
+/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/msg/NavigatorStatus.msg
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/msg/NormalizedUnsignedSetpoint.msg
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/msg/NpfgStatus.msg
 /home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/msg/ObstacleDistance.msg

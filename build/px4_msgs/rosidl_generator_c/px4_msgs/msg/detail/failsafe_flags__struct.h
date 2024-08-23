@@ -91,6 +91,8 @@ typedef struct px4_msgs__msg__FailsafeFlags
   bool flight_time_limit_exceeded;
   /// Local position estimate has dropped below threshold, but is currently still declared valid
   bool local_position_accuracy_low;
+  /// Navigator failed to execute a mode
+  bool navigator_failure;
   /// Failure detector
   /// Critical failure (attitude/altitude limit exceeded, or external ATS)
   bool fd_critical_failure;

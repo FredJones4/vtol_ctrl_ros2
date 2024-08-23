@@ -529,6 +529,9 @@ CMakeFiles/px4_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/px4_msg
  /home/cmhales/vtol_ctrl_ros2/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__type_support.h \
  /home/cmhales/vtol_ctrl_ros2/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__struct.h \
  /home/cmhales/vtol_ctrl_ros2/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.h \
+ /home/cmhales/vtol_ctrl_ros2/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__type_support.h \
+ /home/cmhales/vtol_ctrl_ros2/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__struct.h \
+ /home/cmhales/vtol_ctrl_ros2/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.h \
  /home/cmhales/vtol_ctrl_ros2/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__type_support.h \
  /home/cmhales/vtol_ctrl_ros2/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__struct.h \
  /home/cmhales/vtol_ctrl_ros2/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.h \

@@ -102,6 +102,8 @@ cdr_serialize(
   cdr << (ros_message.flight_time_limit_exceeded ? true : false);
   // Member: local_position_accuracy_low
   cdr << (ros_message.local_position_accuracy_low ? true : false);
+  // Member: navigator_failure
+  cdr << (ros_message.navigator_failure ? true : false);
   // Member: fd_critical_failure
   cdr << (ros_message.fd_critical_failure ? true : false);
   // Member: fd_esc_arming_failure
@@ -302,6 +304,13 @@ cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message.local_position_accuracy_low = tmp ? true : false;
+  }
+
+  // Member: navigator_failure
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.navigator_failure = tmp ? true : false;
   }
 
   // Member: fd_critical_failure
@@ -555,6 +564,12 @@ get_serialized_size(
   // Member: local_position_accuracy_low
   {
     size_t item_size = sizeof(ros_message.local_position_accuracy_low);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: navigator_failure
+  {
+    size_t item_size = sizeof(ros_message.navigator_failure);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -893,6 +908,14 @@ max_serialized_size_FailsafeFlags(
   }
 
   // Member: local_position_accuracy_low
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: navigator_failure
   {
     size_t array_size = 1;
 

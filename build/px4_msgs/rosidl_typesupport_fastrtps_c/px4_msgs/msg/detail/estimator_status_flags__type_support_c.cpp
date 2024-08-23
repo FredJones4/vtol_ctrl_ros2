@@ -269,6 +269,16 @@ static bool _EstimatorStatusFlags__cdr_serialize(
     cdr << (ros_message->cs_opt_flow_terrain ? true : false);
   }
 
+  // Field name: cs_valid_fake_pos
+  {
+    cdr << (ros_message->cs_valid_fake_pos ? true : false);
+  }
+
+  // Field name: cs_constant_pos
+  {
+    cdr << (ros_message->cs_constant_pos ? true : false);
+  }
+
   // Field name: fault_status_changes
   {
     cdr << ros_message->fault_status_changes;
@@ -701,6 +711,20 @@ static bool _EstimatorStatusFlags__cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message->cs_opt_flow_terrain = tmp ? true : false;
+  }
+
+  // Field name: cs_valid_fake_pos
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->cs_valid_fake_pos = tmp ? true : false;
+  }
+
+  // Field name: cs_constant_pos
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->cs_constant_pos = tmp ? true : false;
   }
 
   // Field name: fault_status_changes
@@ -1145,6 +1169,18 @@ size_t get_serialized_size_px4_msgs__msg__EstimatorStatusFlags(
   // field.name cs_opt_flow_terrain
   {
     size_t item_size = sizeof(ros_message->cs_opt_flow_terrain);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name cs_valid_fake_pos
+  {
+    size_t item_size = sizeof(ros_message->cs_valid_fake_pos);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name cs_constant_pos
+  {
+    size_t item_size = sizeof(ros_message->cs_constant_pos);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -1626,6 +1662,20 @@ size_t max_serialized_size_px4_msgs__msg__EstimatorStatusFlags(
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: cs_opt_flow_terrain
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: cs_valid_fake_pos
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: cs_constant_pos
   {
     size_t array_size = 1;
 

@@ -405,16 +405,48 @@ private:
   ::px4_msgs::msg::EstimatorStatusFlags msg_;
 };
 
+class Init_EstimatorStatusFlags_cs_constant_pos
+{
+public:
+  explicit Init_EstimatorStatusFlags_cs_constant_pos(::px4_msgs::msg::EstimatorStatusFlags & msg)
+  : msg_(msg)
+  {}
+  Init_EstimatorStatusFlags_fault_status_changes cs_constant_pos(::px4_msgs::msg::EstimatorStatusFlags::_cs_constant_pos_type arg)
+  {
+    msg_.cs_constant_pos = std::move(arg);
+    return Init_EstimatorStatusFlags_fault_status_changes(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::EstimatorStatusFlags msg_;
+};
+
+class Init_EstimatorStatusFlags_cs_valid_fake_pos
+{
+public:
+  explicit Init_EstimatorStatusFlags_cs_valid_fake_pos(::px4_msgs::msg::EstimatorStatusFlags & msg)
+  : msg_(msg)
+  {}
+  Init_EstimatorStatusFlags_cs_constant_pos cs_valid_fake_pos(::px4_msgs::msg::EstimatorStatusFlags::_cs_valid_fake_pos_type arg)
+  {
+    msg_.cs_valid_fake_pos = std::move(arg);
+    return Init_EstimatorStatusFlags_cs_constant_pos(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::EstimatorStatusFlags msg_;
+};
+
 class Init_EstimatorStatusFlags_cs_opt_flow_terrain
 {
 public:
   explicit Init_EstimatorStatusFlags_cs_opt_flow_terrain(::px4_msgs::msg::EstimatorStatusFlags & msg)
   : msg_(msg)
   {}
-  Init_EstimatorStatusFlags_fault_status_changes cs_opt_flow_terrain(::px4_msgs::msg::EstimatorStatusFlags::_cs_opt_flow_terrain_type arg)
+  Init_EstimatorStatusFlags_cs_valid_fake_pos cs_opt_flow_terrain(::px4_msgs::msg::EstimatorStatusFlags::_cs_opt_flow_terrain_type arg)
   {
     msg_.cs_opt_flow_terrain = std::move(arg);
-    return Init_EstimatorStatusFlags_fault_status_changes(msg_);
+    return Init_EstimatorStatusFlags_cs_valid_fake_pos(msg_);
   }
 
 private:

@@ -99,6 +99,8 @@ class EstimatorStatusFlags(metaclass=Metaclass_EstimatorStatusFlags):
         '_cs_aux_gpos',
         '_cs_rng_terrain',
         '_cs_opt_flow_terrain',
+        '_cs_valid_fake_pos',
+        '_cs_constant_pos',
         '_fault_status_changes',
         '_fs_bad_mag_x',
         '_fs_bad_mag_y',
@@ -170,6 +172,8 @@ class EstimatorStatusFlags(metaclass=Metaclass_EstimatorStatusFlags):
         'cs_aux_gpos': 'boolean',
         'cs_rng_terrain': 'boolean',
         'cs_opt_flow_terrain': 'boolean',
+        'cs_valid_fake_pos': 'boolean',
+        'cs_constant_pos': 'boolean',
         'fault_status_changes': 'uint32',
         'fs_bad_mag_x': 'boolean',
         'fs_bad_mag_y': 'boolean',
@@ -200,6 +204,8 @@ class EstimatorStatusFlags(metaclass=Metaclass_EstimatorStatusFlags):
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
@@ -315,6 +321,8 @@ class EstimatorStatusFlags(metaclass=Metaclass_EstimatorStatusFlags):
         self.cs_aux_gpos = kwargs.get('cs_aux_gpos', bool())
         self.cs_rng_terrain = kwargs.get('cs_rng_terrain', bool())
         self.cs_opt_flow_terrain = kwargs.get('cs_opt_flow_terrain', bool())
+        self.cs_valid_fake_pos = kwargs.get('cs_valid_fake_pos', bool())
+        self.cs_constant_pos = kwargs.get('cs_constant_pos', bool())
         self.fault_status_changes = kwargs.get('fault_status_changes', int())
         self.fs_bad_mag_x = kwargs.get('fs_bad_mag_x', bool())
         self.fs_bad_mag_y = kwargs.get('fs_bad_mag_y', bool())
@@ -456,6 +464,10 @@ class EstimatorStatusFlags(metaclass=Metaclass_EstimatorStatusFlags):
         if self.cs_rng_terrain != other.cs_rng_terrain:
             return False
         if self.cs_opt_flow_terrain != other.cs_opt_flow_terrain:
+            return False
+        if self.cs_valid_fake_pos != other.cs_valid_fake_pos:
+            return False
+        if self.cs_constant_pos != other.cs_constant_pos:
             return False
         if self.fault_status_changes != other.fault_status_changes:
             return False
@@ -1089,6 +1101,32 @@ class EstimatorStatusFlags(metaclass=Metaclass_EstimatorStatusFlags):
                 isinstance(value, bool), \
                 "The 'cs_opt_flow_terrain' field must be of type 'bool'"
         self._cs_opt_flow_terrain = value
+
+    @builtins.property
+    def cs_valid_fake_pos(self):
+        """Message field 'cs_valid_fake_pos'."""
+        return self._cs_valid_fake_pos
+
+    @cs_valid_fake_pos.setter
+    def cs_valid_fake_pos(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'cs_valid_fake_pos' field must be of type 'bool'"
+        self._cs_valid_fake_pos = value
+
+    @builtins.property
+    def cs_constant_pos(self):
+        """Message field 'cs_constant_pos'."""
+        return self._cs_constant_pos
+
+    @cs_constant_pos.setter
+    def cs_constant_pos(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'cs_constant_pos' field must be of type 'bool'"
+        self._cs_constant_pos = value
 
     @builtins.property
     def fault_status_changes(self):

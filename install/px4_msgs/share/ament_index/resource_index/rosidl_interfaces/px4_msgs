@@ -216,6 +216,8 @@ msg/MountOrientation.idl
 msg/MountOrientation.msg
 msg/NavigatorMissionItem.idl
 msg/NavigatorMissionItem.msg
+msg/NavigatorStatus.idl
+msg/NavigatorStatus.msg
 msg/NormalizedUnsignedSetpoint.idl
 msg/NormalizedUnsignedSetpoint.msg
 msg/NpfgStatus.idl

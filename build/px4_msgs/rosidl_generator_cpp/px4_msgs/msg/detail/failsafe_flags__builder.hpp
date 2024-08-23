@@ -85,16 +85,32 @@ private:
   ::px4_msgs::msg::FailsafeFlags msg_;
 };
 
+class Init_FailsafeFlags_navigator_failure
+{
+public:
+  explicit Init_FailsafeFlags_navigator_failure(::px4_msgs::msg::FailsafeFlags & msg)
+  : msg_(msg)
+  {}
+  Init_FailsafeFlags_fd_critical_failure navigator_failure(::px4_msgs::msg::FailsafeFlags::_navigator_failure_type arg)
+  {
+    msg_.navigator_failure = std::move(arg);
+    return Init_FailsafeFlags_fd_critical_failure(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::FailsafeFlags msg_;
+};
+
 class Init_FailsafeFlags_local_position_accuracy_low
 {
 public:
   explicit Init_FailsafeFlags_local_position_accuracy_low(::px4_msgs::msg::FailsafeFlags & msg)
   : msg_(msg)
   {}
-  Init_FailsafeFlags_fd_critical_failure local_position_accuracy_low(::px4_msgs::msg::FailsafeFlags::_local_position_accuracy_low_type arg)
+  Init_FailsafeFlags_navigator_failure local_position_accuracy_low(::px4_msgs::msg::FailsafeFlags::_local_position_accuracy_low_type arg)
   {
     msg_.local_position_accuracy_low = std::move(arg);
-    return Init_FailsafeFlags_fd_critical_failure(msg_);
+    return Init_FailsafeFlags_navigator_failure(msg_);
   }
 
 private:

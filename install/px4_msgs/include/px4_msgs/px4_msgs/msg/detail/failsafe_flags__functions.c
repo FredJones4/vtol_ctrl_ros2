@@ -52,6 +52,7 @@ px4_msgs__msg__FailsafeFlags__init(px4_msgs__msg__FailsafeFlags * msg)
   // wind_limit_exceeded
   // flight_time_limit_exceeded
   // local_position_accuracy_low
+  // navigator_failure
   // fd_critical_failure
   // fd_esc_arming_failure
   // fd_imbalanced_prop
@@ -100,6 +101,7 @@ px4_msgs__msg__FailsafeFlags__fini(px4_msgs__msg__FailsafeFlags * msg)
   // wind_limit_exceeded
   // flight_time_limit_exceeded
   // local_position_accuracy_low
+  // navigator_failure
   // fd_critical_failure
   // fd_esc_arming_failure
   // fd_imbalanced_prop
@@ -252,6 +254,10 @@ px4_msgs__msg__FailsafeFlags__are_equal(const px4_msgs__msg__FailsafeFlags * lhs
   if (lhs->local_position_accuracy_low != rhs->local_position_accuracy_low) {
     return false;
   }
+  // navigator_failure
+  if (lhs->navigator_failure != rhs->navigator_failure) {
+    return false;
+  }
   // fd_critical_failure
   if (lhs->fd_critical_failure != rhs->fd_critical_failure) {
     return false;
@@ -349,6 +355,8 @@ px4_msgs__msg__FailsafeFlags__copy(
   output->flight_time_limit_exceeded = input->flight_time_limit_exceeded;
   // local_position_accuracy_low
   output->local_position_accuracy_low = input->local_position_accuracy_low;
+  // navigator_failure
+  output->navigator_failure = input->navigator_failure;
   // fd_critical_failure
   output->fd_critical_failure = input->fd_critical_failure;
   // fd_esc_arming_failure

@@ -184,6 +184,14 @@ module px4_msgs {
       boolean cs_opt_flow_terrain;
 
       @verbatim (language="comment", text=
+        "41 - true if a valid constant position is being fused")
+      boolean cs_valid_fake_pos;
+
+      @verbatim (language="comment", text=
+        "42 - true if the vehicle is at a constant position")
+      boolean cs_constant_pos;
+
+      @verbatim (language="comment", text=
         "fault status" "\n"
         "number of filter fault status (fs) changes")
       uint32 fault_status_changes;

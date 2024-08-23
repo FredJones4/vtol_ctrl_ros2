@@ -11,6 +11,7 @@
 
   <depend>px4_msgs</depend>
   <depend>std_msgs</depend>
+  <exec_depend>px4_ros2_interface_lib</exec_depend>
   <depend>ament_cmake</depend>
   <depend>ament_python</depend>
   <depend>px4_ros_com</depend>

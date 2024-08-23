@@ -2,5 +2,8 @@
 actuator_px4_control = ros2_px4_interface.actuator_px4_control:main
 offboard_test = ros2_px4_interface.OffBoardTest:main
 px4_data_gatherer = ros2_px4_interface.px4_data_gatherer:main
+px4_ros2_test = ros2_px4_interface.px4_ros2_TEST:main
 ros2_px4_interface = ros2_px4_interface.ros2_px4_interface:main
+ros_mavsim_wrapper = ros_px4_interface.ROS_MAVSIM_wrapper:main
+usb_data_gatherer = ros2_px4_interface.USBDataGatherer:main
 

@@ -333,6 +333,20 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
+  // member: cs_valid_fake_pos
+  {
+    out << "cs_valid_fake_pos: ";
+    rosidl_generator_traits::value_to_yaml(msg.cs_valid_fake_pos, out);
+    out << ", ";
+  }
+
+  // member: cs_constant_pos
+  {
+    out << "cs_constant_pos: ";
+    rosidl_generator_traits::value_to_yaml(msg.cs_constant_pos, out);
+    out << ", ";
+  }
+
   // member: fault_status_changes
   {
     out << "fault_status_changes: ";
@@ -943,6 +957,26 @@ inline void to_block_style_yaml(
     }
     out << "cs_opt_flow_terrain: ";
     rosidl_generator_traits::value_to_yaml(msg.cs_opt_flow_terrain, out);
+    out << "\n";
+  }
+
+  // member: cs_valid_fake_pos
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "cs_valid_fake_pos: ";
+    rosidl_generator_traits::value_to_yaml(msg.cs_valid_fake_pos, out);
+    out << "\n";
+  }
+
+  // member: cs_constant_pos
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "cs_constant_pos: ";
+    rosidl_generator_traits::value_to_yaml(msg.cs_constant_pos, out);
     out << "\n";
   }
 

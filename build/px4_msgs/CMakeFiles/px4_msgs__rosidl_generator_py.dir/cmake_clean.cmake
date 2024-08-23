@@ -217,6 +217,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/px4_msgs__rosidl_generator_py.dir/rosidl_generator_py/px4_msgs/msg/_mount_orientation_s.c.o.d"
   "CMakeFiles/px4_msgs__rosidl_generator_py.dir/rosidl_generator_py/px4_msgs/msg/_navigator_mission_item_s.c.o"
   "CMakeFiles/px4_msgs__rosidl_generator_py.dir/rosidl_generator_py/px4_msgs/msg/_navigator_mission_item_s.c.o.d"
+  "CMakeFiles/px4_msgs__rosidl_generator_py.dir/rosidl_generator_py/px4_msgs/msg/_navigator_status_s.c.o"
+  "CMakeFiles/px4_msgs__rosidl_generator_py.dir/rosidl_generator_py/px4_msgs/msg/_navigator_status_s.c.o.d"
   "CMakeFiles/px4_msgs__rosidl_generator_py.dir/rosidl_generator_py/px4_msgs/msg/_normalized_unsigned_setpoint_s.c.o"
   "CMakeFiles/px4_msgs__rosidl_generator_py.dir/rosidl_generator_py/px4_msgs/msg/_normalized_unsigned_setpoint_s.c.o.d"
   "CMakeFiles/px4_msgs__rosidl_generator_py.dir/rosidl_generator_py/px4_msgs/msg/_npfg_status_s.c.o"
