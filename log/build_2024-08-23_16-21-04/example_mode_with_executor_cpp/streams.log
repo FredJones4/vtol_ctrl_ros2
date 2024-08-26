@@ -1,0 +1,74 @@
+[0.056s] Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp
+[1.183s] -- The C compiler identification is GNU 11.4.0
+[1.183s] -- The CXX compiler identification is GNU 11.4.0
+[1.184s] -- Detecting C compiler ABI info
+[1.184s] -- Detecting C compiler ABI info - done
+[1.184s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.184s] -- Detecting C compile features
+[1.184s] -- Detecting C compile features - done
+[1.184s] -- Detecting CXX compiler ABI info
+[1.184s] -- Detecting CXX compiler ABI info - done
+[1.184s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.184s] -- Detecting CXX compile features
+[1.184s] -- Detecting CXX compile features - done
+[1.184s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[1.184s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.184s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.419s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.609s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[1.675s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.682s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.693s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.712s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.737s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.796s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.799s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.914s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.944s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.989s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.999s] -- Looking for pthread.h
+[2.078s] -- Looking for pthread.h - found
+[2.078s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.155s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[2.156s] -- Found Threads: TRUE  
+[2.206s] -- Found px4_ros2_cpp: 0.0.1 (/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/cmake)
+[2.223s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.310s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.312s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.312s] -- Configured cppcheck include dirs: /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor/include
+[2.312s] -- Configured cppcheck exclude dirs and/or files: 
+[2.313s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[2.313s] -- Configured cpplint exclude dirs and/or files: 
+[2.314s] -- Added test 'lint_cmake' to check CMake code style
+[2.315s] -- Added test 'uncrustify' to check C / C++ code style
+[2.315s] -- Configured uncrustify additional arguments: 
+[2.316s] -- Added test 'xmllint' to check XML markup files
+[2.318s] -- Configuring done
+[2.329s] -- Generating done
+[2.330s] -- Build files have been written to: /home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp
+[2.339s] Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp
+[2.340s] Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp -- -j6 -l6
+[2.394s] [ 50%] [32mBuilding CXX object CMakeFiles/example_mode_with_executor.dir/src/main.cpp.o[0m
+[6.199s] [100%] [32m[1mLinking CXX executable example_mode_with_executor[0m
+[7.204s] [100%] Built target example_mode_with_executor
+[7.217s] Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp -- -j6 -l6
+[7.251s] Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp
+[7.258s] -- Install configuration: ""
+[7.258s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/lib/example_mode_with_executor_cpp/example_mode_with_executor
+[7.259s] -- Set runtime path of "/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/lib/example_mode_with_executor_cpp/example_mode_with_executor" to ""
+[7.259s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/ament_index/resource_index/package_run_dependencies/example_mode_with_executor_cpp
+[7.259s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/ament_index/resource_index/parent_prefix_path/example_mode_with_executor_cpp
+[7.259s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/environment/ament_prefix_path.sh
+[7.260s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/environment/ament_prefix_path.dsv
+[7.260s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/environment/path.sh
+[7.261s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/environment/path.dsv
+[7.261s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/local_setup.bash
+[7.262s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/local_setup.sh
+[7.262s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/local_setup.zsh
+[7.262s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/local_setup.dsv
+[7.262s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/package.dsv
+[7.262s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/ament_index/resource_index/packages/example_mode_with_executor_cpp
+[7.262s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/cmake/example_mode_with_executor_cppConfig.cmake
+[7.262s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/cmake/example_mode_with_executor_cppConfig-version.cmake
+[7.262s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/package.xml
+[7.264s] Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp

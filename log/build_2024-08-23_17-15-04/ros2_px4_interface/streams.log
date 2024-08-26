@@ -1,0 +1,30 @@
+[1.408s] Invoking command in '/home/cmhales/vtol_ctrl_ros2/src/ros2_px4_interface': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/ros2_px4_interface build --build-base /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build install --record /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/install.log --single-version-externally-managed install_data
+[1.906s] running egg_info
+[1.908s] writing ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/PKG-INFO
+[1.909s] writing dependency_links to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/dependency_links.txt
+[1.909s] writing entry points to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/entry_points.txt
+[1.909s] writing requirements to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/requires.txt
+[1.910s] writing top-level names to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/top_level.txt
+[1.911s] reading manifest file '../../build/ros2_px4_interface/ros2_px4_interface.egg-info/SOURCES.txt'
+[1.913s] writing manifest file '../../build/ros2_px4_interface/ros2_px4_interface.egg-info/SOURCES.txt'
+[1.913s] running build
+[1.913s] running build_py
+[1.914s] copying ros2_px4_interface/px4_ros2_TEST.py -> /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface
+[1.914s] running install
+[1.914s] running install_lib
+[1.916s] copying /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface/px4_ros2_TEST.py -> /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface
+[1.917s] byte-compiling /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface/px4_ros2_TEST.py to px4_ros2_TEST.cpython-310.pyc
+[1.919s] running install_data
+[1.919s] running install_egg_info
+[1.928s] removing '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface-0.0.0-py3.10.egg-info' (and everything under it)
+[1.930s] Copying ../../build/ros2_px4_interface/ros2_px4_interface.egg-info to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface-0.0.0-py3.10.egg-info
+[1.943s] running install_scripts
+[2.019s] Installing actuator_px4_control script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface
+[2.020s] Installing offboard_test script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface
+[2.021s] Installing px4_data_gatherer script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface
+[2.021s] Installing px4_ros2_test script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface
+[2.022s] Installing ros2_px4_interface script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface
+[2.022s] Installing ros_mavsim_wrapper script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface
+[2.028s] Installing usb_data_gatherer script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface
+[2.029s] writing list of installed files to '/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/install.log'
+[2.254s] Invoked command in '/home/cmhales/vtol_ctrl_ros2/src/ros2_px4_interface' returned '0': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/ros2_px4_interface build --build-base /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build install --record /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/install.log --single-version-externally-managed install_data

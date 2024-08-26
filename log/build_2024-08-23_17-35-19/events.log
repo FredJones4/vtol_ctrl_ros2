@@ -1,0 +1,15 @@
+[0.000000] (-) TimerEvent: {}
+[0.000364] (-) JobUnselected: {'identifier': 'example_global_navigation_cpp'}
+[0.000445] (-) JobUnselected: {'identifier': 'example_local_navigation_cpp'}
+[0.000501] (-) JobUnselected: {'identifier': 'example_mode_fw_attitude_cpp'}
+[0.000528] (-) JobUnselected: {'identifier': 'example_mode_goto_cpp'}
+[0.000562] (-) JobUnselected: {'identifier': 'example_mode_goto_global_cpp'}
+[0.000674] (-) JobUnselected: {'identifier': 'example_mode_manual_cpp'}
+[0.000739] (-) JobUnselected: {'identifier': 'example_mode_rtl_replacement_cpp'}
+[0.000829] (-) JobUnselected: {'identifier': 'example_mode_with_executor_cpp'}
+[0.000874] (-) JobUnselected: {'identifier': 'px4_msgs'}
+[0.000905] (-) JobUnselected: {'identifier': 'px4_offboard'}
+[0.000930] (-) JobUnselected: {'identifier': 'px4_ros2_cpp'}
+[0.000953] (-) JobUnselected: {'identifier': 'px4_ros_com'}
+[0.000977] (-) JobUnselected: {'identifier': 'ros2_px4_interface'}
+[0.001001] (-) EventReactorShutdown: {}

@@ -1,0 +1,2 @@
+Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/px4_ros2_cpp -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp
+Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/px4_ros2_cpp -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp

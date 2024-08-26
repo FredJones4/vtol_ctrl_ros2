@@ -17,7 +17,7 @@ class USBDataGatherer(Node):
             self.write_callback,
             10)
         
-        self.read_pub = self.create_publisher(String, 'read', 10)
+        self.read_pub = self.create_publisher(String, 'airspeed_bridge', 10)
 
         # Serial port initialization
         self.ser = serial.Serial()
@@ -52,7 +52,7 @@ class USBDataGatherer(Node):
 def main(args=None):
     rclpy.init(args=args)
     
-    serial_example_node = SerialExampleNode()
+    serial_example_node = USBDataGatherer()
     
     try:
         rclpy.spin(serial_example_node)

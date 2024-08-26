@@ -26,6 +26,13 @@ class PX4_ROS2_TEST(Node):
             durability=DurabilityPolicy.VOLATILE,
             depth=10
         )
+        # Create subscriber to data_to_control
+        self.data_to_control_sub = self.create_subscription(
+            String,
+            'data_to_control',
+            self.data_to_control_callback,
+            qos_profile
+        )
 
         # Create publishers with the specified QoS profiles
         self.actuator_motors_pub = self.create_publisher(
@@ -74,6 +81,15 @@ class PX4_ROS2_TEST(Node):
 
             # Stop the timer after mode change
             self.timer2.destroy()
+    def data_to_control_callback(self, msg):
+        self.get_logger().info('Received data_to_control message')
+        # Extract data from the message
+        data = msg.data
+
+        # Process the data
+        # ...
+        # # Publish actuator control messages
+        # self.publish_actuator_items()
 
     def timer_callback(self):
         print("counter: ", self.offboard_setpoint_counter)

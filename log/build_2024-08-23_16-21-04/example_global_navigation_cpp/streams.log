@@ -1,0 +1,74 @@
+[0.044s] Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp
+[0.190s] -- The C compiler identification is GNU 11.4.0
+[0.311s] -- The CXX compiler identification is GNU 11.4.0
+[0.340s] -- Detecting C compiler ABI info
+[0.509s] -- Detecting C compiler ABI info - done
+[0.531s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.532s] -- Detecting C compile features
+[0.532s] -- Detecting C compile features - done
+[0.537s] -- Detecting CXX compiler ABI info
+[0.730s] -- Detecting CXX compiler ABI info - done
+[0.742s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.744s] -- Detecting CXX compile features
+[0.746s] -- Detecting CXX compile features - done
+[0.750s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.761s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[0.768s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.033s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.210s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[1.279s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.288s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.300s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.320s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.343s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.410s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.414s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.597s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.662s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.735s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.748s] -- Looking for pthread.h
+[1.879s] -- Looking for pthread.h - found
+[1.879s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.021s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[2.023s] -- Found Threads: TRUE  
+[2.099s] -- Found px4_ros2_cpp: 0.0.1 (/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/cmake)
+[2.144s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.314s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.317s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.317s] -- Configured cppcheck include dirs: /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation/include
+[2.317s] -- Configured cppcheck exclude dirs and/or files: 
+[2.318s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[2.319s] -- Configured cpplint exclude dirs and/or files: 
+[2.321s] -- Added test 'lint_cmake' to check CMake code style
+[2.323s] -- Added test 'uncrustify' to check C / C++ code style
+[2.323s] -- Configured uncrustify additional arguments: 
+[2.325s] -- Added test 'xmllint' to check XML markup files
+[2.328s] -- Configuring done
+[2.370s] -- Generating done
+[2.372s] -- Build files have been written to: /home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp
+[2.394s] Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp
+[2.397s] Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp -- -j6 -l6
+[2.503s] [ 50%] [32mBuilding CXX object CMakeFiles/example_global_navigation.dir/src/main.cpp.o[0m
+[7.230s] [100%] [32m[1mLinking CXX executable example_global_navigation[0m
+[9.533s] [100%] Built target example_global_navigation
+[9.579s] Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp -- -j6 -l6
+[9.764s] Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp
+[9.792s] -- Install configuration: ""
+[9.792s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/lib/example_global_navigation_cpp/example_global_navigation
+[9.798s] -- Set runtime path of "/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/lib/example_global_navigation_cpp/example_global_navigation" to ""
+[9.798s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/ament_index/resource_index/package_run_dependencies/example_global_navigation_cpp
+[9.798s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/ament_index/resource_index/parent_prefix_path/example_global_navigation_cpp
+[9.799s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/environment/ament_prefix_path.sh
+[9.800s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/environment/ament_prefix_path.dsv
+[9.801s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/environment/path.sh
+[9.801s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/environment/path.dsv
+[9.802s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/local_setup.bash
+[9.803s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/local_setup.sh
+[9.803s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/local_setup.zsh
+[9.804s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/local_setup.dsv
+[9.804s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/package.dsv
+[9.805s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/ament_index/resource_index/packages/example_global_navigation_cpp
+[9.805s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/cmake/example_global_navigation_cppConfig.cmake
+[9.806s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/cmake/example_global_navigation_cppConfig-version.cmake
+[9.806s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/package.xml
+[9.818s] Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp

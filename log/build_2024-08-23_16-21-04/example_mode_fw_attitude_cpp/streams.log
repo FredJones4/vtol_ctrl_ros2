@@ -1,0 +1,72 @@
+[0.043s] Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp
+[0.205s] -- The C compiler identification is GNU 11.4.0
+[0.331s] -- The CXX compiler identification is GNU 11.4.0
+[0.353s] -- Detecting C compiler ABI info
+[0.582s] -- Detecting C compiler ABI info - done
+[0.595s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.596s] -- Detecting C compile features
+[0.596s] -- Detecting C compile features - done
+[0.600s] -- Detecting CXX compiler ABI info
+[0.801s] -- Detecting CXX compiler ABI info - done
+[0.825s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.825s] -- Detecting CXX compile features
+[0.825s] -- Detecting CXX compile features - done
+[0.830s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.063s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.198s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[1.266s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.275s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.289s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.307s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.330s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.398s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.402s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.577s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.616s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.672s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.684s] -- Looking for pthread.h
+[1.844s] -- Looking for pthread.h - found
+[1.845s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.004s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[2.006s] -- Found Threads: TRUE  
+[2.063s] -- Found px4_ros2_cpp: 0.0.1 (/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/cmake)
+[2.131s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.301s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.302s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.303s] -- Configured cppcheck include dirs: /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude/include
+[2.303s] -- Configured cppcheck exclude dirs and/or files: 
+[2.304s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[2.305s] -- Configured cpplint exclude dirs and/or files: 
+[2.308s] -- Added test 'lint_cmake' to check CMake code style
+[2.309s] -- Added test 'uncrustify' to check C / C++ code style
+[2.309s] -- Configured uncrustify additional arguments: 
+[2.310s] -- Added test 'xmllint' to check XML markup files
+[2.316s] -- Configuring done
+[2.346s] -- Generating done
+[2.358s] -- Build files have been written to: /home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp
+[2.375s] Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp
+[2.379s] Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp -- -j6 -l6
+[2.475s] [ 50%] [32mBuilding CXX object CMakeFiles/example_mode_fw_attitude.dir/src/main.cpp.o[0m
+[8.857s] [100%] [32m[1mLinking CXX executable example_mode_fw_attitude[0m
+[11.492s] [100%] Built target example_mode_fw_attitude
+[11.520s] Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp -- -j6 -l6
+[11.625s] Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp
+[11.640s] -- Install configuration: ""
+[11.641s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/lib/example_mode_fw_attitude_cpp/example_mode_fw_attitude
+[11.645s] -- Set runtime path of "/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/lib/example_mode_fw_attitude_cpp/example_mode_fw_attitude" to ""
+[11.645s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/ament_index/resource_index/package_run_dependencies/example_mode_fw_attitude_cpp
+[11.647s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/ament_index/resource_index/parent_prefix_path/example_mode_fw_attitude_cpp
+[11.648s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/environment/ament_prefix_path.sh
+[11.649s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/environment/ament_prefix_path.dsv
+[11.650s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/environment/path.sh
+[11.652s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/environment/path.dsv
+[11.654s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/local_setup.bash
+[11.655s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/local_setup.sh
+[11.657s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/local_setup.zsh
+[11.659s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/local_setup.dsv
+[11.659s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/package.dsv
+[11.660s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/ament_index/resource_index/packages/example_mode_fw_attitude_cpp
+[11.660s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/cmake/example_mode_fw_attitude_cppConfig.cmake
+[11.660s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/cmake/example_mode_fw_attitude_cppConfig-version.cmake
+[11.665s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/package.xml
+[11.679s] Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp

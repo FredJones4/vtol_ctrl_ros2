@@ -1,0 +1,160 @@
+[0.010s] Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/px4_ros2_cpp -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp
+[0.023s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.145s] -- Found ament_index_cpp: 1.4.0 (/opt/ros/humble/share/ament_index_cpp/cmake)
+[0.145s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[0.174s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.177s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.183s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.192s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.205s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.239s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.240s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.354s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.405s] -- Found px4_msgs: 2.0.1 (/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/cmake)
+[0.420s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.429s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[0.435s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.437s] -- Found ament_cmake_gtest: 1.3.10 (/opt/ros/humble/share/ament_cmake_gtest/cmake)
+[0.531s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[0.546s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.554s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.555s] -- Configured cppcheck include dirs: /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/px4_ros2_cpp/include
+[0.555s] -- Configured cppcheck exclude dirs and/or files: 
+[0.568s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.568s] -- Configured cpplint exclude dirs and/or files: 
+[0.575s] -- Added test 'lint_cmake' to check CMake code style
+[0.594s] -- Added test 'uncrustify' to check C / C++ code style
+[0.595s] -- Configured uncrustify additional arguments: 
+[0.597s] -- Added test 'xmllint' to check XML markup files
+[0.605s] -- Configuring done
+[0.663s] -- Generating done
+[0.672s] -- Build files have been written to: /home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp
+[0.695s] Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp' returned '0': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/px4_ros2_cpp -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp
+[0.696s] Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp -- -j6 -l6
+[0.803s] [  2%] [32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o[0m
+[0.817s] [  4%] [32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o[0m
+[0.828s] [  6%] [32mBuilding CXX object CMakeFiles/integration_utils.dir/test/integration/util.cpp.o[0m
+[0.831s] [  8%] [32mBuilding CXX object CMakeFiles/unit_utils.dir/test/unit/utils/util.cpp.o[0m
+[0.846s] [ 10%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/components/health_and_arming_checks.cpp.o[0m
+[0.862s] [ 12%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/components/manual_control_input.cpp.o[0m
+[2.224s] [ 14%] [32m[1mLinking CXX static library libgtest_main.a[0m
+[2.332s] [ 14%] Built target gtest_main
+[2.348s] [ 17%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/components/message_compatibility_check.cpp.o[0m
+[4.482s] [ 19%] [32m[1mLinking CXX shared library libunit_utils.so[0m
+[4.662s] [ 19%] Built target unit_utils
+[4.679s] [ 21%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/components/mode.cpp.o[0m
+[5.282s] [ 23%] [32m[1mLinking CXX static library libgtest.a[0m
+[5.386s] [ 23%] Built target gtest
+[5.402s] [ 25%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/components/mode_executor.cpp.o[0m
+[12.385s] [ 27%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/components/overrides.cpp.o[0m
+[13.537s] [ 29%] [32m[1mLinking CXX shared library libintegration_utils.so[0m
+[13.966s] [ 31%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/components/registration.cpp.o[0m
+[14.623s] [ 31%] Built target integration_utils
+[14.640s] [ 34%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/components/wait_for_fmu.cpp.o[0m
+[17.018s] [ 36%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/control/peripheral_actuators.cpp.o[0m
+[18.745s] [ 38%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/control/setpoint_types/direct_actuators.cpp.o[0m
+[18.953s] [ 40%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/control/setpoint_types/goto.cpp.o[0m
+[23.382s] [ 42%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/control/setpoint_types/experimental/attitude.cpp.o[0m
+[24.801s] [ 44%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/control/setpoint_types/experimental/rates.cpp.o[0m
+[25.452s] [ 46%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/control/setpoint_types/experimental/trajectory.cpp.o[0m
+[25.616s] [ 48%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/navigation/experimental/global_position_measurement_interface.cpp.o[0m
+[25.994s] [ 51%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/navigation/experimental/local_position_measurement_interface.cpp.o[0m
+[26.036s] [ 53%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/odometry/attitude.cpp.o[0m
+[29.607s] [ 55%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/odometry/global_position.cpp.o[0m
+[30.791s] [ 57%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/odometry/local_position.cpp.o[0m
+[31.521s] [ 59%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/odometry/angular_velocity.cpp.o[0m
+[31.889s] [ 61%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/utils/geodesic.cpp.o[0m
+[33.402s] [ 63%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp.dir/src/utils/map_projection_impl.cpp.o[0m
+[41.786s] [ 65%] [32m[1mLinking CXX shared library libpx4_ros2_cpp.so[0m
+[46.250s] [ 65%] Built target px4_ros2_cpp
+[46.278s] [ 70%] [32mBuilding CXX object CMakeFiles/integration_tests.dir/test/integration/global_navigation.cpp.o[0m
+[46.279s] [ 72%] [32mBuilding CXX object CMakeFiles/integration_tests.dir/test/integration/local_navigation.cpp.o[0m
+[46.279s] [ 72%] [32mBuilding CXX object CMakeFiles/integration_tests.dir/test/integration/arming_check.cpp.o[0m
+[46.282s] [ 74%] [32mBuilding CXX object CMakeFiles/integration_tests.dir/test/integration/mode.cpp.o[0m
+[46.283s] [ 76%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp_unit_tests.dir/test/unit/local_navigation.cpp.o[0m
+[46.293s] [ 78%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp_unit_tests.dir/test/unit/global_navigation.cpp.o[0m
+[50.937s] [ 80%] [32mBuilding CXX object CMakeFiles/integration_tests.dir/test/integration/mode_executor.cpp.o[0m
+[52.402s] [ 82%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp_unit_tests.dir/test/unit/main.cpp.o[0m
+[53.154s] [ 85%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp_unit_tests.dir/test/unit/modes.cpp.o[0m
+[53.571s] [ 87%] [32mBuilding CXX object CMakeFiles/integration_tests.dir/test/integration/overrides.cpp.o[0m
+[56.627s] [ 89%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp_unit_tests.dir/test/unit/utils/frame_conversion.cpp.o[0m
+[58.942s] [ 91%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp_unit_tests.dir/test/unit/utils/geodesic.cpp.o[0m
+[59.902s] [ 93%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp_unit_tests.dir/test/unit/utils/geometry.cpp.o[0m
+[61.385s] [ 95%] [32mBuilding CXX object CMakeFiles/px4_ros2_cpp_unit_tests.dir/test/unit/utils/map_projection_impl.cpp.o[0m
+[62.169s] [ 97%] [32m[1mLinking CXX executable integration_tests[0m
+[64.032s] [ 97%] Built target integration_tests
+[65.139s] [100%] [32m[1mLinking CXX executable px4_ros2_cpp_unit_tests[0m
+[66.165s] [100%] Built target px4_ros2_cpp_unit_tests
+[66.178s] Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp' returned '0': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp -- -j6 -l6
+[66.312s] Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp
+[66.322s] -- Install configuration: ""
+[66.325s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/environment/library_path.sh
+[66.326s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/environment/library_path.dsv
+[66.327s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2
+[66.328s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/navigation
+[66.328s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/navigation/groups.dox
+[66.329s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/navigation/experimental
+[66.330s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/navigation/experimental/local_position_measurement_interface.hpp
+[66.331s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/navigation/experimental/global_position_measurement_interface.hpp
+[66.332s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/navigation/experimental/navigation_interface_base.hpp
+[66.333s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/control
+[66.333s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/control/peripheral_actuators.hpp
+[66.334s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/control/groups.dox
+[66.334s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/control/setpoint_types
+[66.335s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/control/setpoint_types/direct_actuators.hpp
+[66.335s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/control/setpoint_types/goto.hpp
+[66.336s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/control/setpoint_types/groups.dox
+[66.337s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/control/setpoint_types/experimental
+[66.337s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/control/setpoint_types/experimental/attitude.hpp
+[66.338s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/control/setpoint_types/experimental/rates.hpp
+[66.338s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/control/setpoint_types/experimental/trajectory.hpp
+[66.339s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/utils
+[66.339s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/utils/geometry.hpp
+[66.339s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/utils/frame_conversion.hpp
+[66.340s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/utils/groups.dox
+[66.341s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/utils/geodesic.hpp
+[66.341s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/odometry
+[66.341s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/odometry/global_position.hpp
+[66.342s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/odometry/attitude.hpp
+[66.342s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/odometry/angular_velocity.hpp
+[66.342s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/odometry/local_position.hpp
+[66.343s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/odometry/subscription.hpp
+[66.343s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/odometry/groups.dox
+[66.344s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/common
+[66.344s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/common/context.hpp
+[66.345s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/common/frame.hpp
+[66.345s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/common/setpoint_base.hpp
+[66.345s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/common/requirement_flags.hpp
+[66.346s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/components
+[66.346s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/components/mode.hpp
+[66.346s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/components/overrides.hpp
+[66.346s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/components/groups.dox
+[66.347s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/components/mode_executor.hpp
+[66.347s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/components/wait_for_fmu.hpp
+[66.347s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/components/manual_control_input.hpp
+[66.347s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/components/node_with_mode.hpp
+[66.348s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/components/events.hpp
+[66.348s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/components/health_and_arming_checks.hpp
+[66.348s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/include/px4_ros2/components/message_compatibility_check.hpp
+[66.349s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib/libpx4_ros2_cpp.so
+[66.411s] -- Set runtime path of "/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib/libpx4_ros2_cpp.so" to ""
+[66.411s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/ament_index/resource_index/package_run_dependencies/px4_ros2_cpp
+[66.411s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/ament_index/resource_index/parent_prefix_path/px4_ros2_cpp
+[66.413s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/environment/ament_prefix_path.sh
+[66.413s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/environment/ament_prefix_path.dsv
+[66.413s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/environment/path.sh
+[66.414s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/environment/path.dsv
+[66.414s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/local_setup.bash
+[66.414s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/local_setup.sh
+[66.414s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/local_setup.zsh
+[66.415s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/local_setup.dsv
+[66.415s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/package.dsv
+[66.415s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/ament_index/resource_index/packages/px4_ros2_cpp
+[66.416s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/cmake/px4_ros2_cppExport.cmake
+[66.416s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/cmake/px4_ros2_cppExport-noconfig.cmake
+[66.416s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/cmake/ament_cmake_export_targets-extras.cmake
+[66.417s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/cmake/ament_cmake_export_dependencies-extras.cmake
+[66.417s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/cmake/px4_ros2_cppConfig.cmake
+[66.417s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/cmake/px4_ros2_cppConfig-version.cmake
+[66.417s] -- Installing: /home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/package.xml
+[66.420s] Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp' returned '0': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp

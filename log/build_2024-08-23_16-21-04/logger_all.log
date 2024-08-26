@@ -1,0 +1,909 @@
+[0.115s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.115s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=6, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x73aa4b33ed40>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x73aa4b33e7d0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x73aa4b33e7d0>>, mixin_verb=('build',))
+[0.298s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.299s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.299s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.299s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.299s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.299s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.299s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/cmhales/vtol_ctrl_ros2'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib) by extensions ['ignore', 'ignore_ament_install']
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib) by extension 'ignore'
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib) by extension 'ignore_ament_install'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib) by extensions ['colcon_pkg']
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib) by extension 'colcon_pkg'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib) by extensions ['colcon_meta']
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib) by extension 'colcon_meta'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib) by extensions ['ros']
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib) by extension 'ros'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib) by extensions ['cmake', 'python']
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib) by extension 'cmake'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib) by extension 'python'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib) by extensions ['python_setup_py']
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib) by extension 'python_setup_py'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples) by extensions ['ignore', 'ignore_ament_install']
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples) by extension 'ignore'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples) by extension 'ignore_ament_install'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples) by extensions ['colcon_pkg']
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples) by extension 'colcon_pkg'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples) by extensions ['colcon_meta']
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples) by extension 'colcon_meta'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples) by extensions ['ros']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples) by extension 'ros'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples) by extensions ['cmake', 'python']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples) by extension 'cmake'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples) by extension 'python'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples) by extensions ['python_setup_py']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples) by extension 'python_setup_py'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp) by extensions ['ignore', 'ignore_ament_install']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp) by extension 'ignore'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp) by extension 'ignore_ament_install'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp) by extensions ['colcon_pkg']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp) by extension 'colcon_pkg'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp) by extensions ['colcon_meta']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp) by extension 'colcon_meta'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp) by extensions ['ros']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp) by extension 'ros'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp) by extensions ['cmake', 'python']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp) by extension 'cmake'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp) by extension 'python'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp) by extensions ['python_setup_py']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp) by extension 'python_setup_py'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes) by extensions ['ignore', 'ignore_ament_install']
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes) by extension 'ignore'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes) by extension 'ignore_ament_install'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes) by extensions ['colcon_pkg']
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes) by extension 'colcon_pkg'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes) by extensions ['colcon_meta']
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes) by extension 'colcon_meta'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes) by extensions ['ros']
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes) by extension 'ros'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes) by extensions ['cmake', 'python']
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes) by extension 'cmake'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes) by extension 'python'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes) by extensions ['python_setup_py']
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes) by extension 'python_setup_py'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude) by extensions ['ignore', 'ignore_ament_install']
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude) by extension 'ignore'
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude) by extension 'ignore_ament_install'
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude) by extensions ['colcon_pkg']
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude) by extension 'colcon_pkg'
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude) by extensions ['colcon_meta']
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude) by extension 'colcon_meta'
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude) by extensions ['ros']
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude) by extension 'ros'
+[0.317s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude' with type 'ros.ament_cmake' and name 'example_mode_fw_attitude_cpp'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto) by extensions ['ignore', 'ignore_ament_install']
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto) by extension 'ignore'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto) by extension 'ignore_ament_install'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto) by extensions ['colcon_pkg']
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto) by extension 'colcon_pkg'
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto) by extensions ['colcon_meta']
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto) by extension 'colcon_meta'
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto) by extensions ['ros']
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto) by extension 'ros'
+[0.318s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px4-ros2-interface-lib/examples/cpp/modes/goto' with type 'ros.ament_cmake' and name 'example_mode_goto_cpp'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto_global) by extensions ['ignore', 'ignore_ament_install']
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto_global) by extension 'ignore'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto_global) by extension 'ignore_ament_install'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto_global) by extensions ['colcon_pkg']
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto_global) by extension 'colcon_pkg'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto_global) by extensions ['colcon_meta']
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto_global) by extension 'colcon_meta'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto_global) by extensions ['ros']
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/goto_global) by extension 'ros'
+[0.320s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px4-ros2-interface-lib/examples/cpp/modes/goto_global' with type 'ros.ament_cmake' and name 'example_mode_goto_global_cpp'
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/manual) by extensions ['ignore', 'ignore_ament_install']
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/manual) by extension 'ignore'
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/manual) by extension 'ignore_ament_install'
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/manual) by extensions ['colcon_pkg']
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/manual) by extension 'colcon_pkg'
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/manual) by extensions ['colcon_meta']
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/manual) by extension 'colcon_meta'
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/manual) by extensions ['ros']
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/manual) by extension 'ros'
+[0.321s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px4-ros2-interface-lib/examples/cpp/modes/manual' with type 'ros.ament_cmake' and name 'example_mode_manual_cpp'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor) by extensions ['ignore', 'ignore_ament_install']
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor) by extension 'ignore'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor) by extension 'ignore_ament_install'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor) by extensions ['colcon_pkg']
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor) by extension 'colcon_pkg'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor) by extensions ['colcon_meta']
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor) by extension 'colcon_meta'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor) by extensions ['ros']
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor) by extension 'ros'
+[0.322s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor' with type 'ros.ament_cmake' and name 'example_mode_with_executor_cpp'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/rtl_replacement) by extensions ['ignore', 'ignore_ament_install']
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/rtl_replacement) by extension 'ignore'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/rtl_replacement) by extension 'ignore_ament_install'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/rtl_replacement) by extensions ['colcon_pkg']
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/rtl_replacement) by extension 'colcon_pkg'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/rtl_replacement) by extensions ['colcon_meta']
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/rtl_replacement) by extension 'colcon_meta'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/rtl_replacement) by extensions ['ros']
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/modes/rtl_replacement) by extension 'ros'
+[0.323s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px4-ros2-interface-lib/examples/cpp/modes/rtl_replacement' with type 'ros.ament_cmake' and name 'example_mode_rtl_replacement_cpp'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation) by extensions ['ignore', 'ignore_ament_install']
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation) by extension 'ignore'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation) by extension 'ignore_ament_install'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation) by extensions ['colcon_pkg']
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation) by extension 'colcon_pkg'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation) by extensions ['colcon_meta']
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation) by extension 'colcon_meta'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation) by extensions ['ros']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation) by extension 'ros'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation) by extensions ['cmake', 'python']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation) by extension 'cmake'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation) by extension 'python'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation) by extensions ['python_setup_py']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation) by extension 'python_setup_py'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation) by extensions ['ignore', 'ignore_ament_install']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation) by extension 'ignore'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation) by extension 'ignore_ament_install'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation) by extensions ['colcon_pkg']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation) by extension 'colcon_pkg'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation) by extensions ['colcon_meta']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation) by extension 'colcon_meta'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation) by extensions ['ros']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation) by extension 'ros'
+[0.325s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation' with type 'ros.ament_cmake' and name 'example_global_navigation_cpp'
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/local_navigation) by extensions ['ignore', 'ignore_ament_install']
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/local_navigation) by extension 'ignore'
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/local_navigation) by extension 'ignore_ament_install'
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/local_navigation) by extensions ['colcon_pkg']
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/local_navigation) by extension 'colcon_pkg'
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/local_navigation) by extensions ['colcon_meta']
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/local_navigation) by extension 'colcon_meta'
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/local_navigation) by extensions ['ros']
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/examples/cpp/navigation/local_navigation) by extension 'ros'
+[0.327s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px4-ros2-interface-lib/examples/cpp/navigation/local_navigation' with type 'ros.ament_cmake' and name 'example_local_navigation_cpp'
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/px4_ros2_cpp) by extensions ['ignore', 'ignore_ament_install']
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/px4_ros2_cpp) by extension 'ignore'
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/px4_ros2_cpp) by extension 'ignore_ament_install'
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/px4_ros2_cpp) by extensions ['colcon_pkg']
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/px4_ros2_cpp) by extension 'colcon_pkg'
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/px4_ros2_cpp) by extensions ['colcon_meta']
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/px4_ros2_cpp) by extension 'colcon_meta'
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/px4_ros2_cpp) by extensions ['ros']
+[0.328s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/px4_ros2_cpp) by extension 'ros'
+[0.328s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px4-ros2-interface-lib/px4_ros2_cpp' with type 'ros.ament_cmake' and name 'px4_ros2_cpp'
+[0.328s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/scripts) by extensions ['ignore', 'ignore_ament_install']
+[0.328s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/scripts) by extension 'ignore'
+[0.328s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/scripts) by extension 'ignore_ament_install'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/scripts) by extensions ['colcon_pkg']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/scripts) by extension 'colcon_pkg'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/scripts) by extensions ['colcon_meta']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/scripts) by extension 'colcon_meta'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/scripts) by extensions ['ros']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/scripts) by extension 'ros'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/scripts) by extensions ['cmake', 'python']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/scripts) by extension 'cmake'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/scripts) by extension 'python'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/scripts) by extensions ['python_setup_py']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4-ros2-interface-lib/scripts) by extension 'python_setup_py'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extension 'ignore'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extension 'ignore_ament_install'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extensions ['colcon_pkg']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extension 'colcon_pkg'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extensions ['colcon_meta']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extension 'colcon_meta'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extensions ['ros']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extension 'ros'
+[0.330s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px4_msgs' with type 'ros.ament_cmake' and name 'px4_msgs'
+[0.330s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extensions ['ignore', 'ignore_ament_install']
+[0.330s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extension 'ignore'
+[0.330s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extension 'ignore_ament_install'
+[0.330s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extensions ['colcon_pkg']
+[0.330s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extension 'colcon_pkg'
+[0.330s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extensions ['colcon_meta']
+[0.330s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extension 'colcon_meta'
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extensions ['ros']
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extension 'ros'
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extensions ['cmake', 'python']
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extension 'cmake'
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extension 'python'
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extensions ['python_setup_py']
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extension 'python_setup_py'
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_px4_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_px4_interface) by extension 'ignore'
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_px4_interface) by extension 'ignore_ament_install'
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_px4_interface) by extensions ['colcon_pkg']
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_px4_interface) by extension 'colcon_pkg'
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_px4_interface) by extensions ['colcon_meta']
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_px4_interface) by extension 'colcon_meta'
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_px4_interface) by extensions ['ros']
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_px4_interface) by extension 'ros'
+[0.332s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_px4_interface' with type 'ros.ament_python' and name 'ros2_px4_interface'
+[0.332s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.332s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.332s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.332s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.332s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.353s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.353s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.354s] WARNING:colcon.colcon_core.prefix_path.colcon:The path '/home/cmhales/grid_map_geo/install' in the environment variable COLCON_PREFIX_PATH doesn't exist
+[0.355s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/cmhales/vtol_ctrl_ros2/install
+[0.356s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 270 installed packages in /opt/ros/humble
+[0.357s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.407s] WARNING:colcon.colcon_core.package_selection:Some selected packages are already built in one or more underlay workspaces:
+	'px4_msgs' is in: /home/cmhales/vtol_ctrl_ros2/install/px4_msgs
+If a package in a merged underlay workspace is overridden and it installs headers, then all packages in the overlay must sort their include directories by workspace order. Failure to do so may result in build failures or undefined behavior at run time.
+If the overridden package is used by another package in any underlay, then the overriding package in the overlay must be API and ABI compatible or undefined behavior at run time may occur.
+
+If you understand the risks and want to override a package anyways, add the following to the command line:
+	--allow-overriding px4_msgs
+
+This may be promoted to an error in a future release of colcon-override-check.
+[0.408s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_args' from command line to 'None'
+[0.408s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_target' from command line to 'None'
+[0.408s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.408s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.408s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.408s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.408s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.408s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.408s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.408s] DEBUG:colcon.colcon_core.verb:Building package 'px4_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/cmhales/vtol_ctrl_ros2/build/px4_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs', 'merge_install': False, 'path': '/home/cmhales/vtol_ctrl_ros2/src/px4_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.408s] Level 5:colcon.colcon_core.verb:set package 'px4_ros2_cpp' build argument 'cmake_args' from command line to 'None'
+[0.408s] Level 5:colcon.colcon_core.verb:set package 'px4_ros2_cpp' build argument 'cmake_target' from command line to 'None'
+[0.408s] Level 5:colcon.colcon_core.verb:set package 'px4_ros2_cpp' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.408s] Level 5:colcon.colcon_core.verb:set package 'px4_ros2_cpp' build argument 'cmake_clean_cache' from command line to 'False'
+[0.408s] Level 5:colcon.colcon_core.verb:set package 'px4_ros2_cpp' build argument 'cmake_clean_first' from command line to 'False'
+[0.408s] Level 5:colcon.colcon_core.verb:set package 'px4_ros2_cpp' build argument 'cmake_force_configure' from command line to 'False'
+[0.409s] Level 5:colcon.colcon_core.verb:set package 'px4_ros2_cpp' build argument 'ament_cmake_args' from command line to 'None'
+[0.409s] Level 5:colcon.colcon_core.verb:set package 'px4_ros2_cpp' build argument 'catkin_cmake_args' from command line to 'None'
+[0.409s] Level 5:colcon.colcon_core.verb:set package 'px4_ros2_cpp' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.409s] DEBUG:colcon.colcon_core.verb:Building package 'px4_ros2_cpp' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp', 'merge_install': False, 'path': '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/px4_ros2_cpp', 'symlink_install': False, 'test_result_base': None}
+[0.409s] Level 5:colcon.colcon_core.verb:set package 'ros2_px4_interface' build argument 'cmake_args' from command line to 'None'
+[0.409s] Level 5:colcon.colcon_core.verb:set package 'ros2_px4_interface' build argument 'cmake_target' from command line to 'None'
+[0.409s] Level 5:colcon.colcon_core.verb:set package 'ros2_px4_interface' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.409s] Level 5:colcon.colcon_core.verb:set package 'ros2_px4_interface' build argument 'cmake_clean_cache' from command line to 'False'
+[0.409s] Level 5:colcon.colcon_core.verb:set package 'ros2_px4_interface' build argument 'cmake_clean_first' from command line to 'False'
+[0.409s] Level 5:colcon.colcon_core.verb:set package 'ros2_px4_interface' build argument 'cmake_force_configure' from command line to 'False'
+[0.409s] Level 5:colcon.colcon_core.verb:set package 'ros2_px4_interface' build argument 'ament_cmake_args' from command line to 'None'
+[0.409s] Level 5:colcon.colcon_core.verb:set package 'ros2_px4_interface' build argument 'catkin_cmake_args' from command line to 'None'
+[0.409s] Level 5:colcon.colcon_core.verb:set package 'ros2_px4_interface' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.409s] DEBUG:colcon.colcon_core.verb:Building package 'ros2_px4_interface' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface', 'merge_install': False, 'path': '/home/cmhales/vtol_ctrl_ros2/src/ros2_px4_interface', 'symlink_install': False, 'test_result_base': None}
+[0.409s] Level 5:colcon.colcon_core.verb:set package 'example_global_navigation_cpp' build argument 'cmake_args' from command line to 'None'
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_global_navigation_cpp' build argument 'cmake_target' from command line to 'None'
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_global_navigation_cpp' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_global_navigation_cpp' build argument 'cmake_clean_cache' from command line to 'False'
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_global_navigation_cpp' build argument 'cmake_clean_first' from command line to 'False'
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_global_navigation_cpp' build argument 'cmake_force_configure' from command line to 'False'
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_global_navigation_cpp' build argument 'ament_cmake_args' from command line to 'None'
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_global_navigation_cpp' build argument 'catkin_cmake_args' from command line to 'None'
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_global_navigation_cpp' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.410s] DEBUG:colcon.colcon_core.verb:Building package 'example_global_navigation_cpp' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp', 'merge_install': False, 'path': '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation', 'symlink_install': False, 'test_result_base': None}
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_local_navigation_cpp' build argument 'cmake_args' from command line to 'None'
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_local_navigation_cpp' build argument 'cmake_target' from command line to 'None'
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_local_navigation_cpp' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_local_navigation_cpp' build argument 'cmake_clean_cache' from command line to 'False'
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_local_navigation_cpp' build argument 'cmake_clean_first' from command line to 'False'
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_local_navigation_cpp' build argument 'cmake_force_configure' from command line to 'False'
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_local_navigation_cpp' build argument 'ament_cmake_args' from command line to 'None'
+[0.410s] Level 5:colcon.colcon_core.verb:set package 'example_local_navigation_cpp' build argument 'catkin_cmake_args' from command line to 'None'
+[0.411s] Level 5:colcon.colcon_core.verb:set package 'example_local_navigation_cpp' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.411s] DEBUG:colcon.colcon_core.verb:Building package 'example_local_navigation_cpp' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/cmhales/vtol_ctrl_ros2/build/example_local_navigation_cpp', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp', 'merge_install': False, 'path': '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/navigation/local_navigation', 'symlink_install': False, 'test_result_base': None}
+[0.411s] Level 5:colcon.colcon_core.verb:set package 'example_mode_fw_attitude_cpp' build argument 'cmake_args' from command line to 'None'
+[0.411s] Level 5:colcon.colcon_core.verb:set package 'example_mode_fw_attitude_cpp' build argument 'cmake_target' from command line to 'None'
+[0.411s] Level 5:colcon.colcon_core.verb:set package 'example_mode_fw_attitude_cpp' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.411s] Level 5:colcon.colcon_core.verb:set package 'example_mode_fw_attitude_cpp' build argument 'cmake_clean_cache' from command line to 'False'
+[0.411s] Level 5:colcon.colcon_core.verb:set package 'example_mode_fw_attitude_cpp' build argument 'cmake_clean_first' from command line to 'False'
+[0.411s] Level 5:colcon.colcon_core.verb:set package 'example_mode_fw_attitude_cpp' build argument 'cmake_force_configure' from command line to 'False'
+[0.411s] Level 5:colcon.colcon_core.verb:set package 'example_mode_fw_attitude_cpp' build argument 'ament_cmake_args' from command line to 'None'
+[0.411s] Level 5:colcon.colcon_core.verb:set package 'example_mode_fw_attitude_cpp' build argument 'catkin_cmake_args' from command line to 'None'
+[0.411s] Level 5:colcon.colcon_core.verb:set package 'example_mode_fw_attitude_cpp' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.411s] DEBUG:colcon.colcon_core.verb:Building package 'example_mode_fw_attitude_cpp' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp', 'merge_install': False, 'path': '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude', 'symlink_install': False, 'test_result_base': None}
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_cpp' build argument 'cmake_args' from command line to 'None'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_cpp' build argument 'cmake_target' from command line to 'None'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_cpp' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_cpp' build argument 'cmake_clean_cache' from command line to 'False'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_cpp' build argument 'cmake_clean_first' from command line to 'False'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_cpp' build argument 'cmake_force_configure' from command line to 'False'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_cpp' build argument 'ament_cmake_args' from command line to 'None'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_cpp' build argument 'catkin_cmake_args' from command line to 'None'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_cpp' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.412s] DEBUG:colcon.colcon_core.verb:Building package 'example_mode_goto_cpp' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_cpp', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp', 'merge_install': False, 'path': '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/goto', 'symlink_install': False, 'test_result_base': None}
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_global_cpp' build argument 'cmake_args' from command line to 'None'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_global_cpp' build argument 'cmake_target' from command line to 'None'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_global_cpp' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_global_cpp' build argument 'cmake_clean_cache' from command line to 'False'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_global_cpp' build argument 'cmake_clean_first' from command line to 'False'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_global_cpp' build argument 'cmake_force_configure' from command line to 'False'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_global_cpp' build argument 'ament_cmake_args' from command line to 'None'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_global_cpp' build argument 'catkin_cmake_args' from command line to 'None'
+[0.412s] Level 5:colcon.colcon_core.verb:set package 'example_mode_goto_global_cpp' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.412s] DEBUG:colcon.colcon_core.verb:Building package 'example_mode_goto_global_cpp' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_global_cpp', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp', 'merge_install': False, 'path': '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/goto_global', 'symlink_install': False, 'test_result_base': None}
+[0.413s] Level 5:colcon.colcon_core.verb:set package 'example_mode_manual_cpp' build argument 'cmake_args' from command line to 'None'
+[0.413s] Level 5:colcon.colcon_core.verb:set package 'example_mode_manual_cpp' build argument 'cmake_target' from command line to 'None'
+[0.413s] Level 5:colcon.colcon_core.verb:set package 'example_mode_manual_cpp' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.413s] Level 5:colcon.colcon_core.verb:set package 'example_mode_manual_cpp' build argument 'cmake_clean_cache' from command line to 'False'
+[0.413s] Level 5:colcon.colcon_core.verb:set package 'example_mode_manual_cpp' build argument 'cmake_clean_first' from command line to 'False'
+[0.413s] Level 5:colcon.colcon_core.verb:set package 'example_mode_manual_cpp' build argument 'cmake_force_configure' from command line to 'False'
+[0.413s] Level 5:colcon.colcon_core.verb:set package 'example_mode_manual_cpp' build argument 'ament_cmake_args' from command line to 'None'
+[0.413s] Level 5:colcon.colcon_core.verb:set package 'example_mode_manual_cpp' build argument 'catkin_cmake_args' from command line to 'None'
+[0.413s] Level 5:colcon.colcon_core.verb:set package 'example_mode_manual_cpp' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.413s] DEBUG:colcon.colcon_core.verb:Building package 'example_mode_manual_cpp' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/cmhales/vtol_ctrl_ros2/build/example_mode_manual_cpp', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp', 'merge_install': False, 'path': '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/manual', 'symlink_install': False, 'test_result_base': None}
+[0.413s] Level 5:colcon.colcon_core.verb:set package 'example_mode_rtl_replacement_cpp' build argument 'cmake_args' from command line to 'None'
+[0.413s] Level 5:colcon.colcon_core.verb:set package 'example_mode_rtl_replacement_cpp' build argument 'cmake_target' from command line to 'None'
+[0.413s] Level 5:colcon.colcon_core.verb:set package 'example_mode_rtl_replacement_cpp' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.413s] Level 5:colcon.colcon_core.verb:set package 'example_mode_rtl_replacement_cpp' build argument 'cmake_clean_cache' from command line to 'False'
+[0.414s] Level 5:colcon.colcon_core.verb:set package 'example_mode_rtl_replacement_cpp' build argument 'cmake_clean_first' from command line to 'False'
+[0.414s] Level 5:colcon.colcon_core.verb:set package 'example_mode_rtl_replacement_cpp' build argument 'cmake_force_configure' from command line to 'False'
+[0.414s] Level 5:colcon.colcon_core.verb:set package 'example_mode_rtl_replacement_cpp' build argument 'ament_cmake_args' from command line to 'None'
+[0.414s] Level 5:colcon.colcon_core.verb:set package 'example_mode_rtl_replacement_cpp' build argument 'catkin_cmake_args' from command line to 'None'
+[0.414s] Level 5:colcon.colcon_core.verb:set package 'example_mode_rtl_replacement_cpp' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.414s] DEBUG:colcon.colcon_core.verb:Building package 'example_mode_rtl_replacement_cpp' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/cmhales/vtol_ctrl_ros2/build/example_mode_rtl_replacement_cpp', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp', 'merge_install': False, 'path': '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/rtl_replacement', 'symlink_install': False, 'test_result_base': None}
+[0.414s] Level 5:colcon.colcon_core.verb:set package 'example_mode_with_executor_cpp' build argument 'cmake_args' from command line to 'None'
+[0.414s] Level 5:colcon.colcon_core.verb:set package 'example_mode_with_executor_cpp' build argument 'cmake_target' from command line to 'None'
+[0.414s] Level 5:colcon.colcon_core.verb:set package 'example_mode_with_executor_cpp' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.414s] Level 5:colcon.colcon_core.verb:set package 'example_mode_with_executor_cpp' build argument 'cmake_clean_cache' from command line to 'False'
+[0.414s] Level 5:colcon.colcon_core.verb:set package 'example_mode_with_executor_cpp' build argument 'cmake_clean_first' from command line to 'False'
+[0.414s] Level 5:colcon.colcon_core.verb:set package 'example_mode_with_executor_cpp' build argument 'cmake_force_configure' from command line to 'False'
+[0.414s] Level 5:colcon.colcon_core.verb:set package 'example_mode_with_executor_cpp' build argument 'ament_cmake_args' from command line to 'None'
+[0.414s] Level 5:colcon.colcon_core.verb:set package 'example_mode_with_executor_cpp' build argument 'catkin_cmake_args' from command line to 'None'
+[0.414s] Level 5:colcon.colcon_core.verb:set package 'example_mode_with_executor_cpp' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.414s] DEBUG:colcon.colcon_core.verb:Building package 'example_mode_with_executor_cpp' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp', 'merge_install': False, 'path': '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor', 'symlink_install': False, 'test_result_base': None}
+[0.414s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.415s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.415s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/cmhales/vtol_ctrl_ros2/src/px4_msgs' with build type 'ament_cmake'
+[0.416s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/cmhales/vtol_ctrl_ros2/src/px4_msgs'
+[0.418s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.418s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.418s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.429s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/px4_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/px4_msgs -- -j6 -l6
+[233.507s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/px4_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/px4_msgs -- -j6 -l6
+[239.015s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/px4_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/px4_msgs
+[240.521s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(px4_msgs)
+[240.522s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/px4_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/px4_msgs
+[240.524s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs' for CMake module files
+[240.525s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs' for CMake config files
+[240.529s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_msgs', 'cmake_prefix_path')
+[240.530s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.ps1'
+[240.530s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.dsv'
+[240.531s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.sh'
+[240.531s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib'
+[240.531s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_msgs', 'ld_library_path_lib')
+[240.532s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.ps1'
+[240.532s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.dsv'
+[240.532s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.sh'
+[240.533s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/bin'
+[240.533s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib/pkgconfig/px4_msgs.pc'
+[240.533s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib/python3.10/site-packages'
+[240.533s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/bin'
+[240.534s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/package.ps1'
+[240.534s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/package.dsv'
+[240.535s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/package.sh'
+[240.535s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/package.bash'
+[240.536s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/package.zsh'
+[240.537s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/colcon-core/packages/px4_msgs)
+[246.028s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(px4_msgs)
+[246.028s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs' for CMake module files
+[246.029s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs' for CMake config files
+[246.033s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_msgs', 'cmake_prefix_path')
+[246.034s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.ps1'
+[246.034s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.dsv'
+[246.034s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.sh'
+[246.035s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib'
+[246.035s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_msgs', 'ld_library_path_lib')
+[246.035s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.ps1'
+[246.035s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.dsv'
+[246.036s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.sh'
+[246.036s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/bin'
+[246.036s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib/pkgconfig/px4_msgs.pc'
+[246.037s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib/python3.10/site-packages'
+[246.037s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/bin'
+[246.037s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/package.ps1'
+[246.037s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/package.dsv'
+[246.038s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/package.sh'
+[246.038s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/package.bash'
+[246.039s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/px4_msgs/package.zsh'
+[246.039s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/share/colcon-core/packages/px4_msgs)
+[246.039s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/px4_ros2_cpp' with build type 'ament_cmake'
+[246.039s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/px4_ros2_cpp'
+[246.040s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[246.040s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[246.043s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/cmhales/vtol_ctrl_ros2/src/ros2_px4_interface' with build type 'ament_python'
+[246.043s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_px4_interface', 'ament_prefix_path')
+[246.043s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ros2_px4_interface/hook/ament_prefix_path.ps1'
+[246.044s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ros2_px4_interface/hook/ament_prefix_path.dsv'
+[246.044s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ros2_px4_interface/hook/ament_prefix_path.sh'
+[246.045s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[246.045s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[246.051s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/px4_ros2_cpp -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp
+[246.350s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/cmhales/vtol_ctrl_ros2/src/ros2_px4_interface'
+[246.350s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[246.350s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[246.736s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp' returned '0': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/px4_ros2_cpp -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp
+[246.736s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp -- -j6 -l6
+[246.902s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/src/ros2_px4_interface': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/ros2_px4_interface build --build-base /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build install --record /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/install.log --single-version-externally-managed install_data
+[247.311s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface' for CMake module files
+[247.311s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface' for CMake config files
+[247.312s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib'
+[247.312s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/bin'
+[247.312s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/pkgconfig/ros2_px4_interface.pc'
+[247.312s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages'
+[247.312s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_px4_interface', 'pythonpath')
+[247.313s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ros2_px4_interface/hook/pythonpath.ps1'
+[247.313s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ros2_px4_interface/hook/pythonpath.dsv'
+[247.313s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/src/ros2_px4_interface' returned '0': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/ros2_px4_interface build --build-base /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build install --record /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/install.log --single-version-externally-managed install_data
+[247.314s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ros2_px4_interface/hook/pythonpath.sh'
+[247.315s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/bin'
+[247.315s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ros2_px4_interface)
+[247.315s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ros2_px4_interface/package.ps1'
+[247.316s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ros2_px4_interface/package.dsv'
+[247.318s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ros2_px4_interface/package.sh'
+[247.319s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ros2_px4_interface/package.bash'
+[247.319s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/ros2_px4_interface/package.zsh'
+[247.320s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/share/colcon-core/packages/ros2_px4_interface)
+[312.219s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp' returned '0': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp -- -j6 -l6
+[312.353s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp
+[312.460s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(px4_ros2_cpp)
+[312.460s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp' for CMake module files
+[312.461s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp' returned '0': CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/px4_ros2_cpp
+[312.461s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp' for CMake config files
+[312.462s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_ros2_cpp', 'cmake_prefix_path')
+[312.462s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/hook/cmake_prefix_path.ps1'
+[312.463s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/hook/cmake_prefix_path.dsv'
+[312.464s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/hook/cmake_prefix_path.sh'
+[312.465s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib'
+[312.465s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_ros2_cpp', 'ld_library_path_lib')
+[312.465s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/hook/ld_library_path_lib.ps1'
+[312.466s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/hook/ld_library_path_lib.dsv'
+[312.466s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/hook/ld_library_path_lib.sh'
+[312.466s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/bin'
+[312.466s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib/pkgconfig/px4_ros2_cpp.pc'
+[312.467s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib/python3.10/site-packages'
+[312.467s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/bin'
+[312.467s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/package.ps1'
+[312.468s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/package.dsv'
+[312.468s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/package.sh'
+[312.469s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/package.bash'
+[312.470s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/package.zsh'
+[312.471s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/colcon-core/packages/px4_ros2_cpp)
+[312.607s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(px4_ros2_cpp)
+[312.607s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp' for CMake module files
+[312.607s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp' for CMake config files
+[312.608s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_ros2_cpp', 'cmake_prefix_path')
+[312.608s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/hook/cmake_prefix_path.ps1'
+[312.609s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/hook/cmake_prefix_path.dsv'
+[312.609s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/hook/cmake_prefix_path.sh'
+[312.610s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib'
+[312.610s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_ros2_cpp', 'ld_library_path_lib')
+[312.610s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/hook/ld_library_path_lib.ps1'
+[312.610s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/hook/ld_library_path_lib.dsv'
+[312.611s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/hook/ld_library_path_lib.sh'
+[312.611s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/bin'
+[312.611s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib/pkgconfig/px4_ros2_cpp.pc'
+[312.612s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib/python3.10/site-packages'
+[312.612s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/bin'
+[312.612s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/package.ps1'
+[312.613s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/package.dsv'
+[312.613s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/package.sh'
+[312.614s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/package.bash'
+[312.614s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/px4_ros2_cpp/package.zsh'
+[312.615s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/share/colcon-core/packages/px4_ros2_cpp)
+[312.615s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation' with build type 'ament_cmake'
+[312.615s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation'
+[312.615s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[312.616s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[312.624s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/navigation/local_navigation' with build type 'ament_cmake'
+[312.624s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/navigation/local_navigation'
+[312.624s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[312.624s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[312.630s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude' with build type 'ament_cmake'
+[312.630s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude'
+[312.630s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[312.630s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[312.635s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/goto' with build type 'ament_cmake'
+[312.636s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/goto'
+[312.636s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[312.636s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[312.641s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/goto_global' with build type 'ament_cmake'
+[312.641s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/goto_global'
+[312.641s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[312.641s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[312.649s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/manual' with build type 'ament_cmake'
+[312.649s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/manual'
+[312.650s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[312.650s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[312.660s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp
+[312.663s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_local_navigation_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/navigation/local_navigation -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp
+[312.673s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp
+[312.679s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/goto -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp
+[312.685s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_global_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/goto_global -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp
+[312.692s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_manual_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/manual -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp
+[314.987s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_local_navigation_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/navigation/local_navigation -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp
+[314.988s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_local_navigation_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_local_navigation_cpp -- -j6 -l6
+[314.993s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/goto -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp
+[314.993s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_cpp -- -j6 -l6
+[315.005s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/fw_attitude -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp
+[315.009s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp -- -j6 -l6
+[315.010s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/navigation/global_navigation -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp
+[315.013s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp -- -j6 -l6
+[315.015s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_manual_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/manual -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp
+[315.017s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_manual_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_manual_cpp -- -j6 -l6
+[315.021s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_global_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/goto_global -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp
+[315.022s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_global_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_global_cpp -- -j6 -l6
+[322.196s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp -- -j6 -l6
+[322.283s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_local_navigation_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_local_navigation_cpp -- -j6 -l6
+[322.380s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp
+[322.428s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_global_navigation_cpp)
+[322.429s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp' for CMake module files
+[322.430s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp' for CMake config files
+[322.431s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_global_navigation_cpp', 'cmake_prefix_path')
+[322.431s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/hook/cmake_prefix_path.ps1'
+[322.433s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/hook/cmake_prefix_path.dsv'
+[322.435s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_global_navigation_cpp
+[322.436s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/hook/cmake_prefix_path.sh'
+[322.438s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/lib'
+[322.438s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/bin'
+[322.438s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/lib/pkgconfig/example_global_navigation_cpp.pc'
+[322.439s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/lib/python3.10/site-packages'
+[322.439s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/bin'
+[322.441s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/package.ps1'
+[322.443s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/package.dsv'
+[322.445s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/package.sh'
+[322.451s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/package.bash'
+[322.453s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/package.zsh'
+[322.454s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/colcon-core/packages/example_global_navigation_cpp)
+[322.466s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_local_navigation_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_local_navigation_cpp
+[322.524s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_local_navigation_cpp)
+[322.525s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp' for CMake module files
+[322.526s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_local_navigation_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_local_navigation_cpp
+[322.526s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp' for CMake config files
+[322.527s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_local_navigation_cpp', 'cmake_prefix_path')
+[322.528s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/hook/cmake_prefix_path.ps1'
+[322.529s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/hook/cmake_prefix_path.dsv'
+[322.530s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/hook/cmake_prefix_path.sh'
+[322.532s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/lib'
+[322.532s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/bin'
+[322.532s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/lib/pkgconfig/example_local_navigation_cpp.pc'
+[322.533s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/lib/python3.10/site-packages'
+[322.533s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/bin'
+[322.534s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/package.ps1'
+[322.536s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/package.dsv'
+[322.537s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/package.sh'
+[322.539s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/package.bash'
+[322.540s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/package.zsh'
+[322.541s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/colcon-core/packages/example_local_navigation_cpp)
+[322.601s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_global_navigation_cpp)
+[322.603s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp' for CMake module files
+[322.604s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp' for CMake config files
+[322.608s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_global_navigation_cpp', 'cmake_prefix_path')
+[322.609s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/hook/cmake_prefix_path.ps1'
+[322.610s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/hook/cmake_prefix_path.dsv'
+[322.611s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/hook/cmake_prefix_path.sh'
+[322.613s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/lib'
+[322.613s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/bin'
+[322.613s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/lib/pkgconfig/example_global_navigation_cpp.pc'
+[322.614s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/lib/python3.10/site-packages'
+[322.614s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/bin'
+[322.614s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/package.ps1'
+[322.616s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/package.dsv'
+[322.621s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/package.sh'
+[322.622s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/package.bash'
+[322.623s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/example_global_navigation_cpp/package.zsh'
+[322.624s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp/share/colcon-core/packages/example_global_navigation_cpp)
+[322.627s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/rtl_replacement' with build type 'ament_cmake'
+[322.627s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/rtl_replacement'
+[322.629s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[322.630s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[322.679s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_local_navigation_cpp)
+[322.680s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp' for CMake module files
+[322.682s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp' for CMake config files
+[322.683s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_local_navigation_cpp', 'cmake_prefix_path')
+[322.683s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/hook/cmake_prefix_path.ps1'
+[322.684s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/hook/cmake_prefix_path.dsv'
+[322.685s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/hook/cmake_prefix_path.sh'
+[322.687s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/lib'
+[322.687s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/bin'
+[322.687s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/lib/pkgconfig/example_local_navigation_cpp.pc'
+[322.688s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/lib/python3.10/site-packages'
+[322.688s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/bin'
+[322.689s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/package.ps1'
+[322.691s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/package.dsv'
+[322.692s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/package.sh'
+[322.693s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/package.bash'
+[322.694s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/example_local_navigation_cpp/package.zsh'
+[322.696s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp/share/colcon-core/packages/example_local_navigation_cpp)
+[322.699s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor' with build type 'ament_cmake'
+[322.699s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor'
+[322.700s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[322.700s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[322.721s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_rtl_replacement_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/rtl_replacement -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp
+[322.755s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp
+[323.884s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_manual_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_manual_cpp -- -j6 -l6
+[323.989s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_manual_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_manual_cpp
+[324.150s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp -- -j6 -l6
+[324.151s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_mode_manual_cpp)
+[324.152s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp' for CMake module files
+[324.152s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp' for CMake config files
+[324.153s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_mode_manual_cpp', 'cmake_prefix_path')
+[324.153s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/hook/cmake_prefix_path.ps1'
+[324.154s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/hook/cmake_prefix_path.dsv'
+[324.154s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/hook/cmake_prefix_path.sh'
+[324.155s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/lib'
+[324.155s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/bin'
+[324.155s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/lib/pkgconfig/example_mode_manual_cpp.pc'
+[324.155s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/lib/python3.10/site-packages'
+[324.156s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_manual_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_manual_cpp
+[324.156s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/bin'
+[324.157s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/package.ps1'
+[324.158s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/package.dsv'
+[324.159s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/package.sh'
+[324.159s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/package.bash'
+[324.160s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/package.zsh'
+[324.161s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/colcon-core/packages/example_mode_manual_cpp)
+[324.255s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp
+[324.291s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_mode_manual_cpp)
+[324.291s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp' for CMake module files
+[324.292s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp' for CMake config files
+[324.292s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_mode_manual_cpp', 'cmake_prefix_path')
+[324.292s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/hook/cmake_prefix_path.ps1'
+[324.294s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/hook/cmake_prefix_path.dsv'
+[324.296s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/hook/cmake_prefix_path.sh'
+[324.299s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/lib'
+[324.299s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/bin'
+[324.299s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/lib/pkgconfig/example_mode_manual_cpp.pc'
+[324.300s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/lib/python3.10/site-packages'
+[324.300s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/bin'
+[324.300s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/package.ps1'
+[324.301s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/package.dsv'
+[324.303s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/package.sh'
+[324.304s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/package.bash'
+[324.304s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/example_mode_manual_cpp/package.zsh'
+[324.305s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp/share/colcon-core/packages/example_mode_manual_cpp)
+[324.307s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_mode_fw_attitude_cpp)
+[324.307s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp' for CMake module files
+[324.309s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_fw_attitude_cpp
+[324.310s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp' for CMake config files
+[324.310s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_mode_fw_attitude_cpp', 'cmake_prefix_path')
+[324.311s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/hook/cmake_prefix_path.ps1'
+[324.312s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/hook/cmake_prefix_path.dsv'
+[324.312s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/hook/cmake_prefix_path.sh'
+[324.315s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/lib'
+[324.315s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/bin'
+[324.315s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/lib/pkgconfig/example_mode_fw_attitude_cpp.pc'
+[324.315s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/lib/python3.10/site-packages'
+[324.316s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/bin'
+[324.316s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/package.ps1'
+[324.317s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/package.dsv'
+[324.318s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/package.sh'
+[324.319s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/package.bash'
+[324.320s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/package.zsh'
+[324.320s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/colcon-core/packages/example_mode_fw_attitude_cpp)
+[324.385s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_mode_fw_attitude_cpp)
+[324.385s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp' for CMake module files
+[324.386s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp' for CMake config files
+[324.386s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_mode_fw_attitude_cpp', 'cmake_prefix_path')
+[324.387s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/hook/cmake_prefix_path.ps1'
+[324.388s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/hook/cmake_prefix_path.dsv'
+[324.388s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/hook/cmake_prefix_path.sh'
+[324.389s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/lib'
+[324.389s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/bin'
+[324.389s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/lib/pkgconfig/example_mode_fw_attitude_cpp.pc'
+[324.390s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/lib/python3.10/site-packages'
+[324.390s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/bin'
+[324.390s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/package.ps1'
+[324.391s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/package.dsv'
+[324.391s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/package.sh'
+[324.392s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/package.bash'
+[324.393s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/example_mode_fw_attitude_cpp/package.zsh'
+[324.394s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp/share/colcon-core/packages/example_mode_fw_attitude_cpp)
+[324.481s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_global_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_global_cpp -- -j6 -l6
+[324.503s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_cpp -- -j6 -l6
+[324.525s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_global_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_global_cpp
+[324.544s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_cpp
+[324.551s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_mode_goto_global_cpp)
+[324.551s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_global_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_global_cpp
+[324.552s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp' for CMake module files
+[324.552s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp' for CMake config files
+[324.552s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_mode_goto_global_cpp', 'cmake_prefix_path')
+[324.553s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/hook/cmake_prefix_path.ps1'
+[324.553s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/hook/cmake_prefix_path.dsv'
+[324.554s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/hook/cmake_prefix_path.sh'
+[324.555s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/lib'
+[324.555s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/bin'
+[324.555s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/lib/pkgconfig/example_mode_goto_global_cpp.pc'
+[324.555s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/lib/python3.10/site-packages'
+[324.556s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/bin'
+[324.556s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/package.ps1'
+[324.558s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/package.dsv'
+[324.558s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/package.sh'
+[324.560s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/package.bash'
+[324.561s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/package.zsh'
+[324.561s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/colcon-core/packages/example_mode_goto_global_cpp)
+[324.565s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_mode_goto_cpp)
+[324.565s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp' for CMake module files
+[324.566s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_goto_cpp
+[324.566s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp' for CMake config files
+[324.566s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_mode_goto_cpp', 'cmake_prefix_path')
+[324.567s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/hook/cmake_prefix_path.ps1'
+[324.567s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/hook/cmake_prefix_path.dsv'
+[324.568s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/hook/cmake_prefix_path.sh'
+[324.569s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/lib'
+[324.569s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/bin'
+[324.569s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/lib/pkgconfig/example_mode_goto_cpp.pc'
+[324.569s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/lib/python3.10/site-packages'
+[324.569s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/bin'
+[324.570s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/package.ps1'
+[324.570s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/package.dsv'
+[324.570s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/package.sh'
+[324.571s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/package.bash'
+[324.571s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/package.zsh'
+[324.572s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/colcon-core/packages/example_mode_goto_cpp)
+[324.608s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_mode_goto_global_cpp)
+[324.608s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp' for CMake module files
+[324.609s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp' for CMake config files
+[324.609s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_mode_goto_global_cpp', 'cmake_prefix_path')
+[324.609s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/hook/cmake_prefix_path.ps1'
+[324.610s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/hook/cmake_prefix_path.dsv'
+[324.610s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/hook/cmake_prefix_path.sh'
+[324.611s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/lib'
+[324.611s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/bin'
+[324.611s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/lib/pkgconfig/example_mode_goto_global_cpp.pc'
+[324.611s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/lib/python3.10/site-packages'
+[324.612s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/bin'
+[324.612s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/package.ps1'
+[324.613s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/package.dsv'
+[324.613s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/package.sh'
+[324.614s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/package.bash'
+[324.614s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/example_mode_goto_global_cpp/package.zsh'
+[324.615s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp/share/colcon-core/packages/example_mode_goto_global_cpp)
+[324.615s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_mode_goto_cpp)
+[324.616s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp' for CMake module files
+[324.616s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp' for CMake config files
+[324.617s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_mode_goto_cpp', 'cmake_prefix_path')
+[324.617s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/hook/cmake_prefix_path.ps1'
+[324.617s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/hook/cmake_prefix_path.dsv'
+[324.618s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/hook/cmake_prefix_path.sh'
+[324.618s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/lib'
+[324.618s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/bin'
+[324.618s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/lib/pkgconfig/example_mode_goto_cpp.pc'
+[324.619s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/lib/python3.10/site-packages'
+[324.619s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/bin'
+[324.619s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/package.ps1'
+[324.620s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/package.dsv'
+[324.620s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/package.sh'
+[324.621s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/package.bash'
+[324.622s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/example_mode_goto_cpp/package.zsh'
+[324.623s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp/share/colcon-core/packages/example_mode_goto_cpp)
+[324.959s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_rtl_replacement_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/rtl_replacement -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp
+[324.961s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_rtl_replacement_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_rtl_replacement_cpp -- -j6 -l6
+[325.038s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/cmhales/vtol_ctrl_ros2/src/px4-ros2-interface-lib/examples/cpp/modes/mode_with_executor -DCMAKE_INSTALL_PREFIX=/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp
+[325.039s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp -- -j6 -l6
+[329.916s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp -- -j6 -l6
+[329.950s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp
+[329.963s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_mode_with_executor_cpp)
+[329.963s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp' for CMake module files
+[329.963s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_with_executor_cpp
+[329.964s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp' for CMake config files
+[329.964s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_mode_with_executor_cpp', 'cmake_prefix_path')
+[329.964s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/hook/cmake_prefix_path.ps1'
+[329.965s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/hook/cmake_prefix_path.dsv'
+[329.965s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/hook/cmake_prefix_path.sh'
+[329.966s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/lib'
+[329.966s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/bin'
+[329.966s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/lib/pkgconfig/example_mode_with_executor_cpp.pc'
+[329.966s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/lib/python3.10/site-packages'
+[329.966s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/bin'
+[329.966s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/package.ps1'
+[329.967s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/package.dsv'
+[329.967s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/package.sh'
+[329.967s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/package.bash'
+[329.968s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/package.zsh'
+[329.968s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/colcon-core/packages/example_mode_with_executor_cpp)
+[330.000s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_mode_with_executor_cpp)
+[330.000s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp' for CMake module files
+[330.001s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp' for CMake config files
+[330.001s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_mode_with_executor_cpp', 'cmake_prefix_path')
+[330.001s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/hook/cmake_prefix_path.ps1'
+[330.002s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/hook/cmake_prefix_path.dsv'
+[330.002s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/hook/cmake_prefix_path.sh'
+[330.003s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/lib'
+[330.003s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/bin'
+[330.003s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/lib/pkgconfig/example_mode_with_executor_cpp.pc'
+[330.003s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/lib/python3.10/site-packages'
+[330.003s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/bin'
+[330.004s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/package.ps1'
+[330.004s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/package.dsv'
+[330.005s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/package.sh'
+[330.005s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/package.bash'
+[330.005s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/example_mode_with_executor_cpp/package.zsh'
+[330.006s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp/share/colcon-core/packages/example_mode_with_executor_cpp)
+[335.177s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_rtl_replacement_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/cmhales/vtol_ctrl_ros2/build/example_mode_rtl_replacement_cpp -- -j6 -l6
+[335.207s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_rtl_replacement_cpp': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_rtl_replacement_cpp
+[335.226s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_mode_rtl_replacement_cpp)
+[335.226s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp' for CMake module files
+[335.227s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/cmhales/vtol_ctrl_ros2/build/example_mode_rtl_replacement_cpp' returned '0': AMENT_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/cmhales/vtol_ctrl_ros2/build/example_mode_rtl_replacement_cpp
+[335.227s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp' for CMake config files
+[335.227s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_mode_rtl_replacement_cpp', 'cmake_prefix_path')
+[335.227s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/hook/cmake_prefix_path.ps1'
+[335.228s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/hook/cmake_prefix_path.dsv'
+[335.228s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/hook/cmake_prefix_path.sh'
+[335.229s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/lib'
+[335.229s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/bin'
+[335.229s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/lib/pkgconfig/example_mode_rtl_replacement_cpp.pc'
+[335.229s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/lib/python3.10/site-packages'
+[335.229s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/bin'
+[335.229s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/package.ps1'
+[335.230s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/package.dsv'
+[335.230s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/package.sh'
+[335.230s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/package.bash'
+[335.231s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/package.zsh'
+[335.231s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/colcon-core/packages/example_mode_rtl_replacement_cpp)
+[335.261s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(example_mode_rtl_replacement_cpp)
+[335.261s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp' for CMake module files
+[335.261s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp' for CMake config files
+[335.261s] Level 1:colcon.colcon_core.shell:create_environment_hook('example_mode_rtl_replacement_cpp', 'cmake_prefix_path')
+[335.262s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/hook/cmake_prefix_path.ps1'
+[335.262s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/hook/cmake_prefix_path.dsv'
+[335.262s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/hook/cmake_prefix_path.sh'
+[335.263s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/lib'
+[335.263s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/bin'
+[335.263s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/lib/pkgconfig/example_mode_rtl_replacement_cpp.pc'
+[335.263s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/lib/python3.10/site-packages'
+[335.263s] Level 1:colcon.colcon_core.environment:checking '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/bin'
+[335.264s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/package.ps1'
+[335.265s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/package.dsv'
+[335.265s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/package.sh'
+[335.265s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/package.bash'
+[335.266s] INFO:colcon.colcon_core.shell:Creating package script '/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/example_mode_rtl_replacement_cpp/package.zsh'
+[335.266s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp/share/colcon-core/packages/example_mode_rtl_replacement_cpp)
+[335.266s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[335.267s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[335.267s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[335.267s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[335.285s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[335.285s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[335.285s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[335.352s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[335.353s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/cmhales/vtol_ctrl_ros2/install/local_setup.ps1'
+[335.354s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/cmhales/vtol_ctrl_ros2/install/_local_setup_util_ps1.py'
+[335.355s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/cmhales/vtol_ctrl_ros2/install/setup.ps1'
+[335.357s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/cmhales/vtol_ctrl_ros2/install/local_setup.sh'
+[335.358s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/cmhales/vtol_ctrl_ros2/install/_local_setup_util_sh.py'
+[335.358s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/cmhales/vtol_ctrl_ros2/install/setup.sh'
+[335.360s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/cmhales/vtol_ctrl_ros2/install/local_setup.bash'
+[335.360s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/cmhales/vtol_ctrl_ros2/install/setup.bash'
+[335.361s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/cmhales/vtol_ctrl_ros2/install/local_setup.zsh'
+[335.362s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/cmhales/vtol_ctrl_ros2/install/setup.zsh'
