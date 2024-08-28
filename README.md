@@ -203,8 +203,8 @@ graph TD
     style XRCE-DDS fill:#f9f,stroke:#333,stroke-width:2px
     style PX4 fill:#333,stroke:#333,stroke-width:2px,color:#fff
 
-    style FF2 fill:#808
-    style F fill:#808
+    style FF2 fill:#808,stroke:#333,stroke-width:2px
+    style F fill:#808,stroke:#333,stroke-width:2px
 
     style USB fill:#00ff00,stroke:#333,color:#000
 
@@ -248,10 +248,10 @@ graph TD
 
 ``` 
 ### Explanations of text in graph:
--  " x ?" = As many as needed
+-  " x ?" = As many as needed, depending on number of airspeed sensors (0 is an option) 
 - "___" Hz = external input's Clock Rate
 - "AFAP" = As Fast as Possible
-- "MAVISM" = simulation code (not provided)
+- "MAVISM" = simulation control code (not provided)
 
  **NOTE:** Until USB_Data_Gatherer is better tested for more airspeed sensors, the default for all non-forward Airspeed values will be 0.0 to approximate the $\alpha$ (angle of attack) to 0.0.
 
