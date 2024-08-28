@@ -118,14 +118,14 @@ If you are going to write a new node, follow the instructions found at Steps 2 o
 ##### Important note: The timestamp of the pixhawk is in [MICROseconds](https://docs.px4.io/main/en/msg_docs/VehicleAttitude.html#:~:text=system%20start%20(-,microseconds,-)%0A%0Auint64%20timestamp_sample).
 | Abbreviation         | Name             | Frame Needed     | PX4/DDS Topic                                                                                                 | Given Frame in PX4/DDS Topic                                                                                                                                                                           | Needed Variable                                                                                                                   |
 |----------------------|------------------|------------------|---------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| Va                   | Airspeed         | --               | (not available currently; need direct connection and separate ROS node)                                        | --                                                                                                                                                                                                | --                                                                                                                               |
+| Va                   | Airspeed         | --               | [AirspeedWind](https://github.com/PX4/px4_msgs/blob/main/msg/AirspeedWind.msg)(must be added manually.Possible as of August 28, 2024). See also [Airspeed](https://github.com/PX4/px4_msgs/blob/main/msg/Airspeed.msg)                                        | --                                                                                                                                                                                                | --                                                                                                                               |
 | p,q,r                | Angular Velocity | Body             | [VehicleOdometry](https://docs.px4.io/main/en/msg_docs/VehicleOdometry.html)                                  | Body.<br> See [Angular Velocity Documentation](https://docs.px4.io/main/en/msg_docs/VehicleOdometry.html#:~:text=float32%5B3%5D%20angular_velocity).   | float32[3] angular_velocity<br>**Angular velocity in body-fixed frame (rad/s). NaN if invalid/unknown**                        |
 | Vx, Vy, Vz           | Velocity         | Inertial         | [VehicleOdometry](https://docs.px4.io/main/en/msg_docs/VehicleOdometry.html).<br> Also available in [VehicleLocalPosition](https://docs.px4.io/main/en/msg_docs/VehicleLocalPosition.html) | Inertial or Body.<br> See [Velocity Documentation](https://docs.px4.io/main/en/msg_docs/VehicleOdometry.html#:~:text=uint8%20VELOCITY_FRAME_UNKNOWN%20%20%3D,invalid/unknown) | float32[3] velocity<br>**Velocity in meters/sec. Frame of reference defined by velocity_frame variable. NaN if invalid/unknown** |
 | $\alpha$             | Angle of Attack  | --               | (not available currently; need to create ROS Node to calculate this)                                          | --                                                                                                                                                                                                | --                                                                                                                               |
-| $\beta$              | Sideslip Angle   | --               | (not available currently; need to create ROS Node to calculate this)                                          | --                                                                                                                                                                                                | --                                                                                                                               |
+| $\beta$              | Sideslip Angle   | --               | [AirspeedWind](https://github.com/PX4/px4_msgs/blob/main/msg/AirspeedWind.msg) (must be added manually. Possible as of August 28, 2024)                                          | --                                                                                                                                                                                                | --                                                                                                                               |
 | Px, Py, Pz           | Position         | Inertial         | [VehicleOdometry](https://docs.px4.io/main/en/msg_docs/VehicleOdometry.html).<br> Also available in [VehicleLocalPosition](https://docs.px4.io/main/en/msg_docs/VehicleLocalPosition.html) | Inertial.<br> NOTE: Needed to calculate roll, pitch and yaw ($\phi$, $\theta$, $\psi$) from Quaternion. May also have roll, pitch and yaw ($\phi$, $\theta$, $\psi$) in other topic.<br> See [Position Documentation](https://docs.px4.io/main/en/msg_docs/VehicleOdometry.html#:~:text=uint8%20POSE_FRAME_UNKNOWN%20%3D%200%0Auint8%20POSE_FRAME_NED,value%20NaN%20if%20invalid/unknown) | float32[3] position<br>**Position in meters. Frame of reference defined by local_frame. NaN if invalid/unknown**             |
 | Ax, Ay, Az           | Acceleration     | Inertial         | [SensorCombined](https://docs.px4.io/main/en/msg_docs/SensorCombined.html)                                   | Inertial.<br> See [Acceleration Documentation](https://docs.px4.io/main/en/msg_docs/SensorCombined.html#:~:text=int32%20accelerometer_timestamp_relative%20%20%23%20timestamp,period%20in%20microseconds) | float32[3] accelerometer_m_s2<br>**Average value acceleration measured in the FRD body frame XYZ-axis in m/s²**                  |
-| $\phi$, $\theta$, $\psi$ | Attitude         | Vehicle          | (not directly available. Must be calculated from quaternion in [VehicleOdometry](https://docs.px4.io/main/en/msg_docs/VehicleOdometry.html)) | --                                                                                                                                                                                                | float32[4] q<br>**Quaternion rotation from FRD body frame to reference frame. First value NaN if invalid/unknown**             |
+| $\phi$, $\theta$, $\psi$ | Attitude         | Vehicle          | (Can be calculated from quaternion in [VehicleOdometry](https://docs.px4.io/main/en/msg_docs/VehicleOdometry.html)). See also [VehicleAttidue](https://github.com/PX4/px4_msgs/blob/main/msg/VehicleAttitude.msg) for another copy of the | --                                                                                                                                                                                                | float32[4] q<br>**Quaternion rotation from FRD body frame to reference frame. First value NaN if invalid/unknown**             |
 
 
 The needed calculation will be performed in real time from [example code found on Wikipedia and converted to Python code.](https://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles#:~:text=%23define%20_USE_MATH_DEFINES%0A%23include,angles%3B%0A%7D) This calculation will be included in the subscriber function found in the px4_data_gatherer.py function.
@@ -227,6 +227,118 @@ NOTE: 200+ Hz is written because a proper Speed Ratio has not been properly test
 
 
 #### Implementation Version of Code:
+
+
+The differences between Test Code and Implementation Code:
+- As seen from the differently highlighted (blue) MAVSIM and Control_Node, the data from PX4 is directly channeled in the wrapper node, as seen in the [ROSFLIGHT MAVSIM wrapper example from Brandon Sutherland](https://github.com/bsutherland333/mavsim_rosflight_bridge/blob/main/mavsim_bridge/mavsim_bridge.py). 
+- The node is renamed to ROS_Wrapper because it will wrap the control "MAVSIM" code. 
+- Additionally, the function description ```2.``` is changed in Control_Node to describe how the ROS wrapper will work.
+- NOTE: This setup will require, on the physical board, **2 USB CONNECTIONS: the Airspeed sensor and the TELEM port into the Pixhawk.** Proper configuration and labelling of USB port is required. 
+
+
+
+```mermaid
+graph TD
+
+    subgraph PX4 Topics
+        D2[/fmu/in/actuator_servos/]
+        D1[/fmu/in/actuator_motors/]
+        D[/fmu/out/vehicle_local_position/]
+        E[/fmu/out/sensor_combined/]
+        F[/airspeed_usb_data/]
+        FF2[/fmu/out/airspeed_wind/]
+    end
+
+    H -->|Motor Controls @100+Hz| D1
+    H --> |Servo Controls @100+Hz|D2
+    D1 -->|Motor Controls|PX4
+    D2 -->|Servo Controls|PX4
+
+    subgraph USB_Data_Gatherer
+        G((USB Data Gatherer))
+        A2[1. convert_airspeed_in_to_airspeedValue]
+       
+    end
+
+    USB(USB Output)
+    USB -->|raw_airspeed_data| G
+
+    subgraph XRCE-DDS
+        PX4[PX4]
+        PX4 --> D
+        PX4 --> E
+    end
+
+    subgraph Control_Node
+        H((ROS_Wrapper))
+        H2[1. Update personal dictionary<br> with data from all subscriptions]
+        H1[2. UPON RECEIVING FULL STATE,<br>re-calculate needed Servo Control Values and Motor Control values]
+    end
+    
+    style Control_Node stroke-width:4px,stroke:#0000ff
+    style PX4DataGatherer_Node stroke-width:4px,stroke:#ff0000
+    style USB_Data_Gatherer stroke-width:4px,stroke:#ff0000
+    style XRCE-DDS fill:#f9f,stroke:#333,stroke-width:2px
+    style PX4 fill:#333,stroke:#333,stroke-width:2px,color:#fff
+
+    style USB fill:#00ff00,stroke:#333,color:#000
+
+    D -->|angular_velocity, velocity, position, q @200+Hz| H
+    E -->|accelerometer_m_s2 @100+Hz| H
+
+    G --> |airspeedValue @AFAP| F
+    F -.->|airspeedValues| H
+
+    MAVSIM(MAVSIM)
+    style MAVSIM font-size:60px,fill:#00ff00,stroke:#0000ff,color:#000
+
+    MAVSIM -->|Motor Controls, Servo Controls @ ___ Hz| H
+    H -->|Full State| MAVSIM
+```
+
+
+Above, "___" is used to describe an unknown Hz rate. That rate is based off of the wrapped control code.
+
+"MAVISM" refers to simulation code, professor-made or student-made, that creates the control allocation neeeded for the vtol/fixed-wing.
+
+The reader will notice that the "airspeed_usb_data" topic is colored dark purple (like the PX4 airspeedWind topic), and that its line to the ROS_Wrapper is dashed. The dark purple is to signify a user-defined topic. The dashed line is to show that the information from this node may not be necessary. The default for all non-forward Airspeed values will be 0.0 to approximate the $\alpha$ (angle of attack) to 0.0.
+
+
+
+# Resources
+
+
+MAVSIM-ROSFlight Interface: 
+
+https://github.com/bsutherland333/mavsim_rosflight_bridge/tree/main
+
+
+
+Conversion to Euler Angles: 
+
+https://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles#:~:text=%23define%20_USE_MATH_DEFINES%0A%23include,angles%3B%0A%7D 
+
+Writing ROS Wrappers: 
+
+https://roboticsbackend.com/create-a-ros-driver-package-introduction-what-is-a-ros-wrapper-1-4/
+
+
+# Future
+
+As of August 28, 2024, [documentation has been created for supported means of adding PX4 topics to the middleware.](https://docs.px4.io/main/en/middleware/uxrce_dds.html#supported-uorb-messages) 
+The user has yet to see:
+- how adding new topics affects speed of messages already being published
+- how effective the newly added topics are in hardware
+- how effective the newly added topics are in Gazebo simulation (where the PX4 flight stack runs)
+
+In the same documentation, custom uORB topics are proven to be writable to the PX4 Autopilot. 
+The user has yet to see:
+- if this would allow for the PX4 to directly add more Airpseed sensors and calculate $\alpha$ (angle of attacK)
+
+
+# Appendix
+
+#### Old Implementation Version of Code:
 
 
 The differences between Test Code and Implementation Code:
