@@ -3,7 +3,7 @@ from rclpy.node import Node
 from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy
 from px4_msgs.msg import OffboardControlMode, TrajectorySetpoint, VehicleCommand
 from px4_msgs.msg import (ActuatorMotors, ActuatorServos, VehicleCommand, OffboardControlMode)
-from std_msgs.msg import Header
+from std_msgs.msg import Header, String
 import time
 import math
 
@@ -25,6 +25,13 @@ class PX4_ROS2_TEST(Node):
             reliability=ReliabilityPolicy.BEST_EFFORT,
             durability=DurabilityPolicy.VOLATILE,
             depth=10
+        )
+        # Create subscriber to data_to_control
+        self.data_to_control_sub = self.create_subscription(
+            String,
+            'data_to_control',
+            self.data_to_control_callback,
+            qos_profile
         )
 
         # Create publishers with the specified QoS profiles
@@ -74,6 +81,15 @@ class PX4_ROS2_TEST(Node):
 
             # Stop the timer after mode change
             self.timer2.destroy()
+    def data_to_control_callback(self, msg):
+        self.get_logger().info('Received data_to_control message')
+        # Extract data from the message
+        data = msg.data
+
+        # Process the data
+        # ...
+        # # Publish actuator control messages
+        # self.publish_actuator_items()
 
     def timer_callback(self):
         print("counter: ", self.offboard_setpoint_counter)
@@ -169,11 +185,12 @@ class PX4_ROS2_TEST(Node):
 
     def publish_actuator_items(self):
         motors_msg = ActuatorMotors()  # Populate with relevant data
-        motors_msg.control = [0.99] * 12
+        motors_msg.control = [0.0] * 12
+        motors_msg.control[0] = 0.99
 
         # # command_msg = VehicleCommand()  # Populate with relevant data
         servos_msg = ActuatorServos()   # Populate with relevant data
-        servos_msg.control = [0.99] * 8
+        servos_msg.control = [0.0] * 8
         # control_mode_msg = OffboardControlMode()  # Populate with relevant data
 
         self.publish_actuator_motors(motors_msg)

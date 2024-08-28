@@ -185,11 +185,12 @@ class PX4_ROS2_TEST(Node):
 
     def publish_actuator_items(self):
         motors_msg = ActuatorMotors()  # Populate with relevant data
-        motors_msg.control = [0.99] * 12
+        motors_msg.control = [0.0] * 12
+        motors_msg.control[0] = 0.99
 
         # # command_msg = VehicleCommand()  # Populate with relevant data
         servos_msg = ActuatorServos()   # Populate with relevant data
-        servos_msg.control = [0.99] * 8
+        servos_msg.control = [0.0] * 8
         # control_mode_msg = OffboardControlMode()  # Populate with relevant data
 
         self.publish_actuator_motors(motors_msg)

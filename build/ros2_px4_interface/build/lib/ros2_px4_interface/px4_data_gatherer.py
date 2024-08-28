@@ -3,7 +3,8 @@ from rclpy.node import Node
 from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy
 from px4_msgs.msg import (VehicleLocalPosition, VehicleOdometry, AirspeedWind, Airspeed, VehicleAngularVelocity,
                           VehicleStatus, VehicleCommandAck)
-
+from std_msgs.msg import String
+# TODO: Throw al data into a dictionary and publish it to a topic
 class PX4DataGatherer(Node):
     def __init__(self):
         super().__init__('px4_data_gatherer')
@@ -64,6 +65,27 @@ class PX4DataGatherer(Node):
             self.vehicle_command_ack_callback,
             qos_profile
         )
+        # User Defined Callbacks for USBDataGatherer airspeed_bridge
+        self.create_subscription(
+            String, 
+            'airspeed_bridge',
+            self.airspeed_bridge_callback,
+            qos_profile
+        )
+        # Publisher
+        self.write_pub = self.create_publisher(String, 'data_to_control', 10)
+
+        self.data_dict = {}
+        self.timer = self.create_timer(0.1, self.send_data_along)  # 100Hz loop rate
+
+    def send_data_along(self):
+        msg = self.data_dict
+        msg.data = "Data to be sent to control"
+        self.write_pub.publish(msg) # Publish data to control
+
+    def airspeed_bridge_callback(self, msg):
+        self.get_logger().info('Received airspeed_bridge message')
+        self.get_logger().info(f"Message: {msg.data}")
 
     def vehicle_local_position_callback(self, msg):
         self.get_logger().info('Received VehicleLocalPosition message')
