@@ -24,16 +24,18 @@ from px4_msgs.msg import (VehicleLocalPosition, VehicleOdometry, AirspeedWind, A
 from std_msgs.msg import String
 
 
-import parameters.planner_parameters as PLAN
-from controllers.autopilot import Autopilot
-from estimators.observer import Observer
-from planners.path_follower import PathFollower
-from planners.path_manager import PathManager
-from message_types.msg_autopilot import MsgAutopilot
-from message_types.msg_sensors import MsgSensors
-from message_types.msg_state import MsgState
-from message_types.msg_waypoints import MsgWaypoints
-from viewers.view_manager import ViewManager
+# import parameters.planner_parameters as PLAN
+# from controllers.autopilot import Autopilot
+# from estimators.observer import Observer
+# from planners.path_follower import PathFollower
+# from planners.path_manager import PathManager
+# from message_types.msg_autopilot import MsgAutopilot
+# from message_types.msg_sensors import MsgSensors
+# from message_types.msg_state import MsgState
+# from message_types.msg_waypoints import MsgWaypoints
+# from viewers.view_manager import ViewManager
+
+
 
 
 def ecef_to_ned_matrix(ecef):
@@ -66,6 +68,9 @@ class ROS_MAVSIM_wrapper(Node):
         self.start_time = self.start_time.sec + self.start_time.nanosec / 1e9
         self.truth_msg = None
 
+        # set up sensor data dictionary
+        self.sensors = {}
+
         # QoS profile for subscriptions
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.BEST_EFFORT,
@@ -92,7 +97,7 @@ class ROS_MAVSIM_wrapper(Node):
         self.delta_pub = self.create_publisher(Command, '/command', 1)
 
         # Create subscriptions
-        self.airspeed_sub = self.create_subscription(String, '/airspeed_bridge', self.airspeed_callback, 1)
+        self.airspeed_sub = self.create_subscription(String, '/airspeed_usb_data', self.airspeed_callback, 1)
         self.gnss_sub = self.create_subscription(GNSS, '/gnss', self.gnss_callback, 1)
         self.imu_sub = self.create_subscription(Imu, '/imu/data', self.imu_callback, 1)
         self.mag_sub = self.create_subscription(MagneticField, '/magnetometer', self.mag_callback, 1)
@@ -112,8 +117,11 @@ class ROS_MAVSIM_wrapper(Node):
     def airspeed_callback(self, msg):
         # msg is in Pa
         # Uses max since mavsim is not prepared to handle negative values
-        self.sensors.diff_pressure = max(msg.differential_pressure, 0.0)
-
+        # self.sensors.diff_pressure = max(msg.differential_pressure, 0.0) # ROSFlight version
+        self.sensors.diff_pressure = max(msg.data, 0.0)  # PX4 version
+        self.sensors['windspeed_north'] = msg.windspeed_north
+        self.sensors['beta_innov'] = msg.beta_innov
+        
     def barometer_callback(self, msg):
         # msg is in Pa
         if self.initial_baro is None:

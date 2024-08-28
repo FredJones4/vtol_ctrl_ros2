@@ -102,7 +102,7 @@ To use a certain node, run:
 ```
 ros2 run <package-name> <package-node>
 ```
-For the self-made nodes, this will currently either be:
+Examples include:
 
 ```
 ros2 run ros2_px4_interface offboard_test
@@ -111,7 +111,10 @@ or:
 ```
 ros2 run ros2_px4_interface ros2_px4_interface
 ```
-
+or multiple nodes (_launch file to do this same task is not yet written_):
+```
+ros2 run ros2_px4_interface usb_data_gatherer ros_mavsim_wrapper
+```
 
 You can run multiple ROS nodes in different terminals. Make sure in each terminal, you source ROS and the install as described above.
 
@@ -126,7 +129,9 @@ The ```px4_ros_com``` and ```px4_msgs``` are provided by PX4 and should not be a
 
 ## Adding new nodes
 
-If you are going to write a new node, follow the instructions found at Steps 2 on https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html
+If you are going to write a new node, follow the instructions found at Steps 2 on: 
+
+https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html
 
 
 # Design Description
@@ -149,16 +154,141 @@ The needed calculation will be performed in real time from [example code found o
 
 
 
-### Current Plan for nodes (add to top as plan):
 
-#### Nodes to be added:
-- ROS wrapper for Dean's code
-- Airspeed direct-to-USB 
 
-#### [Topics to be added](https://www.theconstruct.ai/ros2-in-5-mins-005-how-to-work-with-ros2-topics-from-the-command-line/#:~:text=Also%2C%20by%20publishing%20to%20a%20topic%20that%20did%20not%20exist%20before%2C%20we%20got%20ROS2%20to%20automatically%20create%20it.):
-- Airspeed_USB-to-Data_gatherer topic
-- 
-#### Test version of code:
+#### Implementation Version of Code:
+
+
+```mermaid
+graph TD
+
+    subgraph PX4 Topics
+        D2[/fmu/in/actuator_servos/]
+        D1[/fmu/in/actuator_motors/]
+        D[/fmu/out/vehicle_local_position/]
+        E[/fmu/out/sensor_combined/]
+        F[/airspeed_usb_data/]
+        FF2[/fmu/out/airspeed_wind/]
+    end
+
+    H -->|Motor Control<br> @100+Hz| D1
+    H --> |Servo Controls<br> @100+Hz|D2
+    D1 -->|Motor Controls|PX4
+    D2 -->|Servo Controls|PX4
+
+    subgraph "USB_Data_Gatherer_x_?"
+        G((USB_Data_Gatherer))
+        A2[1. convert_airspeed_in_to_airspeedValue]
+       
+    end
+
+    USB(USB Output)
+    USB -->|raw_airspeed_data| G
+
+    subgraph XRCE-DDS
+        PX4[PX4]
+        PX4 --> D
+        PX4 --> E
+        PX4 --> FF2
+    end
+
+    subgraph Control_Node
+        H((ROS_Wrapper))
+        H2[1. Update personal dictionary<br> with data from all subscriptions]
+        H1[2. On 100+ Hz cycle,<br> re-calculate needed Servo Control Values <br>and Motor Control values via MAVSIM]
+    end
+    
+    style Control_Node stroke-width:4px,stroke:#0000ff
+    style USB_Data_Gatherer_x_? stroke-width:4px,stroke:#ff0000
+    style XRCE-DDS fill:#f9f,stroke:#333,stroke-width:2px
+    style PX4 fill:#333,stroke:#333,stroke-width:2px,color:#fff
+
+    style FF2 fill:#808
+    style F fill:#808
+
+    style USB fill:#00ff00,stroke:#333,color:#000
+
+    D -->|angular_velocity<br> velocity<br> position<br> q @200+Hz| H
+    E -->|accelerometer_m_s2<br>@100+Hz| H
+    FF2 --> |airspeed values| H
+
+    G --> |airspeedValue <br> @AFAP| F
+    F -.->|airspeedValues| H
+
+    MAVSIM(MAVSIM)
+    style MAVSIM font-size:60px,fill:#00ff00,stroke:#0000ff,color:#000
+
+    MAVSIM -->|Motor Controls<br> Servo Controls<br> @ ___ Hz| H
+    H -->|Full State| MAVSIM
+
+    %% Legend for color coding
+    subgraph Legend
+        L1[Self-made topic]:::selfMadeTopicStyle
+        L2[PX4 Software]:::px4Style
+        L3[External Input]:::externalInputStyle
+        L4[Optional Node]:::optionalNodeStyle
+        L5[Required Node]:::requiredNodeStyle
+    end
+
+
+    %% Define legend styles
+    classDef selfMadeTopicStyle fill:#808,stroke:#333,stroke-width:2px;
+    classDef px4Style fill:#333,stroke:#333,stroke-width:2px,color:#fff;
+    classDef externalInputStyle fill:#00ff00,stroke:#333,color:#000;
+    classDef optionalNodeStyle stroke-width:4px,stroke:#ff0000;
+    classDef requiredNodeStyle stroke-width:4px,stroke:#0000ff;
+    classDef textExplanation fill:#ffffff,stroke:#fff,stroke-width:2px;
+
+    %% Apply styles to legend items
+    class L1 selfMadeTopicStyle;
+    class L2 px4Style;
+    class L3 externalInputStyle;
+    class L4 optionalNodeStyle;
+    class L5 requiredNodeStyle;
+
+``` 
+### Explanations of text in graph:
+-  " x ?" = As many as needed
+- "___" Hz = external input's Clock Rate
+- "AFAP" = As Fast as Possible
+- "MAVISM" = simulation code (not provided)
+
+ **NOTE:** Until USB_Data_Gatherer is better tested for more airspeed sensors, the default for all non-forward Airspeed values will be 0.0 to approximate the $\alpha$ (angle of attack) to 0.0.
+
+# Resources
+
+
+MAVSIM-ROSFlight Interface: 
+
+https://github.com/bsutherland333/mavsim_rosflight_bridge/tree/main
+
+
+
+Conversion to Euler Angles: 
+
+https://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles#:~:text=%23define%20_USE_MATH_DEFINES%0A%23include,angles%3B%0A%7D 
+
+Writing ROS Wrappers: 
+
+https://roboticsbackend.com/create-a-ros-driver-package-introduction-what-is-a-ros-wrapper-1-4/
+
+
+# Future
+
+As of August 28, 2024, [documentation has been created for supported means of adding PX4 topics to the middleware.](https://docs.px4.io/main/en/middleware/uxrce_dds.html#supported-uorb-messages) 
+The user has yet to see:
+- how adding new topics affects speed of messages already being published
+- how effective the newly added topics are in hardware
+- how effective the newly added topics are in Gazebo simulation (where the PX4 flight stack runs)
+
+In the same documentation, custom uORB topics are proven to be writable to the PX4 Autopilot. 
+The user has yet to see:
+- if this would allow for the PX4 to directly add more Airpseed sensors and calculate $\alpha$ (angle of attacK)
+
+
+# Appendix
+
+### Test version of code:
 
 - The nodes made by the developer (me) are highlighted in red.
 
@@ -236,207 +366,3 @@ graph TD
 
 
 ```
-NOTE: AFAP means "As Fast As Possible"
-
-NOTE: 200+ Hz is written because a proper Speed Ratio has not been properly tested on Raspberry Pi, nor on SITL.
-
-
-
-
-#### Implementation Version of Code:
-
-
-The differences between Test Code and Implementation Code:
-- As seen from the differently highlighted (blue) MAVSIM and Control_Node, the data from PX4 is directly channeled in the wrapper node, as seen in the [ROSFLIGHT MAVSIM wrapper example from Brandon Sutherland](https://github.com/bsutherland333/mavsim_rosflight_bridge/blob/main/mavsim_bridge/mavsim_bridge.py). 
-- The node is renamed to ROS_Wrapper because it will wrap the control "MAVSIM" code. 
-- Additionally, the function description ```2.``` is changed in Control_Node to describe how the ROS wrapper will work.
-- NOTE: This setup will require, on the physical board, **2 USB CONNECTIONS: the Airspeed sensor and the TELEM port into the Pixhawk.** Proper configuration and labelling of USB port is required. 
-
-
-
-```mermaid
-graph TD
-
-    subgraph PX4 Topics
-        D2[/fmu/in/actuator_servos/]
-        D1[/fmu/in/actuator_motors/]
-        D[/fmu/out/vehicle_local_position/]
-        E[/fmu/out/sensor_combined/]
-        F[/airspeed_usb_data/]
-        FF2[/fmu/out/airspeed_wind/]
-    end
-
-    H -->|Motor Controls @100+Hz| D1
-    H --> |Servo Controls @100+Hz|D2
-    D1 -->|Motor Controls|PX4
-    D2 -->|Servo Controls|PX4
-
-    subgraph USB_Data_Gatherer
-        G((USB Data Gatherer))
-        A2[1. convert_airspeed_in_to_airspeedValue]
-       
-    end
-
-    USB(USB Output)
-    USB -->|raw_airspeed_data| G
-
-    subgraph XRCE-DDS
-        PX4[PX4]
-        PX4 --> D
-        PX4 --> E
-    end
-
-    subgraph Control_Node
-        H((ROS_Wrapper))
-        H2[1. Update personal dictionary<br> with data from all subscriptions]
-        H1[2. On 100+ Hz cycle,<br> re-calculate needed Servo Control Values <br>and Motor Control values via MAVSIM]
-    end
-    
-    style Control_Node stroke-width:4px,stroke:#0000ff
-    style PX4DataGatherer_Node stroke-width:4px,stroke:#ff0000
-    style USB_Data_Gatherer stroke-width:4px,stroke:#ff0000
-    style XRCE-DDS fill:#f9f,stroke:#333,stroke-width:2px
-    style PX4 fill:#333,stroke:#333,stroke-width:2px,color:#fff
-
-    style USB fill:#00ff00,stroke:#333,color:#000
-
-    D -->|angular_velocity, velocity, position, q @200+Hz| H
-    E -->|accelerometer_m_s2 @100+Hz| H
-
-    G --> |airspeedValue @AFAP| F
-    F -.->|airspeedValues| H
-
-    MAVSIM(MAVSIM)
-    style MAVSIM font-size:60px,fill:#00ff00,stroke:#0000ff,color:#000
-
-    MAVSIM -->|Motor Controls, Servo Controls @ ___ Hz| H
-    H -->|Full State| MAVSIM
-```
-
-
-Above, "___" is used to describe an unknown Hz rate. That rate is based off of the wrapped control code.
-
-"MAVISM" refers to simulation code, professor-made or student-made, that creates the control allocation neeeded for the vtol/fixed-wing.
-
-The reader will notice that the "airspeed_usb_data" topic is colored dark purple (like the PX4 airspeedWind topic), and that its line to the ROS_Wrapper is dashed. The dark purple is to signify a user-defined topic. The dashed line is to show that the information from this node may not be necessary. The default for all non-forward Airspeed values will be 0.0 to approximate the $\alpha$ (angle of attack) to 0.0.
-
-
-
-# Resources
-
-
-MAVSIM-ROSFlight Interface: 
-
-https://github.com/bsutherland333/mavsim_rosflight_bridge/tree/main
-
-
-
-Conversion to Euler Angles: 
-
-https://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles#:~:text=%23define%20_USE_MATH_DEFINES%0A%23include,angles%3B%0A%7D 
-
-Writing ROS Wrappers: 
-
-https://roboticsbackend.com/create-a-ros-driver-package-introduction-what-is-a-ros-wrapper-1-4/
-
-
-# Future
-
-As of August 28, 2024, [documentation has been created for supported means of adding PX4 topics to the middleware.](https://docs.px4.io/main/en/middleware/uxrce_dds.html#supported-uorb-messages) 
-The user has yet to see:
-- how adding new topics affects speed of messages already being published
-- how effective the newly added topics are in hardware
-- how effective the newly added topics are in Gazebo simulation (where the PX4 flight stack runs)
-
-In the same documentation, custom uORB topics are proven to be writable to the PX4 Autopilot. 
-The user has yet to see:
-- if this would allow for the PX4 to directly add more Airpseed sensors and calculate $\alpha$ (angle of attacK)
-
-
-# Appendix
-
-#### Old Implementation Version of Code:
-
-
-The differences between Test Code and Implementation Code:
-- As seen from the differently highlighted (blue) MAVSIM and Control_Node (name changed from above), the only differences are in the top node. 
-- The node is renamed to ROS_Wrapper because it will wrap the control "MAVSIM" code. 
-- Additionally, the function description ```2.``` is changed in Control_Node to describe how the ROS wrapper will work.
-- NOTE: This setup will require, on the physical board, **2 USB CONNECTIONS: the Airspeed sensor and the TELEM port into the Pixhawk.** Proper configuration and labelling of USB port is required. 
-
-
-
-```mermaid
-graph TD
-    subgraph PX4DataGatherer_Node
-        A((PX4DataGatherer))
-        A1[1. convert_quaternion_to_euler]
-        
-    end
-
-    A-->|Full State @200+Hz| G2T
-    G2T --> |Full State| H
-
-    subgraph PX4 Topics
-        D2[/fmu/in/actuator_servos/]
-        D1[/fmu/in/actuator_motors/]
-        D[/fmu/out/vehicle_local_position/]
-        E[/fmu/out/sensor_combined/]
-    end
-
-    subgraph Handmade Topics
-        F[/airspeed_bridge/]
-        G2T[/data_to_control/]
-    end
-
-    H -->|Motor Controls @200+Hz| D1
-    H --> |Servo Controls @200+Hz|D2
-    D1 -->|Motor Controls|PX4
-    D2 -->|Servo Controls|PX4
-
-    subgraph USB_Data_Gatherer
-        G((USB Data Gatherer))
-        A2[1. convert_airspeed_in_to_airspeedValue]
-       
-    end
-
-    USB(USB Output)
-    USB -->|raw_airspeed_data| G
-
-    subgraph XRCE-DDS
-        PX4[PX4]
-        PX4 --> D
-        PX4 --> E
-    end
-
-    subgraph Control_Node
-        H((ROS_Wrapper))
-        H2[1. Update personal dictionary<br> with PX4DataGatherer_Node msg dictionary]
-        H1[2. UPON RECEIVING FULL STATE,<br>re-calculate needed Servo Control Values and Motor Control values]
-    end
-    
-    style Control_Node stroke-width:4px,stroke:#0000ff
-    style PX4DataGatherer_Node stroke-width:4px,stroke:#ff0000
-    style USB_Data_Gatherer stroke-width:4px,stroke:#ff0000
-    style XRCE-DDS fill:#f9f,stroke:#333,stroke-width:2px
-    style PX4 fill:#333,stroke:#333,stroke-width:2px,color:#fff
-
-    style USB fill:#00ff00,stroke:#333,color:#000
-
-    D -->|angular_velocity, velocity, position, q @200+Hz| A
-    E -->|accelerometer_m_s2 @200+Hz| A
-
-    G --> |airspeedValue @AFAP| F
-    F -->|airspeedValue| A
-
-    MAVSIM(MAVSIM)
-    style MAVSIM font-size:60px,fill:#00ff00,stroke:#0000ff,color:#000
-
-    MAVSIM -->|Motor Controls, Servo Controls @ ___ Hz| H
-    H -->|Full State| MAVSIM
-```
-
-
-NOTE: Above, "___" is used to describe an unknown Hz rate. That rate is based off of the wrapped control code.
-
-NOTE: "MAVISM" refers to simulation code, professor-made or student-made, that creates the control allocation neeeded for the vtol/fixed-wing.

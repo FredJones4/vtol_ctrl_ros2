@@ -17,7 +17,7 @@ class USBDataGatherer(Node):
             self.write_callback,
             10)
         
-        self.read_pub = self.create_publisher(String, 'airspeed_bridge', 10)
+        self.read_pub = self.create_publisher(String, 'airspeed_usb_data', 10)
 
         # Serial port initialization
         self.ser = serial.Serial()
