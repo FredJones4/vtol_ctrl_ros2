@@ -99,7 +99,7 @@ class PX4_ROS2_TEST(Node):
 
             # Arm the vehicle
             self.arm()
-        if self.offboard_setpoint_counter < 200: # 20 seconds
+        if self.offboard_setpoint_counter < 50: # 20 seconds
             # Publish offboard control mode and trajectory setpoint
             self.publish_offboard_control_mode()
             # self.publish_trajectory_setpoint()
@@ -115,14 +115,14 @@ class PX4_ROS2_TEST(Node):
             self.offboard_setpoint_counter += 1
 
             pass
-        elif self.offboard_setpoint_counter < 400: #TEMP
+        elif self.offboard_setpoint_counter < 300: #TEMP
+            self.publish_trajectory_setpoint()
             self.publish_offboard_control_mode()
-            self.publish_actuator_items()
             self.offboard_setpoint_counter += 1
         else:
+            self.publish_trajectory_setpoint()
             self.publish_offboard_control_mode()
-            self.publish_actuator_items()
-
+            self.offboard_setpoint_counter += 1
         # Increment the counter and stop after reaching 11
         if self.offboard_setpoint_counter < 11:
             self.offboard_setpoint_counter += 1
@@ -186,7 +186,7 @@ class PX4_ROS2_TEST(Node):
     def publish_actuator_items(self):
         motors_msg = ActuatorMotors()  # Populate with relevant data
         motors_msg.control = [0.0] * 12
-        motors_msg.control[0] = 0.99
+        motors_msg.control[11] = 0.99
 
         # # command_msg = VehicleCommand()  # Populate with relevant data
         servos_msg = ActuatorServos()   # Populate with relevant data
