@@ -3,7 +3,7 @@ from rclpy.node import Node
 from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy
 from px4_msgs.msg import OffboardControlMode, TrajectorySetpoint, VehicleCommand
 from px4_msgs.msg import (ActuatorMotors, ActuatorServos, VehicleCommand, OffboardControlMode)
-from std_msgs.msg import Header
+from std_msgs.msg import Header, String
 import time
 import math
 
