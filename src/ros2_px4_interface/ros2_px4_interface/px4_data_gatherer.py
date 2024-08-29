@@ -2,7 +2,7 @@ import rclpy
 from rclpy.node import Node
 from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy
 from px4_msgs.msg import (VehicleLocalPosition, VehicleOdometry, AirspeedWind, Airspeed, VehicleAngularVelocity,
-                          VehicleStatus, VehicleCommandAck)
+                          VehicleStatus, VehicleCommandAck, SensorCombined)
 from std_msgs.msg import String
 # TODO: Throw al data into a dictionary and publish it to a topic
 class PX4DataGatherer(Node):

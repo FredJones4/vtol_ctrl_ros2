@@ -1,0 +1,96 @@
+[0.000000] (-) TimerEvent: {}
+[0.000620] (-) JobUnselected: {'identifier': 'example_global_navigation_cpp'}
+[0.001460] (-) JobUnselected: {'identifier': 'example_local_navigation_cpp'}
+[0.002960] (-) JobUnselected: {'identifier': 'example_mode_fw_attitude_cpp'}
+[0.003110] (-) JobUnselected: {'identifier': 'example_mode_goto_cpp'}
+[0.003195] (-) JobUnselected: {'identifier': 'example_mode_goto_global_cpp'}
+[0.003361] (-) JobUnselected: {'identifier': 'example_mode_manual_cpp'}
+[0.003425] (-) JobUnselected: {'identifier': 'example_mode_rtl_replacement_cpp'}
+[0.003457] (-) JobUnselected: {'identifier': 'example_mode_with_executor_cpp'}
+[0.003523] (-) JobUnselected: {'identifier': 'px4_msgs'}
+[0.003557] (-) JobUnselected: {'identifier': 'px4_offboard'}
+[0.003585] (-) JobUnselected: {'identifier': 'px4_ros2_cpp'}
+[0.003612] (-) JobUnselected: {'identifier': 'px4_ros_com'}
+[0.003810] (ros2_px4_interface) JobQueued: {'identifier': 'ros2_px4_interface', 'dependencies': OrderedDict([('px4_msgs', '/home/cmhales/vtol_ctrl_ros2/install/px4_msgs'), ('px4_ros_com', '/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com')])}
+[0.004090] (ros2_px4_interface) JobStarted: {'identifier': 'ros2_px4_interface'}
+[0.099371] (-) TimerEvent: {}
+[0.201280] (-) TimerEvent: {}
+[0.301921] (-) TimerEvent: {}
+[0.403326] (-) TimerEvent: {}
+[0.504034] (-) TimerEvent: {}
+[0.604881] (-) TimerEvent: {}
+[0.707109] (-) TimerEvent: {}
+[0.810502] (-) TimerEvent: {}
+[0.911315] (-) TimerEvent: {}
+[1.012963] (-) TimerEvent: {}
+[1.115711] (-) TimerEvent: {}
+[1.219029] (-) TimerEvent: {}
+[1.324235] (-) TimerEvent: {}
+[1.426394] (-) TimerEvent: {}
+[1.527216] (-) TimerEvent: {}
+[1.630076] (-) TimerEvent: {}
+[1.731213] (-) TimerEvent: {}
+[1.835114] (-) TimerEvent: {}
+[1.938017] (-) TimerEvent: {}
+[2.040358] (-) TimerEvent: {}
+[2.141617] (-) TimerEvent: {}
+[2.243565] (-) TimerEvent: {}
+[2.345356] (-) TimerEvent: {}
+[2.446620] (-) TimerEvent: {}
+[2.547651] (-) TimerEvent: {}
+[2.648373] (-) TimerEvent: {}
+[2.750639] (-) TimerEvent: {}
+[2.816604] (ros2_px4_interface) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/ros2_px4_interface', 'build', '--build-base', '/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build', 'install', '--record', '/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/cmhales/vtol_ctrl_ros2/src/ros2_px4_interface', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'cmhales', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/lib:/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/cmhales', 'CHROME_DESKTOP': 'code-url-handler.desktop', 'OLDPWD': '/home/cmhales', 'TERM_PROGRAM_VERSION': '1.92.2', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'SYSTEMD_EXEC_PID': '2126', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/cmhales/vtol_ctrl_ros2/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'cmhales', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'cmhales', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:/home/cmhales/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/EB146-1023317:@/tmp/.ICE-unix/2103,unix/EB146-1023317:/tmp/.ICE-unix/2103', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/f5b2b732_fef7_4393_bed9_8fbb31b46bc6', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1001', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'Unity', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/.mutter-Xwaylandauth.P9I3S2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1001/vscode-git-16f85e1851.sock', 'GNOME_TERMINAL_SERVICE': ':1.96', 'TERM_PROGRAM': 'vscode', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/opt/ros/humble', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages:/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages:/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com/local/lib/python3.10/dist-packages:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/cmhales/vtol_ctrl_ros2/install/px4_ros_com:/home/cmhales/vtol_ctrl_ros2/install/px4_msgs:/home/cmhales/vtol_ctrl_ros2/install/example_mode_with_executor_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_rtl_replacement_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_manual_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_global_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_goto_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_mode_fw_attitude_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_local_navigation_cpp:/home/cmhales/vtol_ctrl_ros2/install/example_global_navigation_cpp:/home/cmhales/vtol_ctrl_ros2/install/px4_ros2_cpp'}, 'shell': False}
+[2.852509] (-) TimerEvent: {}
+[2.953460] (-) TimerEvent: {}
+[3.054154] (-) TimerEvent: {}
+[3.154976] (-) TimerEvent: {}
+[3.258406] (-) TimerEvent: {}
+[3.359531] (-) TimerEvent: {}
+[3.461551] (-) TimerEvent: {}
+[3.562577] (-) TimerEvent: {}
+[3.664924] (-) TimerEvent: {}
+[3.668352] (ros2_px4_interface) StdoutLine: {'line': b'running egg_info\n'}
+[3.670451] (ros2_px4_interface) StdoutLine: {'line': b'writing ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/PKG-INFO\n'}
+[3.672832] (ros2_px4_interface) StdoutLine: {'line': b'writing dependency_links to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/dependency_links.txt\n'}
+[3.676371] (ros2_px4_interface) StdoutLine: {'line': b'writing entry points to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/entry_points.txt\n'}
+[3.677179] (ros2_px4_interface) StdoutLine: {'line': b'writing requirements to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/requires.txt\n'}
+[3.679102] (ros2_px4_interface) StdoutLine: {'line': b'writing top-level names to ../../build/ros2_px4_interface/ros2_px4_interface.egg-info/top_level.txt\n'}
+[3.693009] (ros2_px4_interface) StdoutLine: {'line': b"reading manifest file '../../build/ros2_px4_interface/ros2_px4_interface.egg-info/SOURCES.txt'\n"}
+[3.694583] (ros2_px4_interface) StdoutLine: {'line': b"writing manifest file '../../build/ros2_px4_interface/ros2_px4_interface.egg-info/SOURCES.txt'\n"}
+[3.697506] (ros2_px4_interface) StdoutLine: {'line': b'running build\n'}
+[3.699738] (ros2_px4_interface) StdoutLine: {'line': b'running build_py\n'}
+[3.703196] (ros2_px4_interface) StdoutLine: {'line': b'copying ros2_px4_interface/ROS_MAVSIM_wrapper.py -> /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface\n'}
+[3.705197] (ros2_px4_interface) StdoutLine: {'line': b'copying ros2_px4_interface/USBDataGatherer.py -> /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface\n'}
+[3.707634] (ros2_px4_interface) StdoutLine: {'line': b'copying ros2_px4_interface/px4_data_gatherer.py -> /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface\n'}
+[3.711788] (ros2_px4_interface) StdoutLine: {'line': b'copying ros2_px4_interface/px4_ros2_TEST.py -> /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface\n'}
+[3.715992] (ros2_px4_interface) StdoutLine: {'line': b'running install\n'}
+[3.716521] (ros2_px4_interface) StdoutLine: {'line': b'running install_lib\n'}
+[3.719449] (ros2_px4_interface) StdoutLine: {'line': b'copying /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface/ROS_MAVSIM_wrapper.py -> /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface\n'}
+[3.723126] (ros2_px4_interface) StdoutLine: {'line': b'copying /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface/USBDataGatherer.py -> /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface\n'}
+[3.729373] (ros2_px4_interface) StdoutLine: {'line': b'copying /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface/px4_data_gatherer.py -> /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface\n'}
+[3.735991] (ros2_px4_interface) StdoutLine: {'line': b'copying /home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/build/lib/ros2_px4_interface/px4_ros2_TEST.py -> /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface\n'}
+[3.737786] (ros2_px4_interface) StdoutLine: {'line': b'byte-compiling /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface/ROS_MAVSIM_wrapper.py to ROS_MAVSIM_wrapper.cpython-310.pyc\n'}
+[3.746466] (ros2_px4_interface) StdoutLine: {'line': b'byte-compiling /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface/USBDataGatherer.py to USBDataGatherer.cpython-310.pyc\n'}
+[3.752227] (ros2_px4_interface) StdoutLine: {'line': b'byte-compiling /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface/px4_data_gatherer.py to px4_data_gatherer.cpython-310.pyc\n'}
+[3.759409] (ros2_px4_interface) StdoutLine: {'line': b'byte-compiling /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface/px4_ros2_TEST.py to px4_ros2_TEST.cpython-310.pyc\n'}
+[3.765192] (ros2_px4_interface) StdoutLine: {'line': b'running install_data\n'}
+[3.765632] (-) TimerEvent: {}
+[3.765975] (ros2_px4_interface) StdoutLine: {'line': b'running install_egg_info\n'}
+[3.769576] (ros2_px4_interface) StdoutLine: {'line': b"removing '/home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[3.770399] (ros2_px4_interface) StdoutLine: {'line': b'Copying ../../build/ros2_px4_interface/ros2_px4_interface.egg-info to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/python3.10/site-packages/ros2_px4_interface-0.0.0-py3.10.egg-info\n'}
+[3.779048] (ros2_px4_interface) StdoutLine: {'line': b'running install_scripts\n'}
+[3.859210] (ros2_px4_interface) StdoutLine: {'line': b'Installing actuator_px4_control script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface\n'}
+[3.860058] (ros2_px4_interface) StdoutLine: {'line': b'Installing offboard_test script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface\n'}
+[3.861169] (ros2_px4_interface) StdoutLine: {'line': b'Installing px4_data_gatherer script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface\n'}
+[3.862246] (ros2_px4_interface) StdoutLine: {'line': b'Installing px4_ros2_test script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface\n'}
+[3.863247] (ros2_px4_interface) StdoutLine: {'line': b'Installing ros2_px4_interface script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface\n'}
+[3.863910] (ros2_px4_interface) StdoutLine: {'line': b'Installing ros_mavsim_wrapper script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface\n'}
+[3.864890] (ros2_px4_interface) StdoutLine: {'line': b'Installing usb_data_gatherer script to /home/cmhales/vtol_ctrl_ros2/install/ros2_px4_interface/lib/ros2_px4_interface\n'}
+[3.865870] (ros2_px4_interface) StdoutLine: {'line': b"writing list of installed files to '/home/cmhales/vtol_ctrl_ros2/build/ros2_px4_interface/install.log'\n"}
+[3.866532] (-) TimerEvent: {}
+[3.968399] (-) TimerEvent: {}
+[4.070035] (-) TimerEvent: {}
+[4.078652] (ros2_px4_interface) CommandEnded: {'returncode': 0}
+[4.158189] (ros2_px4_interface) JobEnded: {'identifier': 'ros2_px4_interface', 'rc': 0}
+[4.160214] (-) EventReactorShutdown: {}
