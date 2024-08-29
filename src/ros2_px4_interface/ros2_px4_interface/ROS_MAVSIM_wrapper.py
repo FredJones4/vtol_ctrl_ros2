@@ -106,6 +106,7 @@ class ROS_MAVSIM_wrapper(Node):
         self.odometry_sub = self.create_subscription(VehicleLocalPosition, '/fmu/out/vehicle_local_position', self.local_pos_callback, 1)
         self.servos_sub = self.create_subscription(ActuatorServos, '/fmu/out/actuator_servos', self.servos_callback, 1)
         self.motors_sub = self.create_subscription(ActuatorMotors, '/fmu/out/actuator_motors', self.motors_callback, 1)
+        
         # adding on to code
         self.angular_velocity = self.create_subscription(
             VehicleAngularVelocity,
