@@ -293,7 +293,7 @@ It is to be seen:
 - how effective the newly added topics are in Gazebo simulation (where the PX4 flight stack runs)
 
 In the same documentation, custom uORB topics are proven to be writable to the PX4 Autopilot. 
-The user has yet to see:
+It is to be seen:
 - if this would allow for the PX4 to directly add more Airpseed sensors and calculate $\alpha$ (angle of attacK)
 
 
