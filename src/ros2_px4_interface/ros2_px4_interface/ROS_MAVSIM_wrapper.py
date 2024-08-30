@@ -9,51 +9,82 @@ import numpy as np
 
 import rclpy
 from rclpy.node import Node
-from nav_msgs.msg import Odometry
+# from nav_msgs.msg import Odometry
 
-from rosflight_msgs.msg import Airspeed
-from rosflight_msgs.msg import Barometer
-from rosflight_msgs.msg import Command
-from rosflight_msgs.msg import GNSS
-from sensor_msgs.msg import Imu
-from sensor_msgs.msg import MagneticField
+# from rosflight_msgs.msg import Airspeed
+# from rosflight_msgs.msg import Barometer
+# from rosflight_msgs.msg import Command
+# from rosflight_msgs.msg import GNSS
+# from sensor_msgs.msg import Imu
+# from sensor_msgs.msg import MagneticField
+
+import parameters.planner_parameters as PLAN
+from controllers.autopilot import Autopilot
+from estimators.observer import Observer
+from planners.path_follower import PathFollower
+from planners.path_manager import PathManager
+from message_types.msg_autopilot import MsgAutopilot
+from message_types.msg_sensors import MsgSensors
+from message_types.msg_state import MsgState
+from message_types.msg_waypoints import MsgWaypoints
+from viewers.view_manager import ViewManager
+
+
 
 from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy
 from px4_msgs.msg import (VehicleLocalPosition, VehicleOdometry, AirspeedWind, Airspeed, VehicleAngularVelocity,
                           VehicleStatus, VehicleCommandAck, SensorCombined, ActuatorServos, ActuatorMotors)
 from std_msgs.msg import String
 
+# for quaternion-to-euler
+import math
 
-# import parameters.planner_parameters as PLAN
-# from controllers.autopilot import Autopilot
-# from estimators.observer import Observer
-# from planners.path_follower import PathFollower
-# from planners.path_manager import PathManager
-# from message_types.msg_autopilot import MsgAutopilot
-# from message_types.msg_sensors import MsgSensors
-# from message_types.msg_state import MsgState
-# from message_types.msg_waypoints import MsgWaypoints
-# from viewers.view_manager import ViewManager
+def quaternion_to_euler(q):
+    """
+    Converts a quaternion into roll, pitch, and yaw angles.
+    See the following link for the C++ example from which this derives:
+    https://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles#:~:text=%23define%20_USE_MATH_DEFINES%20%23include,angles%3B%20}
+    
+
+    Args:
+    q: list or tuple with four elements [q0, q1, q2, q3]
+       where q0 is the scalar part, and q1, q2, q3 are the vector part.
+
+    Returns:
+    roll: rotation around the x-axis in radians
+    pitch: rotation around the y-axis in radians
+    yaw: rotation around the z-axis in radians
+    """
+
+    q0, q1, q2, q3 = q
+
+    # Roll (x-axis rotation)
+    sinr_cosp = 2 * (q0 * q1 + q2 * q3)
+    cosr_cosp = 1 - 2 * (q1 * q1 + q2 * q2)
+    roll = math.atan2(sinr_cosp, cosr_cosp)
+
+    # Pitch (y-axis rotation)
+    sinp = 2 * math.sqrt(1 + 2*(q0 * q2 - q3 * q1))
+    cosp = 2 * math.sqrt(1 - 2 * (q0 * q2 - q3 * q1))
+    # if abs(sinp) >= 1:
+    #     pitch = math.copysign(math.pi / 2, sinp)  # use 90 degrees if out of range
+    # else:
+    #     pitch = math.asin(sinp)
+    pitch = 2*math.atan2(sinp, cosp) - math.pi/2
+
+    # Yaw (z-axis rotation)
+    siny_cosp = 2 * (q0 * q3 + q1 * q2)
+    cosy_cosp = 1 - 2 * (q2 * q2 + q3 * q3)
+    yaw = math.atan2(siny_cosp, cosy_cosp)
+
+    return roll, pitch, yaw
 
 
 
 
-def ecef_to_ned_matrix(ecef):
-    # Define the projection for ECEF: EPSG:4978
-    # and WGS84 LatLong: EPSG:4326
-    ecef_proj = Proj(proj='geocent', ellps='WGS84', datum='WGS84')
-    latlong_proj = Proj(proj='latlong', ellps='WGS84', datum='WGS84')
 
-    # Convert from ECEF to Geodetic (Latitude, Longitude, Altitude)
-    lon, lat, _ = transform(ecef_proj, latlong_proj, ecef[0], ecef[1], ecef[2], radians=True)
 
-    # Calculate transformation matrix from ECEF to NED
-    matrix = np.array([
-        [-np.sin(lat) * np.cos(lon), -np.sin(lat) * np.sin(lon), np.cos(lat)],
-        [-np.sin(lon), np.cos(lon), 0],
-        [-np.cos(lat) * np.cos(lon), -np.cos(lat) * np.sin(lon), -np.sin(lat)]
-    ])
-    return matrix
+
 
 
 class ROS_MAVSIM_wrapper(Node):
@@ -93,13 +124,11 @@ class ROS_MAVSIM_wrapper(Node):
         self.waypoints.add(np.array([[0, 1000, -100]]).T, Va, np.radians(45), np.inf, 0, 0)
         self.waypoints.add(np.array([[1000, 1000, -100]]).T, Va, np.radians(-135), np.inf, 0, 0)
 
-        # Create publisher for delta commands
-        self.delta_pub = self.create_publisher(Command, '/command', 1)
 
         # Create subscriptions
         self.airspeed_sub = self.create_subscription(String, '/airspeed_usb_data', self.airspeed_callback, 1) # Optional
         self.accel_sub = self.create_subscription(SensorCombined, '/fmu/out/sensor_combined', self.accel_callback, 1)
-        self.odometry_sub = self.create_subscription(VehicleLocalPosition, '/fmu/out/vehicle_local_position', self.local_pos_callback, 1)
+        self.odometry_sub = self.create_subscription(VehicleLocalPosition, '/fmu/out/vehicle_odometry', self.odometry_callback, 1)
                 # redundant subscription added for example
         # self.angular_velocity = self.create_subscription(
         #     VehicleAngularVelocity,
@@ -108,10 +137,11 @@ class ROS_MAVSIM_wrapper(Node):
         #    1 # can replace with the variable qos_profile
         # )
 
+        # TODO: in the future, add subscriptions to USB-contrived airspeed sensors and calculate alpha.
+
         # Publishers #TODO: add motors and servos into physical output timer callback.
-        self.servos_sub = self.create_subscription(ActuatorServos, '/fmu/in/actuator_servos', self.servos_callback, 1)
-        self.motors_sub = self.create_subscription(ActuatorMotors, '/fmu/in/actuator_motors', self.motors_callback, 1)
-        
+        self.servos_pub = self.create_subscription(ActuatorServos, '/fmu/in/actuator_servos', 1)
+        self.motors_pub = self.create_subscription(ActuatorMotors, '/fmu/in/actuator_motors', 1)
 
 
 
@@ -127,6 +157,8 @@ class ROS_MAVSIM_wrapper(Node):
         self.sensors.diff_pressure = max(msg.data, 0.0)  # PX4 version
         self.sensors['windspeed_north'] = msg.windspeed_north
         self.sensors['beta_innov'] = msg.beta_innov
+
+        # TODO: learn to make code for proper calculation of alpha
         
 
     def accel_callback(self, msg):
@@ -135,16 +167,28 @@ class ROS_MAVSIM_wrapper(Node):
         self.sensors['accel_y'] = msg.accelerometer_m_s2[1]
         self.sensors['accel_z'] = msg.accelerometer_m_s2[2]
     
-    def local_pos_callback(self, msg):
+    def odometry_callback(self, msg):
         # msg is in m and m/s
-        self.sensors['north'] = msg.x
-        self.sensors['east'] = msg.y
-        self.sensors['altitude'] = -msg.z
-        self.sensors['Vg'] = np.linalg.norm([msg.vx, msg.vy])
-        self.sensors['chi'] = np.arctan2(msg.vy, msg.vx)
-        self.sensors['phi'] = msg.roll
-        self.sensors['theta'] = msg.pitch
-        self.sensors['psi'] = msg.yaw
+        
+        # Position
+        self.position_curr = msg.position
+
+        self.sensors['north'] = self.position_curr[0]
+        self.sensors['east'] = self.position_curr[1]
+        self.sensors['altitude'] = -self.position_curr[2]
+        # Attitude
+        self.sensors['phi'], self.sensors['theta'], self.sensors['psi'] = quaternion_to_euler(msg.q)
+        # Velocity
+        self.sensors['vx'] = msg.velocity[0]
+        self.sensors['vy'] = msg.velocity[1]
+        self.sensors['vz'] = msg.velocity[2]
+        # Angular velocity
+        self.sensors['p'] = msg.angular_velocity[0]
+        self.sensors['q'] = msg.angular_velocity[1]
+        self.sensors['r'] = msg.angular_velocity[2]
+
+
+
 
     def timer_callback(self):
         # Get next set of commands
@@ -173,11 +217,11 @@ class ROS_MAVSIM_wrapper(Node):
             truth_quat = self.truth_msg.pose.pose.orientation
             truth_quat = [truth_quat.x, truth_quat.y, truth_quat.z, truth_quat.w]
             truth_r = R.from_quat(truth_quat)
-            truth_xyz = truth_r.as_euler('xyz', degrees=False)
+            truth_xyz = truth_r.as_euler('xyz', degrees=False) # TODO: learn mavsim ersion versus wikipedia version 
             true_state.phi = truth_xyz[0]
             true_state.theta = truth_xyz[1]
             true_state.psi = truth_xyz[2]
-            true_state.chi = truth_xyz[2]  # NOTE: Assumes no wind
+            true_state.chi = truth_xyz[2]  # NOTE: Assumes no wind #TODO: learn chi
 
             # Velocity
             # Assumes no wind
@@ -199,15 +243,32 @@ class ROS_MAVSIM_wrapper(Node):
                             commanded_state=commanded_state,
                             delta=delta)
 
-        # Publish delta commands
-        msg = Command()
-        msg.header.stamp = self.get_clock().now().to_msg()
-        msg.mode = Command.MODE_PASS_THROUGH
-        msg.x = delta.aileron
-        msg.y = -delta.elevator
-        msg.z = -delta.rudder
-        msg.f = delta.throttle
-        self.delta_pub.publish(msg)
+        # ROSFlight Publishing of Delta commands
+        # # Publish delta commands
+        # msg = Command()
+        # msg.header.stamp = self.get_clock().now().to_msg()
+        # msg.mode = Command.MODE_PASS_THROUGH
+        # msg.x = delta.aileron
+        # msg.y = -delta.elevator
+        # msg.z = -delta.rudder
+        # msg.f = delta.throttle
+        # self.delta_pub.publish(msg)
+
+        # PX4 Publishing deltas
+        # TODO: fill out servo and motor commands.
+        # Actuator Servo
+        msg_servo = ActuatorServos()
+        msg_servo.timestamp = self.get_clock().now().to_msg()
+        msg_servo.control = [0.]*8 # TODO: learn how to grab from mavsim
+        self.servos_pub.publish(msg_servo)
+        
+        # Actuator Motor
+        msg_motor = ActuatorMotors()
+        msg_motor.timestamp = self.get_clock().now().to_msg()
+        msg_motor.control = [0.]*12 #TODO: learn how to grab from mavsim
+        self.motors_pub.publish(msg_motor)
+
+
 
 
 def main():
