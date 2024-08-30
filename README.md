@@ -287,7 +287,7 @@ https://roboticsbackend.com/create-a-ros-driver-package-introduction-what-is-a-r
 # Future
 
 As of August 28, 2024, [documentation has been created for supported means of adding PX4 topics to the middleware.](https://docs.px4.io/main/en/middleware/uxrce_dds.html#supported-uorb-messages) 
-The user has yet to see:
+It is to be seen:
 - how adding new topics affects speed of messages already being published
 - how effective the newly added topics are in hardware
 - how effective the newly added topics are in Gazebo simulation (where the PX4 flight stack runs)

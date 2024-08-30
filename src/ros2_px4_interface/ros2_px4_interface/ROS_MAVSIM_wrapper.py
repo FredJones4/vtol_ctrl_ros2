@@ -58,7 +58,7 @@ def ecef_to_ned_matrix(ecef):
 
 class ROS_MAVSIM_wrapper(Node):
     def __init__(self):
-        super().__init__('mavsim_bridge')
+        super().__init__('ros_mavsim_wrapper')
         control_timer_period = 1 / 100.0
         self.sensors = MsgSensors()
         self.initial_baro = None
@@ -85,7 +85,7 @@ class ROS_MAVSIM_wrapper(Node):
         self.viewers = ViewManager(data=True)
 
         # waypoint definition
-        self.waypoints = MsgWaypoints()
+        self.waypoints = MsgWaypoints() # TODO: update waypoints for personal use.
         self.waypoints.type = 'fillet'
         Va = PLAN.Va0
         self.waypoints.add(np.array([[0, 0, -100]]).T, Va, np.radians(0), np.inf, 0, 0)
@@ -108,7 +108,7 @@ class ROS_MAVSIM_wrapper(Node):
         #    1 # can replace with the variable qos_profile
         # )
 
-        # Publishers
+        # Publishers #TODO: add motors and servos into physical output timer callback.
         self.servos_sub = self.create_subscription(ActuatorServos, '/fmu/in/actuator_servos', self.servos_callback, 1)
         self.motors_sub = self.create_subscription(ActuatorMotors, '/fmu/in/actuator_motors', self.motors_callback, 1)
         
@@ -148,7 +148,7 @@ class ROS_MAVSIM_wrapper(Node):
 
     def timer_callback(self):
         # Get next set of commands
-        estimated_state = self.observer.update(self.sensors)
+        estimated_state = self.observer.update(self.sensors) #TODO: update sensors
         path = self.path_manager.update(self.waypoints, estimated_state, PLAN.R_min)
         autopilot_commands = self.path_follower.update(path, estimated_state)
         delta, _ = self.autopilot.update(autopilot_commands, estimated_state)
@@ -177,7 +177,7 @@ class ROS_MAVSIM_wrapper(Node):
             true_state.phi = truth_xyz[0]
             true_state.theta = truth_xyz[1]
             true_state.psi = truth_xyz[2]
-            true_state.chi = truth_xyz[2]  # Assumes no wind
+            true_state.chi = truth_xyz[2]  # NOTE: Assumes no wind
 
             # Velocity
             # Assumes no wind
