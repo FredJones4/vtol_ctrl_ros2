@@ -71,7 +71,7 @@ class ROS_MAVSIM_wrapper(Node):
         # set up sensor data dictionary
         self.sensors = {}
 
-        # QoS profile for subscriptions
+        # QoS profile for subscriptions. Optional. If used, replace "1" in subscriptions with qos_profile
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.BEST_EFFORT,
             durability=DurabilityPolicy.TRANSIENT_LOCAL,
@@ -85,35 +85,36 @@ class ROS_MAVSIM_wrapper(Node):
         self.viewers = ViewManager(data=True)
 
         # waypoint definition
-        # self.waypoints = MsgWaypoints()
-        # self.waypoints.type = 'fillet'
-        # Va = PLAN.Va0
-        # self.waypoints.add(np.array([[0, 0, -100]]).T, Va, np.radians(0), np.inf, 0, 0)
-        # self.waypoints.add(np.array([[1000, 0, -100]]).T, Va, np.radians(45), np.inf, 0, 0)
-        # self.waypoints.add(np.array([[0, 1000, -100]]).T, Va, np.radians(45), np.inf, 0, 0)
-        # self.waypoints.add(np.array([[1000, 1000, -100]]).T, Va, np.radians(-135), np.inf, 0, 0)
+        self.waypoints = MsgWaypoints()
+        self.waypoints.type = 'fillet'
+        Va = PLAN.Va0
+        self.waypoints.add(np.array([[0, 0, -100]]).T, Va, np.radians(0), np.inf, 0, 0)
+        self.waypoints.add(np.array([[1000, 0, -100]]).T, Va, np.radians(45), np.inf, 0, 0)
+        self.waypoints.add(np.array([[0, 1000, -100]]).T, Va, np.radians(45), np.inf, 0, 0)
+        self.waypoints.add(np.array([[1000, 1000, -100]]).T, Va, np.radians(-135), np.inf, 0, 0)
 
         # Create publisher for delta commands
         self.delta_pub = self.create_publisher(Command, '/command', 1)
 
         # Create subscriptions
-        self.airspeed_sub = self.create_subscription(String, '/airspeed_usb_data', self.airspeed_callback, 1)
-        # self.gnss_sub = self.create_subscription(GNSS, '/gnss', self.gnss_callback, 1)
-        # self.imu_sub = self.create_subscription(Imu, '/imu/data', self.imu_callback, 1)
-        # self.mag_sub = self.create_subscription(MagneticField, '/magnetometer', self.mag_callback, 1)
-        # self.truth_sub = self.create_subscription(Odometry, '/fixedwing/truth/NED', self.truth_callback, 1)
+        self.airspeed_sub = self.create_subscription(String, '/airspeed_usb_data', self.airspeed_callback, 1) # Optional
         self.accel_sub = self.create_subscription(SensorCombined, '/fmu/out/sensor_combined', self.accel_callback, 1)
         self.odometry_sub = self.create_subscription(VehicleLocalPosition, '/fmu/out/vehicle_local_position', self.local_pos_callback, 1)
-        self.servos_sub = self.create_subscription(ActuatorServos, '/fmu/out/actuator_servos', self.servos_callback, 1)
-        self.motors_sub = self.create_subscription(ActuatorMotors, '/fmu/out/actuator_motors', self.motors_callback, 1)
+                # redundant subscription added for example
+        # self.angular_velocity = self.create_subscription(
+        #     VehicleAngularVelocity,
+        #     '/fmu/out/vehicle_angular_velocity',
+        #     self.vehicle_angular_velocity_callback,
+        #    1 # can replace with the variable qos_profile
+        # )
+
+        # Publishers
+        self.servos_sub = self.create_subscription(ActuatorServos, '/fmu/in/actuator_servos', self.servos_callback, 1)
+        self.motors_sub = self.create_subscription(ActuatorMotors, '/fmu/in/actuator_motors', self.motors_callback, 1)
         
-        # adding on to code
-        self.angular_velocity = self.create_subscription(
-            VehicleAngularVelocity,
-            '/fmu/out/vehicle_angular_velocity',
-            self.vehicle_angular_velocity_callback,
-            qos_profile
-        )
+
+
+
 
 
         # Create timer for control loop
@@ -127,24 +128,6 @@ class ROS_MAVSIM_wrapper(Node):
         self.sensors['windspeed_north'] = msg.windspeed_north
         self.sensors['beta_innov'] = msg.beta_innov
         
-    # def barometer_callback(self, msg):
-    #     # msg is in Pa
-    #     if self.initial_baro is None:
-    #         self.initial_baro = msg.pressure
-    #     self.sensors.abs_pressure = self.initial_baro - msg.pressure
-
-    # def gnss_callback(self, msg):
-    #     # msg is in m and m/s
-    #     if self.initial_ecef is None:
-    #         self.initial_ecef = msg.position
-    #         self.ecef_ned_matrix = ecef_to_ned_matrix(self.initial_ecef)
-    #     ned = np.dot(self.ecef_ned_matrix, msg.position - self.initial_ecef)
-    #     ned_vel = np.dot(self.ecef_ned_matrix, msg.velocity)
-    #     self.sensors.gps_n = ned[0]
-    #     self.sensors.gps_e = ned[1]
-    #     self.sensors.gps_h = -ned[2]
-    #     self.sensors.Vg = np.linalg.norm(ned_vel[0:2])
-    #     self.sensors.gps_course = np.arctan2(ned_vel[1], ned_vel[0])
 
     def accel_callback(self, msg):
         # msg is in m/s^2, and this is PX4 form (not ROSFlight) so dictionary
@@ -162,24 +145,6 @@ class ROS_MAVSIM_wrapper(Node):
         self.sensors['phi'] = msg.roll
         self.sensors['theta'] = msg.pitch
         self.sensors['psi'] = msg.yaw
-
-    # def imu_callback(self, msg):
-    #     # msg is in rad/s and m/s^2
-    #     self.sensors.gyro_x = msg.angular_velocity.x
-    #     self.sensors.gyro_y = msg.angular_velocity.y
-    #     self.sensors.gyro_z = msg.angular_velocity.z
-    #     self.sensors.accel_x = msg.linear_acceleration.x
-    #     self.sensors.accel_y = msg.linear_acceleration.y
-    #     self.sensors.accel_z = msg.linear_acceleration.z
-
-    # def mag_callback(self, msg):
-    #     # msg is in Tesla
-    #     self.sensors.mag_x = msg.magnetic_field.x
-    #     self.sensors.mag_y = msg.magnetic_field.y
-    #     self.sensors.mag_z = msg.magnetic_field.z
-
-    # def truth_callback(self, msg):
-    #     self.truth_msg = msg
 
     def timer_callback(self):
         # Get next set of commands
