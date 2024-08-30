@@ -2,7 +2,7 @@ import sys
 import os
 current_dir = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(current_dir, 'mavsim/mavsim_python'))
-
+# TODO: add mavsim to the folder created in this directory.
 from pyproj import Proj, transform
 from scipy.spatial.transform import Rotation as R
 import numpy as np
@@ -80,6 +80,28 @@ def quaternion_to_euler(q):
     return roll, pitch, yaw
 
 
+def ecef_to_ned_matrix(ecef):
+    '''
+    Pulled from https://github.com/bsutherland333/mavsim_rosflight_bridge/blob/main/mavsim_bridge/mavsim_bridge.py
+    (Used in lines 103 to 114 of said example code)
+    This function was used in a gnss_callback as an alternate method of collecting gps position. 
+    It is kept here for reference. 
+    '''
+    # Define the projection for ECEF: EPSG:4978
+    # and WGS84 LatLong: EPSG:4326
+    ecef_proj = Proj(proj='geocent', ellps='WGS84', datum='WGS84')
+    latlong_proj = Proj(proj='latlong', ellps='WGS84', datum='WGS84')
+
+    # Convert from ECEF to Geodetic (Latitude, Longitude, Altitude)
+    lon, lat, _ = transform(ecef_proj, latlong_proj, ecef[0], ecef[1], ecef[2], radians=True)
+
+    # Calculate transformation matrix from ECEF to NED
+    matrix = np.array([
+        [-np.sin(lat) * np.cos(lon), -np.sin(lat) * np.sin(lon), np.cos(lat)],
+        [-np.sin(lon), np.cos(lon), 0],
+        [-np.cos(lat) * np.cos(lon), -np.cos(lat) * np.sin(lon), -np.sin(lat)]
+    ])
+    return matrix
 
 
 
@@ -115,8 +137,8 @@ class ROS_MAVSIM_wrapper(Node):
         self.path_manager = PathManager()
         self.viewers = ViewManager(data=True)
 
-        # waypoint definition
-        self.waypoints = MsgWaypoints() # TODO: update waypoints for personal use.
+        # waypoint definition 
+        self.waypoints = MsgWaypoints() # TODO: update waypoints for current project's use.
         self.waypoints.type = 'fillet'
         Va = PLAN.Va0
         self.waypoints.add(np.array([[0, 0, -100]]).T, Va, np.radians(0), np.inf, 0, 0)
@@ -192,7 +214,7 @@ class ROS_MAVSIM_wrapper(Node):
 
     def timer_callback(self):
         # Get next set of commands
-        estimated_state = self.observer.update(self.sensors) #TODO: update sensors
+        estimated_state = self.observer.update(self.sensors) #TODO: update sensors object to reflect mavsim's usage
         path = self.path_manager.update(self.waypoints, estimated_state, PLAN.R_min)
         autopilot_commands = self.path_follower.update(path, estimated_state)
         delta, _ = self.autopilot.update(autopilot_commands, estimated_state)
@@ -217,11 +239,11 @@ class ROS_MAVSIM_wrapper(Node):
             truth_quat = self.truth_msg.pose.pose.orientation
             truth_quat = [truth_quat.x, truth_quat.y, truth_quat.z, truth_quat.w]
             truth_r = R.from_quat(truth_quat)
-            truth_xyz = truth_r.as_euler('xyz', degrees=False) # TODO: learn mavsim ersion versus wikipedia version 
+            truth_xyz = truth_r.as_euler('xyz', degrees=False) # TODO: decide which version of euler conversion to use. 
             true_state.phi = truth_xyz[0]
             true_state.theta = truth_xyz[1]
             true_state.psi = truth_xyz[2]
-            true_state.chi = truth_xyz[2]  # NOTE: Assumes no wind #TODO: learn chi
+            true_state.chi = truth_xyz[2]  # NOTE: Assumes no wind
 
             # Velocity
             # Assumes no wind
