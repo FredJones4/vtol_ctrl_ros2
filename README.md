@@ -3,7 +3,17 @@
 ## Reading the README.md
 
 ### Disclaimer
+
 This tutorial expects that the user (you) is (are) using VSCode to edit code and view the text. For GitHub or other sources, please adapt the startup instructions as needed. 
+
+This tutorial also expects you are familiar with:
+- Github & Git Commands
+- Python
+- MAGICC Lab Resources (Github, Gitlab)
+- MAGICC Lab Projects (ROSFlight, PX4, etc.)
+
+###
+
 1. This Markdown Preview utilizes Mermaid and LaTeX in its setup so ROS graphs can be quickly and directly be altered later. Download the ```Markdown Preview Mermaid Support``` and the `Markdown+Math` extensions.
 2. This code relies on an altered fork of PX4-Autopilot. A guide to building on that repository is found in this repo, under "Making a Private Clone of a Public Repo.pdf".
 
@@ -14,12 +24,13 @@ This tutorial expects that the user (you) is (are) using VSCode to edit code and
 1. The main branch of PX4/PX4-Autopilot is actually "main", and not "master".
 2. This project uses a public copy of the repository, and not a private one.
 
-The clone of PX4/PX4-Autopilot will differ in, at most, 4 ways:
+The clone of PX4/PX4-Autopilot will differ in, at most, 5 ways:
 
 1. The ```src/modules/uxrce_dds_client/dds_topice.yaml``` file includes other PX4 topics being published, which capability, as of August 28, PX4 added to their documentation,
 2. The ```README.md``` will only reflect the needs of my version of the project; the original will be deleted.
 3. If proven possible, uORB topics will be altered such that $\alpha$ (angle of attack) and multiple other airspeed sensors can be read by the Pixhawk.
 4. The ```Making a Private Clone of a Public Repo.pdf``` is added (credit to BYU for making the presentation).
+5. The instructions on said pdf for pulling and upstreaming must be done every time one would normally git pull (which is every day before the start of working).
 ## Running the code
 ### Start the Agent
 For ROS 2 to communicate with PX4, uXRCE-DDS client must be running on PX4, connected to a micro XRCE-DDS agent running on the companion computer.
