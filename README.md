@@ -147,6 +147,16 @@ https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Sim
 
 # Design Description
 
+### Purpose of Each Created Node
+
+| Node Name           | Purpose                                                                                                                                                                                                                           |
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OffBoardTest        | Test offboard connection and VTOL/drone waypoint setting.                                                                                                                                                                        |
+| PX4 Data Gatherer   | Prove subscriptions are being received. <br> Test topic speed in a separate terminal using `ros2 topic hz <topic name>`.                                                                                                           |
+| PX4 ROS2 Test       | Test actuator controls. <br> **Note**: As of 30 Aug 2024, this is unsuccessful in Gazebo SITL due to Gazebo not subscribing to these topics. See [newly added documentation for supported means of adding PX4 topics to the middleware in SITL.](https://docs.px4.io/main/en/middleware/uxrce_dds.html#supported-uorb-messages). Note that it may not add the topics already set up by PX4. Experimentation is needed. |
+| ROS MAVSIM Wrapper  | Use Dr. Beard's UAV class MAVSIM-Python library to control the PX4.                                                                                                                                                              |
+| ROS2 PX4 Interface  | Another experiment combining sensor data received and actuator commands being sent (not fully tested).                                                                                                                            |
+
 #### The full state needed:
 ##### Important note: The timestamp of the pixhawk is in [MICROseconds](https://docs.px4.io/main/en/msg_docs/VehicleAttitude.html#:~:text=system%20start%20(-,microseconds,-)%0A%0Auint64%20timestamp_sample).
 | Abbreviation         | Name             | Frame Needed     | PX4/DDS Topic                                                                                                 | Given Frame in PX4/DDS Topic                                                                                                                                                                           | Needed Variable                                                                                                                   |

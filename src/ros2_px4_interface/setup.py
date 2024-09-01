@@ -23,7 +23,6 @@ setup(
             'ros2_px4_interface = ros2_px4_interface.ros2_px4_interface:main',
             'offboard_test = ros2_px4_interface.OffBoardTest:main',
             'px4_data_gatherer = ros2_px4_interface.px4_data_gatherer:main',
-            'actuator_px4_control = ros2_px4_interface.actuator_px4_control:main',
             'usb_data_gatherer = ros2_px4_interface.USBDataGatherer:main',
             'ros_mavsim_wrapper = ros_px4_interface.ROS_MAVSIM_wrapper:main',
             'px4_ros2_test = ros2_px4_interface.px4_ros2_TEST:main'
