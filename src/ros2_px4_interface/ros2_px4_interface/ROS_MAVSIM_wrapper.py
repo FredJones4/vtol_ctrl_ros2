@@ -161,7 +161,7 @@ class ROS_MAVSIM_wrapper(Node):
 
         # TODO: in the future, add subscriptions to USB-contrived airspeed sensors and calculate alpha.
 
-        # Publishers #TODO: add motors and servos into physical output timer callback.
+        # Publishers 
         self.servos_pub = self.create_subscription(ActuatorServos, '/fmu/in/actuator_servos', 1)
         self.motors_pub = self.create_subscription(ActuatorMotors, '/fmu/in/actuator_motors', 1)
 
@@ -177,17 +177,17 @@ class ROS_MAVSIM_wrapper(Node):
         # Uses max since mavsim is not prepared to handle negative values
         # self.sensors.diff_pressure = max(msg.differential_pressure, 0.0) # ROSFlight version
         self.sensors.diff_pressure = max(msg.data, 0.0)  # PX4 version
-        self.sensors['windspeed_north'] = msg.windspeed_north
-        self.sensors['beta_innov'] = msg.beta_innov
+        self.sensors.windspeed_north = msg.windspeed_north
+        self.sensors.beta_innov = msg.beta_innov
 
-        # TODO: learn to make code for proper calculation of alpha
+        # TODO: change the names of variables to appropriately reflect sensor data
         
 
     def accel_callback(self, msg):
         # msg is in m/s^2, and this is PX4 form (not ROSFlight) so dictionary
-        self.sensors['accel_x'] = msg.accelerometer_m_s2[0]
-        self.sensors['accel_y'] = msg.accelerometer_m_s2[1]
-        self.sensors['accel_z'] = msg.accelerometer_m_s2[2]
+        self.sensors.accel_x = msg.accelerometer_m_s2[0]
+        self.sensors.accel_y = msg.accelerometer_m_s2[1]
+        self.sensors.accel_z' = msg.accelerometer_m_s2[2]
     
     def odometry_callback(self, msg):
         # msg is in m and m/s
@@ -195,19 +195,20 @@ class ROS_MAVSIM_wrapper(Node):
         # Position
         self.position_curr = msg.position
 
-        self.sensors['north'] = self.position_curr[0]
-        self.sensors['east'] = self.position_curr[1]
-        self.sensors['altitude'] = -self.position_curr[2]
+        self.sensors.gps_north = self.position_curr[0]
+        self.sensors.gps_east = self.position_curr[1]
+        self.sensors.gps_altitude = -self.position_curr[2]
         # Attitude
-        self.sensors['phi'], self.sensors['theta'], self.sensors['psi'] = quaternion_to_euler(msg.q)
-        # Velocity
-        self.sensors['vx'] = msg.velocity[0]
-        self.sensors['vy'] = msg.velocity[1]
-        self.sensors['vz'] = msg.velocity[2]
+        self.sensors.phi, self.sensors.theta, self.sensors.psi = quaternion_to_euler(msg.q)
+        self.sensors.chi = self.sensor.phi # assume negligible windspeed  
+      # Velocity
+        self.sensors.vx = msg.velocity[0]
+        self.sensors.vy = msg.velocity[1]
+        self.sensors.vz = msg.velocity[2]
         # Angular velocity
-        self.sensors['p'] = msg.angular_velocity[0]
-        self.sensors['q'] = msg.angular_velocity[1]
-        self.sensors['r'] = msg.angular_velocity[2]
+        self.sensors.p = msg.angular_velocity[0]
+        self.sensors.q = msg.angular_velocity[1]
+        self.sensors.r = msg.angular_velocity[2]
 
 
 
@@ -276,18 +277,48 @@ class ROS_MAVSIM_wrapper(Node):
         # msg.f = delta.throttle
         # self.delta_pub.publish(msg)
 
-        # PX4 Publishing deltas
-        # TODO: fill out servo and motor commands.
+        # PX4 Publishing deltas. Order and naming of actuators follows nomenclature of "Quadplane_Project_Instructions.pdf."
+      
+        # TODO: fill out servo and motor commands to reflect the appropriate positions outlined in QGroundControl.
         # Actuator Servo
         msg_servo = ActuatorServos()
         msg_servo.timestamp = self.get_clock().now().to_msg()
-        msg_servo.control = [0.]*8 # TODO: learn how to grab from mavsim
+        msg_servo.control = [0.]*8 
+    # Set Servos Appropriately. The assignment numbers reflect the Pinout assignment in QGroundControl. # TODO: confirm positive and negative positions. 
+      ELEVATOR_SERVO_ASSIGMENT = 0
+      AILERON_SERVO_ASSIGMENT = 1
+      RUDDER_SERVO_ASSIGMENT = 2
+      REVERSE_AILERON_SERVO_ASSIGMENT= 3
+
+      msg_servo.control[ELEVATOR_SERVO_ASSIGMENT] = -delta.elevator
+      msg_servo.control[AILERON_SERVO_ASSIGMENT] = delta.aileron
+      msg_servo.control[RUDDER_SERVO_ASSIGMENT] = -delta.rudder
+      msg_servo.control[REVERSE_AILERON_SERVO_ASSIGMENT] = -delta.aileron
+
+      
+      
         self.servos_pub.publish(msg_servo)
         
         # Actuator Motor
         msg_motor = ActuatorMotors()
         msg_motor.timestamp = self.get_clock().now().to_msg()
-        msg_motor.control = [0.]*12 #TODO: learn how to grab from mavsim
+        msg_motor.control = [0.]*12 
+      # Set Motors appropriately. The assignment numbers reflect the Pinout assignment in QGroundControl. # TODO: confirm positive and negative positions. 
+      PORT_FRONT_MOTOR_ASSIGNMENT = 0
+      PORT_REAR_MOTOR_ASSIGNMENT = 1
+      STARBOARD_REAR_MOTOR_ASSIGNMENT = 2
+      STARBOARD_FRONT_MOTOR_ASSIGNMENT = 3
+      FRONT_PROPULSION_MOTO_ASSIGNMENT = 4
+
+      # TODO: fix delta names, according to MAVSIM nomenclature and location of actual throttle values
+
+      msg_motor.control[PORT_FRONT_MOTOR_ASSIGNMENT] = delta.port_front_motor
+      msg_motor.control[PORT_REAR_MOTOR_ASSIGNMENT] = delta.port_rear_motor
+      msg_motor.control[STARBOARD_REAR_MOTOR_ASSIGNMENT] = delta.starboard_rear_motor
+      msg_motor.control[STARBOARD_FRONT_MOTOR_ASSIGNMENT] = delta.starboard_front_motor
+      msg_motor.control[FRONT_PROPULSION_MOTO_ASSIGNMENT] = delta.forward_propulsion_motor
+      
+      
         self.motors_pub.publish(msg_motor)
 
 
